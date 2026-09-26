@@ -417,14 +417,17 @@
       .article-modal{height:calc(100vh / var(--z))}
       .article-modal-panel{max-height:calc(90vh / var(--z))}
     }
-      .hero .actions{gap:24px 18px}
+      .hero .actions{gap:24px 28px}
     .hero .actions .button-main{width:auto}
     .hero .actions{margin-top:45px}
     /* Carouseli: brez puščic in krogcev pod drsnikom (drsenje, tipkovnica in samodejno vrtenje ostanejo) */
     .u-controls{display:none!important}
     @media(max-width:420px){.hero .actions{gap:16px 10px}.hero .actions .button-main{padding:14px 12px;font-size:.84rem;flex:1 1 auto;justify-content:center}}
-    .hero .entry-grid{margin-top:75px}
+    .hero .entry-grid{margin-top:85px}
+    /* Hero: besedilo, gumbi in kartice 80 px v levo, carousel 80 px v desno (od 1400 px širine naprej) */
+    @media(min-width:1400px){.hero-grid>:first-child{position:relative;left:-80px}.hero-ring{position:relative;left:80px}}
     .hero .entry-card{min-height:95px;padding-top:9.6px;padding-bottom:9.6px}
+    @media(min-width:951px){.hero .entry-grid{width:calc(100% + 10px)}}
       /* Preklopnik jezika: dropdown */
     .lang-dd{position:relative;display:inline-block;margin:0 4px}
     .lang-dd-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 10px 0 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:inherit;font:inherit;font-size:.78rem;font-weight:800;letter-spacing:.04em;cursor:pointer;transition:background .2s ease,border-color .2s ease}
