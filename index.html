@@ -445,6 +445,19 @@
     html[data-theme="light"] .lang-dd-list button.is-on{color:var(--ink)}
     html[data-theme="light"] .lang-dd--inline .lang-dd-list{background:transparent;box-shadow:none}
     @media(max-width:1180px){.nav-links{display:none}.mobile-toggle{display:block}}
+    /* Glavni naslovi (Hero, sekcije, O zavodu, Kontakt, Utrinki): velikost, debelina 800, razmik črk 3 px, vrstice +3 px.
+       Naslovi kartic, člankov in noge ostanejo prvotni. */
+    .hero h1,.u-title,.section-head h2,h2.section-head,.contact-title{font-weight:800;letter-spacing:3px!important}
+    .hero h1,.u-title{font-size:clamp(1.6rem,calc(8.5vw - 10px),2.1rem);line-height:calc(.98em + 3px)!important}
+    .section-head h2,.contact-title{font-size:clamp(1.725rem,calc(5vw - 10px),3.975rem);line-height:calc(.96em + 3px)!important}
+    #o-nas h2.section-head{font-size:clamp(1.3rem,calc(6.5vw - 10px),1.4rem);line-height:calc(1.05em + 3px)!important}
+    @media(min-width:951px){
+      .hero h1,.u-title{font-size:clamp(1.9rem,calc(3.7vw - 10px),3.075rem)}
+      #o-nas h2.section-head{font-size:clamp(1.375rem,calc(3vw - 10px),2.275rem)}
+    }
+    html[lang="sl"] .contact-line2{white-space:normal!important}
+    /* Male oznake nad glavnimi naslovi: enotna velikost (kot O zavodu in Katalog B2B usposabljanj) */
+    .section-head .kicker,.contact-head .kicker{font-size:16px!important}
   </style>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -470,7 +483,7 @@
        <div data-template-id="hero-eyebrow" class="eyebrow canva-tag" style="color: rgb(201, 255, 74); font-weight: 800;">
         <i data-lucide="sparkles" width="15"></i><span data-template-id="hero-eyebrow-text" class="canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Prihodnost izobraževanja</span>
        </div>
-       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-size: 32px;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 32px;">Sodobni didaktični pristopi za navdihujoče učenje in poučevanje.</span></h1>
+       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Sodobni didaktični pristopi za navdihujoče učenje in poučevanje.</span></h1>
        <p data-template-id="hero-description" class="hero-copy canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 18px;">Zavod EDUcatio gradi most med teorijo in prakso. Razvijamo inovativne pedagoške prakse in opolnomočamo učitelje z metodologijo, ki v središče postavlja otrokov celostni razvoj.</p>
        <div class="actions"><a href="#izobrazevanja" data-template-id="hero-primary-cta" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;"><span data-template-id="hero-primary-cta-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Raziščite seminarje za vašo šolo</span> <i data-lucide="arrow-right" width="17"></i></a> <a href="#gradiva" data-template-id="hero-secondary-cta" class="button-main alt canva-button" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-secondary-cta-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Prelistajte avtorska učna gradiva</span></a>
        </div>
@@ -543,7 +556,7 @@
       </div>
       <div class="reveal">
        <div data-template-id="about-kicker" class="kicker canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">O zavodu in ustanoviteljici</div>
-       <h2 data-template-id="about-title" class="section-head canva-text" style="margin: 10px 0px 18px; color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">Dvigujemo kakovost pedagoškega procesa</h2>
+       <h2 data-template-id="about-title" class="section-head canva-text" style="margin: 10px 0px 18px; color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Dvigujemo kakovost pedagoškega procesa</h2>
        <p data-template-id="about-text-1" class="about-text canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 16px;">Zavod EDUcatio je bil ustanovljen z jasnim poslanstvom: dvigovati kakovost pedagoškega procesa prek sistemskega prenosa sodobnih didaktičnih spoznanj v vsakodnevno šolsko prakso. Deluje kot odprto kompetenčno središče za razvoj inovativnih pedagoških praks, opolnomočenje učiteljev ter sistemsko podporo vodstvom šol v Sloveniji in širšem evropskem prostoru.</p>
        <p data-template-id="about-text-2" class="about-text canva-text" style="color: rgb(200, 211, 237);">Ustanoviteljica in direktorica zavoda je mag. Mateja Todorovski, magistrica evropskega skupnega študija dela z otroki in mladostniki (Iscte – Instituto Universitário de Lisboa, ocena 20/20 A+) ter profesorica razrednega pouka s specializacijo za zgodnje poučevanje tujih jezikov. Razpolaga z več kot 20-letnimi izkušnjami kot avtorica uveljavljenih učnih gradiv, pedagoška svetovalka ter mednarodna izobraževalka na področju sodobne didaktike.</p>
       </div>
@@ -589,7 +602,7 @@
      <div class="site-shell">
       <div class="section-head center reveal">
        <div data-template-id="training-kicker" class="kicker canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Katalog B2B usposabljanj</div>
-       <h2 data-template-id="training-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">Izobraževanja in usposabljanja za šole</h2>
+       <h2 data-template-id="training-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Izobraževanja in usposabljanja za šole</h2>
        <p data-template-id="training-description" class="canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 16px;">Naši programi so prilagojeni učiteljem razrednega pouka, učiteljem tujih jezikov, vzgojiteljem ter vodstvenim delavcem. Izberite modul, ki najbolje ustreza potrebam vašega kolektiva.</p>
       </div>
       <div class="filters reveal" role="group" aria-label="Filtri usposabljanj"><button class="filter active" type="button" data-filter="all">Vsi moduli</button><button class="filter" type="button" data-filter="clil">Jezik in CLIL</button><button class="filter" type="button" data-filter="formativno">Formativno spremljanje</button><button class="filter" type="button" data-filter="digitalno">Mednarodno &amp; Digitalno</button>
@@ -1022,7 +1035,7 @@
        <div class="kicker">
         Kontakt
        </div>
-       <h2 class="contact-title">Povej, kaj želiš<br class="contact-br"> <span class="contact-line2">izboljšati v svoji učilnici.</span></h2>
+       <h2 class="contact-title">Kaj želiš<br class="contact-br"> <span class="contact-line2">izboljšati v svoji učilnici?</span></h2>
        <p style="line-height:1.65;color:var(--mist)">Za vprašanja glede izvedbe usposabljanj, naročila svetovalnih storitev ali sodelovanja pri mednarodnih projektih nas kontaktirajte.</p>
       </div>
       <div class="reveal contact-side">
