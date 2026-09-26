@@ -418,7 +418,13 @@
       .article-modal-panel{max-height:calc(90vh / var(--z))}
     }
       .hero .actions{gap:24px 18px}
-    .hero .entry-grid{margin-top:65px}
+    .hero .actions .button-main{width:auto}
+    .hero .actions{margin-top:45px}
+    /* Carouseli: brez puščic in krogcev pod drsnikom (drsenje, tipkovnica in samodejno vrtenje ostanejo) */
+    .u-controls{display:none!important}
+    @media(max-width:420px){.hero .actions{gap:16px 10px}.hero .actions .button-main{padding:14px 12px;font-size:.84rem;flex:1 1 auto;justify-content:center}}
+    .hero .entry-grid{margin-top:75px}
+    .hero .entry-card{min-height:95px;padding-top:9.6px;padding-bottom:9.6px}
       /* Preklopnik jezika: dropdown */
     .lang-dd{position:relative;display:inline-block;margin:0 4px}
     .lang-dd-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 10px 0 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:inherit;font:inherit;font-size:.78rem;font-weight:800;letter-spacing:.04em;cursor:pointer;transition:background .2s ease,border-color .2s ease}
@@ -483,9 +489,9 @@
        <div data-template-id="hero-eyebrow" class="eyebrow canva-tag" style="color: rgb(201, 255, 74); font-weight: 800;">
         <i data-lucide="sparkles" width="15"></i><span data-template-id="hero-eyebrow-text" class="canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Prihodnost izobraževanja</span>
        </div>
-       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Sodobni didaktični pristopi za navdihujoče učenje in poučevanje.</span></h1>
-       <p data-template-id="hero-description" class="hero-copy canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 18px;">Zavod EDUcatio gradi most med teorijo in prakso. Razvijamo inovativne pedagoške prakse in opolnomočamo učitelje z metodologijo, ki v središče postavlja otrokov celostni razvoj.</p>
-       <div class="actions"><a href="#izobrazevanja" data-template-id="hero-primary-cta" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;"><span data-template-id="hero-primary-cta-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Raziščite seminarje za vašo šolo</span> <i data-lucide="arrow-right" width="17"></i></a> <a href="#gradiva" data-template-id="hero-secondary-cta" class="button-main alt canva-button" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-secondary-cta-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Prelistajte avtorska učna gradiva</span></a>
+       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Učenje, ki navdušuje. Poučevanje, ki pusti pečat.</span></h1>
+       <p data-template-id="hero-description" class="hero-copy canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 18px;">Seminarji, metodologije in avtorska gradiva za vrtce, osnovne šole in pedagoge, ki želijo več kot klasično predavanje.</p>
+       <div class="actions"><a href="#izobrazevanja" data-template-id="hero-primary-cta" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;"><span data-template-id="hero-primary-cta-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Razišči seminarje</span> <i data-lucide="arrow-right" width="17"></i></a> <a href="#gradiva" data-template-id="hero-secondary-cta" class="button-main alt canva-button" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-secondary-cta-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Prelistaj gradiva</span></a>
        </div>
        <div class="entry-grid"><a href="#izobrazevanja" class="entry-card"><i data-lucide="presentation"></i><strong>Za učitelje</strong><span>Metode za takojšnjo rabo</span></a> <a href="#o-nas" class="entry-card"><i data-lucide="landmark"></i><strong>Za pedagoge</strong><span>Razvoj prakse in sistema</span></a> <a href="#gradiva" class="entry-card"><i data-lucide="rocket"></i><strong>Za učence</strong><span>Zgodbe, igra in gibanje</span></a>
        </div>
