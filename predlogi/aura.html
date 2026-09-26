@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="sl" class="scroll-smooth">
+<head>
+<meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavod EDUcatio | Inovativna didaktika</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0f',
+                        darker: '#050507',
+                        primary: '#4f46e5',
+                        secondary: '#06b6d4',
+                        accent: '#f43f5e',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #f8fafc;
+            overflow-x: hidden;
+            cursor: none; /* Custom cursor */
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+            border-color: rgba(6, 182, 212, 0.3);
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #4f46e5, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-gradient-accent {
+            background: linear-gradient(to right, #f43f5e, #fb923c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom Cursor */
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(6, 182, 212, 0.5);
+            pointer-events: none;
+            mix-blend-mode: screen;
+            z-index: 9999;
+            transition: transform 0.15s ease-out;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.8);
+        }
+
+        #cursor-follower {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(79, 70, 229, 0.5);
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform 0.3s ease-out, width 0.3s, height 0.3s;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modern Gradient Mesh Background */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%);
+            filter: blur(60px);
+        }
+
+        /* Quiz Styles */
+        .quiz-option {
+            transition: all 0.3s ease;
+        }
+        .quiz-option:hover {
+            background: rgba(79, 70, 229, 0.2);
+            border-color: rgba(79, 70, 229, 0.5);
+            padding-left: 1.5rem;
+        }
+        .quiz-option.correct {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            color: #10b981;
+        }
+        .quiz-option.wrong {
+            background: rgba(244, 63, 94, 0.2);
+            border-color: #f43f5e;
+            color: #f43f5e;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-white relative">
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="hidden md:block"></div>
+    <div id="cursor-follower" class="hidden md:block"></div>
+
+    <div class="bg-mesh"></div>
+
+    <nav class="fixed w-full z-50 glass border-b-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center transform group-hover:rotate-12 transition-transform">
+                        <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-tight text-white">EDU<span class="text-secondary">catio</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#stebri" class="text-gray-300 hover:text-white font-medium transition-colors hover-target">4 Stebri</a>
+                    <a href="#avtorica" class="text-gray-300 hover:text-white font-medium transition-colors hover-target">O ustanoviteljici</a>
+                    <a href="#projekti" class="text-gray-300 hover:text-white font-medium transition-colors hover-target">Mednarodni projekti</a>
+                    <a href="#kontakt" class="px-6 py-2.5 rounded-full bg-white text-dark font-semibold hover:bg-gray-200 transition-all transform hover:scale-105 hover-target shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        Povežimo se
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#stebri" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">4 Stebri</a>
+                <a href="#avtorica" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">O ustanoviteljici</a>
+                <a href="#projekti" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-white/5">Mednarodni projekti</a>
+                <a href="#kontakt" class="block px-3 py-2 rounded-md text-base font-bold text-secondary hover:text-white hover:bg-white/5">Povežimo se</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Animated Blobs behind text -->
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-secondary rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-1/4 left-1/2 w-72 h-72 bg-accent rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob" style="animation-delay: 4s;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full glass border border-white/10 text-sm font-medium text-secondary uppercase tracking-wider reveal">
+                Prihodnost izobraževanja je tukaj
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tight mb-8 reveal" style="transition-delay: 100ms;">
+                Sodobna <span class="text-gradient">didaktika</span><br>za navdihujoče učenje
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10 reveal" style="transition-delay: 200ms;">
+                Zavod EDUcatio gradi most med teorijo in prakso. Razvijamo inovativne pedagoške prakse in opolnomočamo učitelje z metodologijo, ki v središče postavlja otrokov celostni razvoj.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 reveal" style="transition-delay: 300ms;">
+                <a href="#stebri" class="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] transition-all transform hover:-translate-y-1 hover-target flex items-center justify-center gap-2">
+                    Razišči programe <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#kviz" class="px-8 py-4 rounded-full glass text-white font-bold text-lg hover:bg-white/10 transition-all transform hover:-translate-y-1 hover-target flex items-center justify-center gap-2">
+                    Reši pedagoški kviz
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center text-gray-500">
+            <span class="text-xs uppercase tracking-widest mb-2">Drsaj navzdol</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="stebri" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">4 Stebri <span class="text-gradient">Delovanja</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Sistemski prenos sodobnih didaktičnih spoznanj v vsakodnevno šolsko prakso prek štirih ključnih področij.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div class="glass-card p-8 rounded-3xl reveal hover-target" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/20 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-language text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Metodologija CLIL</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Zgodnje poučevanje jezikov. Vsebinsko in jezikovno združeno učenje za naravno usvajanje tujega jezika skozi doživljajske vsebine, gibanje in umetnost.
+                    </p>
+                </div>
+                
+                <!-- Pillar 2 -->
+                <div class="glass-card p-8 rounded-3xl reveal hover-target" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chalkboard-user text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Usposabljanja</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Strokovna usposabljanja, avtorski seminarji in delavnice po meri za učitelje, vzgojitelje in vodstvene delavce v VIZ.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-card p-8 rounded-3xl reveal hover-target" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-book-open text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Učna Gradiva</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Avtorstvo mednarodno uveljavljenih učbeniških serij (kot je <em>The Story Garden</em>) in sodelovanje pri snovanju nacionalnih učnih načrtov.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="glass-card p-8 rounded-3xl reveal hover-target" style="transition-delay: 400ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-earth-europe text-3xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">EU Projekti</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Aktivno mednarodno sodelovanje (Erasmus+, eTwinning, INVITED) ter prenos vodilnih evropskih praks (Finska) v slovenski prostor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Infographic -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12 reveal">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-heading font-extrabold text-gradient mb-2 counter" data-target="20">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">+ let izkušenj</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-heading font-extrabold text-gradient mb-2 counter" data-target="100">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">% Inovativnost</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-heading font-extrabold text-gradient mb-2 counter" data-target="5">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">Erasmus+ KA Ukrepov</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-heading font-extrabold text-gradient mb-2 counter" data-target="97">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-widest">+ EU strokovnjakov/dogodek</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="avtorica" class="py-24 relative z-10 bg-black/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image side -->
+                <div class="w-full lg:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-3xl transform rotate-3 scale-105 opacity-50 blur-lg"></div>
+                        <img src="https://placehold.co/600x800/1e1e2f/ffffff?text=Mateja+Todorovski\nStrokovnjakinja+za+didaktiko" alt="Mateja Todorovski" class="relative rounded-3xl shadow-2xl object-cover w-full h-[600px] border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl animate-float shadow-xl">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-accent/20 p-3 rounded-full">
+                                    <i class="fa-solid fa-award text-accent text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold">Vrhunska</p>
+                                    <p class="text-sm text-gray-400">Strokovna avtoriteta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content side -->
+                <div class="w-full lg:w-1/2 reveal" style="transition-delay: 200ms;">
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">Ustanoviteljica & <br><span class="text-gradient">Direktorica</span></h2>
+                    <h3 class="text-2xl text-white mb-6 font-medium">Mateja Todorovski</h3>
+                    
+                    <div class="space-y-6 text-gray-300 text-lg">
+                        <p>
+                            Uveljavljena strokovnjakinja na področju zgodnjega poučevanja jezikov in didaktike z več kot 20-letnimi izkušnjami v izobraževalnem sektorju.
+                        </p>
+                        <p>
+                            Svojo pot je začela v razredu, kje je razvijala napredne modele zgodnjega usvajanja jezikov. Kot svetovalka na <strong class="text-white">Zavodu RS za šolstvo</strong> je sooblikovala nacionalne smernice in bila članica strokovne skupine za pripravo učnega načrta za angleščino.
+                        </p>
+                        <div class="glass p-6 rounded-2xl border-l-4 border-l-primary mt-8">
+                            <i class="fa-solid fa-quote-left text-2xl text-primary mb-4 opacity-50"></i>
+                            <p class="italic text-gray-200">
+                                "Verjamemo, da vrhunska pedagoška praksa zahteva stalen stik z vodilnimi svetovalnimi in raziskovalnimi dosežki. Naš cilj je dvigovati kakovost pedagoškega procesa."
+                            </p>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <a href="https://www.linkedin.com" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-primary transition-colors hover-target">
+                                <i class="fa-brands fa-linkedin text-2xl"></i>
+                                <span class="font-medium">Povežite se na LinkedIn-u</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kviz" class="py-24 relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold uppercase tracking-wider mb-4 inline-block">Interaktivno</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">Odkrijte svoj <span class="text-gradient-accent">pedagoški potencial</span></h2>
+                <p class="text-gray-400">Preverite svoje poznavanje sodobnih didaktičnih pristopov v manj kot minuti.</p>
+            </div>
+
+            <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden reveal shadow-[0_0_50px_rgba(244,63,94,0.1)]">
+                <!-- Progress bar -->
+                <div class="absolute top-0 left-0 h-1 bg-white/10 w-full">
+                    <div id="quiz-progress" class="h-full bg-gradient-to-r from-accent to-secondary transition-all duration-500 w-0"></div>
+                </div>
+
+                <div id="quiz-container">
+                    <!-- Quiz content injected via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projekti" class="py-24 relative z-10 bg-black/40 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-5xl font-heading font-bold mb-4">Mednarodni <span class="text-gradient">Projekti</span></h2>
+                    <p class="text-gray-400">Sodelovanje v programih Erasmus+ in eTwinning ter prenos inovacij v slovenski šolski prostor.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <div class="flex gap-4 opacity-70 grayscale">
+                        <!-- Logos placeholders -->
+                        <div class="h-12 w-auto flex items-center justify-center font-bold text-xl"><i class="fa-brands fa-europass mr-2"></i> Erasmus+</div>
+                        <div class="h-12 w-auto flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-users mr-2"></i> eTwinning</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass p-8 rounded-3xl reveal hover-target">
+                    <div class="text-secondary mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Predavanje je ponudilo izjemno jasne, praktične in takoj uporabne korake za vključevanje mladih učencev v spletne izmenjave. Interaktivnost in strokovna globina sta presegli naša pričakovanja."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/30 flex items-center justify-center text-primary font-bold">INV</div>
+                        <div>
+                            <h4 class="text-white font-bold">Udeleženci usposabljanja</h4>
+                            <p class="text-sm text-gray-400">Projekt INVITED (Erasmus+)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass p-8 rounded-3xl reveal hover-target" style="transition-delay: 150ms;">
+                    <div class="text-secondary mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Redko srečamo strokovnjaka s tako jasno vizijo in celostnim pedagoškim pristopom, ki zna odlično povezovati teorijo in prakso v razredu."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary/30 flex items-center justify-center text-secondary font-bold">FIN</div>
+                        <div>
+                            <h4 class="text-white font-bold">Pedagoški strokovnjaki</h4>
+                            <p class="text-sm text-gray-400">Mutalan Koulu, Finska (KA1)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass p-8 rounded-3xl reveal hover-target" style="transition-delay: 300ms;">
+                    <div class="text-secondary mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Učna gradiva The Story Garden izkazujejo visoko didaktično vrednost, sistematičen razvoj večjezičnosti ter ustrezno integracijo formativnega spremljanja v razredni pouk."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent/30 flex items-center justify-center text-accent font-bold">RK</div>
+                        <div>
+                            <h4 class="text-white font-bold">Strokovni recenzenti</h4>
+                            <p class="text-sm text-gray-400">Založba Rokus Klett</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-[3rem] p-8 md:p-16 relative overflow-hidden reveal">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full filter blur-[80px] opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary rounded-full filter blur-[80px] opacity-20 transform -translate-x-1/2 translate-y-1/2"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">Začnimo <span class="text-gradient">sodelovanje</span></h2>
+                        <p class="text-gray-300 text-lg mb-10">Zavod EDUcatio je vaš kompetenčni center za CLIL in sodobne izobraževalne strategije. Naročite usposabljanje ali vzpostavite mednarodno partnerstvo.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Sedež zavoda</h4>
+                                    <p class="text-gray-400">Škapinova ulica 13,<br>3000 Celje, Slovenija</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user-tie text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Vodstvo</h4>
+                                    <p class="text-gray-400">Mateja Todorovski,<br>ustanoviteljica in direktorica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form class="space-y-6" onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden'); this.reset();">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Ime in priimek</label>
+                                    <input type="text" required class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors glass">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">E-pošta</label>
+                                    <input type="email" required class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors glass">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Področje sodelovanja</label>
+                                <select class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors glass appearance-none">
+                                    <option value="" class="bg-dark text-gray-400">Izberite področje...</option>
+                                    <option value="sola" class="bg-dark text-white">Izobraževanje za šolo</option>
+                                    <option value="svetovanje" class="bg-dark text-white">Svetovanje</option>
+                                    <option value="gradiva" class="bg-dark text-white">Učna gradiva</option>
+                                    <option value="projekti" class="bg-dark text-white">Mednarodni projekti</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Sporočilo</label>
+                                <textarea rows="4" required class="w-full bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors glass resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] transition-all transform hover:-translate-y-1 hover-target">
+                                Pošlji povpraševanje
+                            </button>
+                            <div id="success-msg" class="hidden text-emerald-400 text-center font-medium p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                                Vaše sporočilo je bilo uspešno poslano. Kontaktirali vas bomo v najkrajšem možnem času.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-black/50 py-12 relative z-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-white text-sm"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl tracking-tight text-white">EDU<span class="text-secondary">catio</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm">Zavod za izobraževanje in usposabljanje. Posevečeni razvoju inovativnih pedagoških praks in strokovnemu usposabljanju učiteljev in vzgojiteljev.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Poslovni podatki</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Matična številka: 9266895000</li>
+                        <li>Davčna številka: 45865132</li>
+                        <li>Nismo zavezanec za DDV.</li>
+                        <li>Vpis: Okrožno sodišče Celje (2022)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bančni podatki</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Banka: Delavska hranilnica d.d.</li>
+                        <li class="font-mono text-xs">SI56 6100 0002 7715 284</li>
+                    </ul>
+                    <div class="mt-4 flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2026 Zavod EDUcatio. Vse pravice pridržane.</p>
+                <div class="flex gap-4 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Varovanje podatkov (GDPR)</a>
+                    <a href="#" class="hover:text-white transition-colors">Piškotki</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. Custom Cursor ---
+        const cursor = document.getElementById('cursor');
+        const cursorFollower = document.getElementById('cursor-follower');
+        const hoverTargets = document.querySelectorAll('.hover-target, a, button, input, select, textarea');
+
+        document.addEventListener('mousemove', (e) => {
+            if(window.innerWidth > 768) {
+                cursor.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
+                setTimeout(() => {
+                    cursorFollower.style.transform = `translate3d(${e.clientX - 20}px, ${e.clientY - 20}px, 0)`;
+                }, 50);
+            }
+        });
+
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursorFollower.style.width = '60px';
+                cursorFollower.style.height = '60px';
+                cursorFollower.style.background = 'rgba(79, 70, 229, 0.1)';
+                cursor.style.transform = `translate3d(${event.clientX - 10}px, ${event.clientY - 10}px, 0) scale(1.5)`;
+            });
+            target.addEventListener('mouseleave', () => {
+                cursorFollower.style.width = '40px';
+                cursorFollower.style.height = '40px';
+                cursorFollower.style.background = 'transparent';
+                cursor.style.transform = `translate3d(${event.clientX - 10}px, ${event.clientY - 10}px, 0) scale(1)`;
+            });
+        });
+
+        // --- 2. Scroll Reveal Animations ---
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // --- 3. Navbar Styling on Scroll ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/40');
+                navbar.classList.remove('border-b-0');
+                navbar.classList.add('border-b', 'border-white/10');
+            } else {
+                navbar.classList.remove('bg-black/40');
+                navbar.classList.add('border-b-0');
+                navbar.classList.remove('border-b', 'border-white/10');
+            }
+        });
+
+        // --- 4. Mobile Menu Toggle ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- 5. Counter Animation ---
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const target = entry.target;
+                    const finalValue = parseInt(target.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = (timestamp) => {
+                        if (!target.startTime) target.startTime = timestamp;
+                        const progress = Math.min((timestamp - target.startTime) / duration, 1);
+                        target.innerText = Math.floor(progress * finalValue);
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            target.innerText = finalValue;
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                    observer.unobserve(target); // animate only once
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(c => counterObserver.observe(c));
+
+        // --- 6. Interactive Quiz Logic ---
+        const quizData = [
+            {
+                question: "Kaj pomeni mednarodno uveljavljena kratica CLIL?",
+                options: [
+                    "Creative Language Interactive Learning",
+                    "Content and Language Integrated Learning",
+                    "Cognitive Linguistic Integration Level"
+                ],
+                correct: 1
+            },
+            {
+                question: "Kateri je ključni element sodobnega poučevanja (1. triada) po metodologiji Zavoda EDUcatio?",
+                options: [
+                    "Ekskluzivno učenje iz tiskanih delovnih zvezkov",
+                    "Doživljajski pouk, gibanje in umetnost",
+                    "Strogo frontalno poučevanje slovnice"
+                ],
+                correct: 1
+            },
+            {
+                question: "Kaj je glavni namen vključevanja šol v mednarodne virtualne izmenjave (npr. eTwinning)?",
+                options: [
+                    "Zgolj izboljšanje računalniških veščin",
+                    "Razvijanje medkulturne kompetence in sodelovanja",
+                    "Tekmovanje z drugimi evropskimi šolami"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        const quizContainer = document.getElementById('quiz-container');
+        const progressBar = document.getElementById('quiz-progress');
+
+        function renderQuiz() {
+            if (currentQuestion >= quizData.length) {
+                showResults();
+                return;
+            }
+
+            const q = quizData[currentQuestion];
+            const progress = (currentQuestion / quizData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            let optionsHtml = '';
+            q.options.forEach((opt, index) => {
+                optionsHtml += `
+                    <div class="quiz-option glass border border-white/10 rounded-xl p-4 mb-3 cursor-pointer hover-target flex items-center gap-3" onclick="selectAnswer(${index}, this)">
+                        <div class="w-6 h-6 rounded-full border border-gray-500 flex items-center justify-center text-xs indicator"></div>
+                        <span class="text-gray-200">${opt}</span>
+                    </div>
+                `;
+            });
+
+            quizContainer.innerHTML = `
+                <span class="text-secondary font-bold mb-2 block">Vprašanje ${currentQuestion + 1}/${quizData.length}</span>
+                <h3 class="text-2xl font-heading text-white mb-6">${q.question}</h3>
+                <div class="options-container">
+                    ${optionsHtml}
+                </div>
+            `;
+        }
+
+        function selectAnswer(selectedIndex, element) {
+            const q = quizData[currentQuestion];
+            const allOptions = document.querySelectorAll('.quiz-option');
+            
+            // Disable further clicks
+            allOptions.forEach(opt => opt.style.pointerEvents = 'none');
+
+            if (selectedIndex === q.correct) {
+                element.classList.add('correct');
+                element.querySelector('.indicator').innerHTML = '<i class="fa-solid fa-check"></i>';
+                element.querySelector('.indicator').classList.add('border-emerald-500', 'bg-emerald-500/20');
+                score++;
+            } else {
+                element.classList.add('wrong');
+                element.querySelector('.indicator').innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                element.querySelector('.indicator').classList.add('border-rose-500', 'bg-rose-500/20');
+                
+                // Show correct
+                allOptions[q.correct].classList.add('correct');
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                renderQuiz();
+            }, 1500);
+        }
+
+        function showResults() {
+            progressBar.style.width = '100%';
+            
+            let message = "";
+            let icon = "";
+            
+            if (score === quizData.length) {
+                message = "Odlično! Vaš pedagoški kompas je naravnan na prihodnost. Sledite viziji sodobnega izobraževanja.";
+                icon = '<i class="fa-solid fa-trophy text-5xl text-yellow-400 mb-4 drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]"></i>';
+            } else {
+                message = "Dobro opravljeno! Vedno je prostor za nadgradnjo znanja. Pridružite se našim usposabljanjem.";
+                icon = '<i class="fa-solid fa-lightbulb text-5xl text-secondary mb-4 drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]"></i>';
+            }
+
+            quizContainer.innerHTML = `
+                <div class="text-center py-8">
+                    ${icon}
+                    <h3 class="text-3xl font-heading text-white mb-2">Vaš rezultat: ${score}/${quizData.length}</h3>
+                    <p class="text-gray-400 mb-8 max-w-md mx-auto">${message}</p>
+                    <a href="#kontakt" class="inline-block px-8 py-3 rounded-full bg-white text-dark font-bold hover:bg-gray-200 transition-all hover-target">
+                        Povežimo se
+                    </a>
+                    <button onclick="resetQuiz()" class="block mx-auto mt-4 text-sm text-gray-500 hover:text-white transition-colors">Reši ponovno</button>
+                </div>
+            `;
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            renderQuiz();
+        }
+
+        // Init Quiz
+        renderQuiz();
+    </script>
+</body>
+</html>
