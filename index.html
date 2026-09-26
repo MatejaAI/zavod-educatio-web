@@ -1,0 +1,1651 @@
+<!doctype html>
+<html lang="sl" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zavod EDUcatio | Kompetenčno središče za sodobno didaktiko</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Zavod EDUcatio povezuje spoznanja sodobne didaktike z neposrednimi izkušnjami iz razrednega pouka ter opolnomoča pedagoške delavce.">
+  <script>try{var t=localStorage.getItem("zavod-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Work+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#091225;
+      --night:#111b36;
+      --panel:#172343;
+      --paper:#f6f5ee;
+      --lime:#c9ff4a;
+      --coral:#ff7464;
+      --violet:#a98bff;
+      --yellow:#ffd858;
+      --mist:#c8d3ed;
+      --sky:#8fd0ff;
+      --line:rgba(222,230,255,.16);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--ink);color:#f8fbff;font-family:"DM Sans",sans-serif;overflow-x:hidden}
+    body:before{
+      content:"";position:fixed;inset:0;z-index:-2;opacity:.48;
+      background-image:linear-gradient(rgba(201,255,74,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(201,255,74,.055) 1px,transparent 1px);
+      background-size:34px 34px;background-color:var(--ink)
+    }
+    body:after{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.15;
+      background:radial-gradient(circle at 12% 8%,#7b5cff 0,transparent 24%),radial-gradient(circle at 82% 16%,#ff7464 0,transparent 18%),radial-gradient(circle at 52% 76%,#c9ff4a 0,transparent 22%)
+    }
+    h1,h2,h3,h4{font-family:"Work Sans",sans-serif;letter-spacing:-.055em}
+    a{color:inherit;text-decoration:none}
+    .site-shell{width:100%;max-width:1220px;margin:auto;padding:0 24px}
+    .panel{background:rgba(23,35,67,.9);border:1px solid var(--line);box-shadow:0 22px 55px rgba(0,0,0,.23)}
+    .entry-card,.bento-card,.module,.book-card,.project,.quote,.training-cta,.idea-card,.detail-list,.form-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-position .22s ease;will-change:transform,box-shadow}
+    .entry-card:hover,.entry-card:focus-visible,.bento-card:hover,.bento-card:focus-visible,.module:hover,.module:focus-visible,.book-card:hover,.book-card:focus-visible,.project:hover,.project:focus-visible,.quote:hover,.quote:focus-visible,.training-cta:hover,.training-cta:focus-visible,.idea-card:hover,.idea-card:focus-visible,.detail-list:hover,.detail-list:focus-visible,.form-card:hover,.form-card:focus-visible{transform:translateY(-6px);box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18);border-color:rgba(201,255,74,.7);background-position:18px 18px}
+    .entry-card:focus-visible,.bento-card:focus-visible,.module:focus-visible,.book-card:focus-visible,.project:focus-visible,.quote:focus-visible,.training-cta:focus-visible,.idea-card:focus-visible,.detail-list:focus-visible,.form-card:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+    @media (hover:none){.entry-card:active,.bento-card:active,.module:active,.book-card:active,.project:active,.quote:active,.training-cta:active,.idea-card:active,.detail-list:active,.form-card:active{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.28),0 0 20px rgba(201,255,74,.2)}}
+    @media (prefers-reduced-motion:reduce){.entry-card,.bento-card,.module,.book-card,.project,.quote,.training-cta,.idea-card,.detail-list,.form-card{transition:box-shadow .15s ease,border-color .15s ease}.entry-card:hover,.entry-card:focus-visible,.bento-card:hover,.bento-card:focus-visible,.module:hover,.module:focus-visible,.book-card:hover,.book-card:focus-visible,.project:hover,.project:focus-visible,.quote:hover,.quote:focus-visible,.training-cta:hover,.training-cta:focus-visible,.idea-card:hover,.idea-card:focus-visible,.detail-list:hover,.detail-list:focus-visible,.form-card:hover,.form-card:focus-visible{transform:none}}
+
+    .paper-panel{background:var(--paper);color:var(--ink);border:1px solid rgba(9,18,37,.12);box-shadow:0 22px 50px rgba(0,0,0,.22)}
+    .nav-wrap{position:fixed;inset:14px 0 auto;z-index:50}
+    .nav-box{min-height:62px;padding:8px 10px 8px 15px;border-radius:18px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,18,37,.83);border:1px solid var(--line);backdrop-filter:blur(18px)}
+    .brand{display:flex;align-items:center;gap:9px;font-family:"Work Sans";font-weight:800;font-size:1.25rem}.brand-name{display:inline-flex;flex-direction:column;align-items:flex-start;white-space:nowrap;line-height:.92;letter-spacing:2px}.brand-subline{display:inline-flex;align-items:center;position:relative;top:5px}.brand-name [data-template-id$="white-header"],.brand-name [data-template-id$="white-footer"],.brand-name [data-template-id$="white-tail-header"],.brand-name [data-template-id$="white-tail-footer"]{color:#fff}.brand-name [data-template-id$="blue-header"],.brand-name [data-template-id$="blue-footer"]{color:#2d63bd}
+    .brand-mark{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;color:var(--ink);background:var(--lime);transform:rotate(-5deg)}.brand-logo{display:block;width:52.272px;height:52.272px;object-fit:contain;border-radius:12px}
+    .brand b{color:var(--lime)}
+    .nav-links{display:flex;align-items:center;gap:15px;font-size:.79rem;font-weight:700;color:#dbe4fb}
+    .nav-links a:hover{color:var(--lime)}
+    .nav-links a.nav-route{position:relative;padding:6px 9px;border-radius:999px;border:1px solid rgba(143,208,255,.35)}
+    .nav-links a.nav-route.is-active{color:var(--lime);background:rgba(201,255,74,.12);border-color:var(--lime)}
+    .nav-links a:focus-visible,.mobile-menu a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:8px}
+    .mobile-menu a.is-active{background:rgba(201,255,74,.12);color:var(--lime)}
+    .nav-contact,.button-main{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;border:0;cursor:pointer;font-weight:800;transition:.22s ease}
+    .nav-contact{padding:10px 14px;background:var(--lime);color:var(--ink)}
+    .mobile-toggle{display:none;padding:10px;border:0;background:transparent;color:#fff}
+    .mobile-menu{display:none;margin-top:8px;padding:10px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
+    .mobile-menu a{display:block;padding:12px;border-radius:10px;font-weight:700}.mobile-menu a:hover{background:rgba(201,255,74,.12);color:var(--lime)}
+    .mobile-menu.open{display:block}
+    section{padding:104px 0;scroll-margin-top:92px}
+    .hero{padding:136px 0 76px;min-height:calc(100 * min(var(--vh,1vh),1vh));display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:38px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(201,255,74,.35);color:var(--lime);padding:8px 12px;border-radius:999px;font-size:.77rem;font-weight:800;letter-spacing:.04em}
+    .hero h1{font-size:clamp(3.45rem,7vw,6.8rem);line-height:.89;max-width:720px;margin:18px 0}.hero h1 em{font-style:normal;color:var(--lime);position:relative}.hero h1 em:after{content:"";height:11px;border-radius:10px;background:var(--coral);opacity:.65;position:absolute;left:0;right:0;bottom:-5px;z-index:-1;transform:rotate(-1deg)}
+    .hero-copy{max-width:630px;color:var(--mist);font-size:1.08rem;line-height:1.72}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.button-main{padding:14px 18px;background:var(--lime);color:var(--ink);box-shadow:5px 5px 0 var(--coral)}.button-main.alt{background:transparent;color:#fff;border:1px solid var(--line);box-shadow:none}.button-main:hover{transform:translate(-2px,-3px);box-shadow:8px 8px 0 var(--coral)}
+    .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:35px}.entry-card{padding:15px;border-radius:17px;border:1px solid var(--line);background:#121e3b;transition:.25s;min-height:112px}.entry-card:hover{transform:translateY(-6px);border-color:var(--lime);background:#1a294e}.entry-card i{color:var(--lime);margin-bottom:13px}.entry-card strong{display:block;font-family:"Work Sans";font-size:.95rem}.entry-card span{font-size:.75rem;color:var(--mist)}
+    .board{min-height:540px;border-radius:32px;position:relative;overflow:hidden;background:linear-gradient(145deg,#253362,#121b35 60%,#342259);border:1px solid rgba(255,255,255,.17);box-shadow:18px 18px 0 rgba(201,255,74,.18)}
+    .board:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 74% 22%,rgba(255,216,88,.35),transparent 23%),radial-gradient(circle at 16% 78%,rgba(255,116,100,.25),transparent 26%);animation:drift 10s ease-in-out infinite alternate}
+    .board-photo{position:absolute;left:8%;bottom:8%;width:53%;height:58%;overflow:hidden;border:4px solid #fff;border-radius:20px;transform:rotate(-5deg);box-shadow:10px 12px 0 var(--coral)}.board-photo img{width:100%;height:100%;object-fit:cover}
+    .scribble{position:absolute;color:var(--yellow);font:800 3.8rem/1 "Work Sans";right:13%;top:17%;transform:rotate(14deg)}
+    .sticker{position:absolute;padding:11px 15px;border-radius:13px;color:var(--ink);font-family:"Work Sans";font-weight:800;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:.25s;animation:float 4.8s ease-in-out infinite}.sticker:hover{transform:scale(1.13) rotate(3deg)!important;z-index:3}.s1{background:var(--lime);top:14%;left:12%;transform:rotate(-7deg)}.s2{background:var(--coral);top:12%;right:12%;transform:rotate(6deg);animation-delay:-1s}.s3{background:var(--yellow);top:41%;right:8%;transform:rotate(-4deg);animation-delay:-2.2s}.s4{background:var(--violet);bottom:12%;right:15%;transform:rotate(5deg);animation-delay:-.4s}.s5{background:#fff;bottom:13%;left:10%;transform:rotate(5deg);animation-delay:-2.8s}.s6{background:var(--coral);top:57%;left:8%;transform:rotate(-4deg);animation-delay:-1.5s}.s7{background:var(--lime);top:31%;left:43%;transform:rotate(5deg);animation-delay:-3.4s}
+    .section-head{max-width:720px;margin-bottom:40px}.section-head.center{text-align:center;margin-left:auto;margin-right:auto}.kicker{text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;font-weight:800;color:var(--lime)}.section-head h2{font-size:clamp(2.35rem,5vw,4.6rem);line-height:.96;margin:12px 0}.section-head p{line-height:1.65;color:var(--mist)}
+    .bento{display:grid;grid-template-columns:1.15fr .85fr .95fr;grid-template-rows:auto auto;gap:16px}.bento-card{padding:28px;border-radius:26px;min-height:220px;position:relative;overflow:hidden;transition:.3s}.bento-card:hover,.module:hover,.book-card:hover,.quote:hover{transform:translateY(-7px)}.bento-card:first-child{grid-row:span 2;min-height:455px}.bento-card:nth-child(2){background:var(--lime);color:var(--ink)}.bento-card:nth-child(3){background:var(--coral);color:var(--ink)}.bento-card:nth-child(4){grid-column:span 2;background:var(--violet);color:var(--ink)}.bento-number{font:800 clamp(4rem,9vw,7.2rem)/.8 "Work Sans";opacity:.06;position:absolute;right:15px;bottom:12px;transform:scale(.9);transition:opacity .22s ease,transform .22s ease}.bento-card:hover{transform:translateY(-8px) scale(1.025);box-shadow:0 22px 44px rgba(0,0,0,.34),0 0 28px rgba(201,255,74,.22)}.bento-card:hover .bento-number,.bento-card:focus-visible .bento-number{opacity:.92;transform:scale(1.08)}.bento-card i{width:36px;height:36px}.bento-card h3{font-size:1.45rem;max-width:270px}.bento-card p{max-width:360px;line-height:1.6;font-size:.91rem}.profile-links{text-align:center;color:var(--mist);margin-top:24px;font-size:.9rem}.text-link{font-weight:800;color:var(--lime);text-decoration:underline;text-underline-offset:4px}.steps .text-link,.modal-steps .text-link{color:#172343;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}.steps .text-link:hover,.steps .text-link:focus-visible,.modal-steps .text-link:hover,.modal-steps .text-link:focus-visible{color:#342259;text-decoration-thickness:3px;text-decoration-color:#342259;outline:2px solid rgba(23,35,67,.28);outline-offset:3px;border-radius:3px}
+    .about-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:58px;align-items:center}.portrait-wrap{position:relative}.portrait-wrap img{width:100%;height:520px;object-fit:cover;border-radius:30px;border:4px solid var(--paper);box-shadow:14px 14px 0 var(--violet)}.experience{position:absolute;right:-20px;bottom:26px;background:var(--lime);color:var(--ink);padding:15px 18px;border-radius:17px;box-shadow:5px 5px 0 var(--ink);border:2px solid var(--ink);transition:transform .22s ease,box-shadow .22s ease}.experience:hover,.experience:focus-within{transform:translateY(-5px) scale(1.04);box-shadow:8px 14px 28px rgba(0,0,0,.32),0 0 22px rgba(201,255,74,.22)}.experience strong{font:800 2.6rem/1 "Work Sans";display:inline-block;transition:transform .22s ease,filter .22s ease,text-shadow .22s ease}.experience:hover strong,.experience:focus-within strong{transform:translateY(-4px) scale(1.08);filter:brightness(1.04);text-shadow:0 5px 12px rgba(9,18,37,.24)}.about-text{font-size:1rem;line-height:1.7;color:var(--mist)}.timeline{margin-top:28px;display:grid;gap:13px;border-left:2px dashed var(--lime);padding-left:22px}.timeline-item{position:relative;padding:14px 16px;border-radius:15px;background:rgba(255,255,255,.055);line-height:1.55;color:#dbe4fa}.timeline-item:before{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);border:2px solid var(--ink);position:absolute;left:-30px;top:20px}.timeline-item strong{display:block;color:#fff}
+    .training-zone{background:#111d39}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}.filter{cursor:pointer;border:1px solid var(--line);padding:10px 14px;border-radius:999px;background:#172343;color:#fff;font-weight:800;font-size:.82rem}.filter.active{background:var(--lime);color:var(--ink);border-color:var(--lime)}.module-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.module{padding:26px;border-radius:24px;background:var(--paper);color:var(--ink);transition:.3s;box-shadow:7px 7px 0 var(--yellow)}.module:nth-child(2){box-shadow:7px 7px 0 var(--coral)}.module:nth-child(3){box-shadow:7px 7px 0 var(--violet)}.module:nth-child(4){box-shadow:7px 7px 0 var(--lime)}.module:nth-child(2):hover,.module:nth-child(3):hover,.module:nth-child(4):hover{background:var(--paper);box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18);border-color:rgba(201,255,74,.7)}.module-top{display:flex;justify-content:space-between;align-items:center}.module-label{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:8px;background:var(--ink);color:#fff}.module h3{font-size:1.45rem;line-height:1.08}.module p,.module li{line-height:1.55;font-size:.91rem}.module ul{padding:13px 0 0;margin:18px 0 0;border-top:1px solid rgba(9,18,37,.16);list-style:none}.module li{margin:7px 0}.module li:before{content:"↳";font-weight:800;color:var(--coral);margin-right:7px}.training-cta{margin-top:30px;padding:37px;border-radius:28px;background:linear-gradient(120deg,#342259,#162443,#1d5364);border:1px solid var(--line)}
+    .shelf{display:grid;grid-template-columns:1.1fr .85fr .85fr;gap:18px;align-items:end;padding:28px 22px;background:#513e2e;border-radius:28px;border-bottom:16px solid #2b1d17;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.book-card{min-height:385px;border-radius:14px 14px 5px 5px;overflow:hidden;background:var(--paper);color:var(--ink);transition:.3s;box-shadow:5px 8px 0 rgba(0,0,0,.35)}.book-card:nth-child(1){transform:rotate(-2deg)}.book-card:nth-child(2){transform:rotate(2deg)}.book-card:nth-child(3){transform:rotate(-1deg)}.book-card:hover{transform:translateY(-12px) rotate(0)}.book-visual{height:205px;padding:15px;background:#dfe8ff}.book-visual img{transition:transform .22s ease,box-shadow .22s ease;transform-origin:center}.book-visual img:hover{transform:translateY(-4px) scale(1.045);box-shadow:0 12px 24px rgba(0,0,0,.24);position:relative;z-index:2}.book-card:first-child .book-visual{height:235px;background:#d9ff87}.word-adventures-visual{display:grid;grid-template-columns:1fr 1fr;gap:10px}.word-adventures-visual img{width:100%;height:100%;max-width:100%;max-height:100%;min-width:0;min-height:0;object-fit:contain;object-position:center;border-radius:8px;background:#fff;overflow:hidden}.book-card:nth-child(3) .book-visual{display:grid;grid-template-columns:1fr 1fr;gap:8px}.book-card:nth-child(3) .book-visual img{min-width:0}.book-card:nth-child(2) .book-visual img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}.book-copy{padding:18px}.book-copy h3{font-size:1.35rem;margin:0 0 7px}.book-copy p{font-size:.88rem;line-height:1.55}.book-copy .text-link{color:#20254a}
+    .map-board{border-radius:32px;background:#172343;border:1px solid var(--line);padding:30px;position:relative;overflow:hidden}.map-board:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(201,255,74,.22) 1px,transparent 1px);background-size:22px 22px;opacity:.55}.map-lines{position:absolute;inset:0;width:100%;height:100%;opacity:.8}.map-line{stroke:var(--lime);stroke-width:2;stroke-dasharray:8 8;animation:dash 9s linear infinite}.project-nodes{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:center;min-height:290px}.project{padding:22px;border-radius:21px;background:rgba(9,18,37,.85);border:1px solid var(--line)}.project:nth-child(2){transform:translateY(36px)}.project:nth-child(3){transform:translateY(-12px)}.project i{color:var(--yellow);margin-bottom:15px}.project p{font-size:.9rem;color:var(--mist);line-height:1.6}
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.quote{padding:26px;border-radius:25px;background:var(--paper);color:var(--ink);border-top:8px solid var(--lime);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.quote:hover,.quote:focus-visible{transform:translateY(-6px) scale(1.018);box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18);border-color:rgba(201,255,74,.7)}.quote:nth-child(2){border-color:var(--coral)}.quote:nth-child(3){border-color:var(--violet)}.quote-mark{font:800 4rem/.7 "Work Sans";color:var(--coral)}.quote p{font-size:.94rem;line-height:1.64}.quote footer{display:flex;gap:10px;align-items:center;margin-top:18px}.initial{width:37px;height:37px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--lime);font-weight:800}.quote small{display:block;color:#56617b}
+    .idea-card{padding:clamp(23px,5vw,52px);border-radius:32px;background:var(--paper);color:var(--ink)}.idea-card p{line-height:1.75}.idea-card h2{font-size:clamp(2rem,4vw,3.5rem);line-height:.98}.idea-card h3{font-size:1.7rem;margin-top:35px}.idea-quote{padding:18px;border-radius:15px;background:var(--yellow);font-weight:800;font-size:1.08rem}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{padding:20px;border-radius:17px;background:#e4e8f0}.step h4{margin-top:0;font-size:1.07rem}.step p{font-size:.91rem}.next-actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:27px;padding:22px;border-radius:21px;background:#1a2849;color:#fff}.next-actions p{color:#d0dbef;font-size:.91rem}.next-actions .button-main{font-size:.84rem}.modal-cta .next-actions{background:transparent;padding:0;gap:20px}.modal-cta .next-actions>div{padding:22px;border:1px solid rgba(201,255,74,.24);border-radius:20px;background:linear-gradient(145deg,#1d2c50,#152342);box-shadow:0 12px 26px rgba(0,0,0,.2);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;display:flex;flex-direction:column}.modal-cta .next-actions>div:hover,.modal-cta .next-actions>div:focus-within{transform:translateY(-6px);box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18);border-color:rgba(201,255,74,.7)}.modal-cta .next-actions h4{margin-top:0;font-size:1.06rem;line-height:1.3;color:#fff}.modal-cta .next-actions p{font-size:.94rem;line-height:1.65}.modal-cta .next-actions .button-main{margin-top:auto}
+    .blog-cards{display:contents}.blog-card{padding:28px;border-radius:26px;background:linear-gradient(145deg,#172343,#251d44);border:1px solid var(--line);color:#fff;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.blog-card:hover,.blog-card:focus-within{transform:translateY(-6px) scale(1.018);box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18);border-color:rgba(201,255,74,.7)}.blog-card h3{font-size:1.65rem;line-height:1.08;margin:14px 0}.blog-card p{color:var(--mist);line-height:1.6}.blog-card-kicker{color:var(--lime);font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.blog-tags{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}.blog-tags span{padding:6px 9px;border-radius:99px;background:rgba(201,255,74,.12);color:var(--lime);font-size:.75rem;font-weight:800}#blog .site-shell{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}#blog .section-head{grid-column:1/-1;margin-bottom:8px}#blog .blog-cards>.blog-card,#blog>.site-shell>article.blog-card{aspect-ratio:1;min-height:0;overflow:hidden;margin:0}#blog>.site-shell>article.blog-card{grid-column:2;grid-row:2}#blog .blog-cards>.blog-card:nth-of-type(2){grid-column:2;grid-row:3;width:100%;justify-self:stretch;aspect-ratio:1;}#blog .blog-cards>.blog-card:nth-of-type(3){grid-column:1;grid-row:3;width:100%;justify-self:stretch;aspect-ratio:1;}.article-modal{position:fixed;inset:0;width:100%;height:calc(100 * min(var(--vh,1vh),1vh));z-index:100;display:grid;place-items:center;padding:20px;overflow:hidden}.article-modal.hidden{display:none}.article-modal-backdrop{position:absolute;inset:0;background:rgba(4,8,20,.86);backdrop-filter:blur(10px)}.article-modal-panel{position:relative;width:min(980px,100%);max-height:calc(90 * min(var(--vh,1vh),1vh));overflow-y:auto;overscroll-behavior:contain;padding:clamp(24px,5vw,52px);border-radius:28px;background:var(--paper);color:var(--ink);box-shadow:0 25px 80px rgba(0,0,0,.5);scroll-behavior:auto}.article-modal-panel h2{font-size:clamp(1.7rem,3.2vw,3.1rem);line-height:1.12;margin:14px 0 24px}.article-modal-panel h3{font-size:1.7rem;margin:30px 0 12px}.article-modal-panel p{line-height:1.7}.article-modal-panel blockquote{margin:25px 0;padding:20px;border-left:7px solid var(--coral);border-radius:0 15px 15px 0;background:var(--yellow);font-weight:800;line-height:1.55}.modal-close{position:absolute;top:18px;right:18px;border:0;border-radius:50%;padding:9px;background:var(--ink);color:#fff;cursor:pointer}.modal-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.modal-steps section{padding:20px;border-radius:20px;background:#d9ff87}.modal-steps section:nth-child(2){background:#ffd8d2}.modal-steps section:nth-child(3){background:#ddd3ff}.modal-steps h4{font-size:1.1rem;line-height:1.15}.modal-cta{margin-top:28px;padding:24px;border-radius:22px;background:#172343;color:#fff}.modal-cta p{color:var(--mist)}
+    .contact-zone{background:linear-gradient(135deg,#172343,#251d44)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:43px}.contact-title{font-size:clamp(2.6rem,5vw,4.5rem);line-height:.96}.detail-list{padding:23px;border-radius:24px}.detail{display:grid;grid-template-columns:27px 1fr;gap:13px;margin:17px 0}.detail i{color:var(--lime)}.detail p{color:var(--mist);line-height:1.55;margin:4px 0;white-space:pre-line}.form-card{padding:28px;border-radius:25px;background:var(--paper);color:var(--ink)}.field{margin:14px 0}.field label{display:block;margin-bottom:6px;font-size:.85rem;font-weight:800}.field input,.field select,.field textarea,.area-trigger{width:100%;border:1px solid #b8c2d5;padding:12px;border-radius:12px;background:#fff;color:var(--ink);font:inherit}.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(169,139,255,.4);border-color:#503fc4}.area-dropdown{position:relative;z-index:30}.area-trigger{display:flex;align-items:center;justify-content:space-between;text-align:left;cursor:pointer}.area-trigger[aria-expanded="true"]{outline:3px solid rgba(169,139,255,.4);border-color:#503fc4}.area-options{position:absolute;top:100%;left:0;right:0;z-index:100;margin-top:5px;padding:5px;list-style:none;background:#fff;border:1px solid #b8c2d5;border-radius:12px;box-shadow:0 14px 30px rgba(9,18,37,.24)}.area-options[hidden]{display:none}.area-option{padding:10px 12px;border-radius:8px;cursor:pointer}.area-option:hover,.area-option[aria-selected="true"]{background:#eaffb0}.area-option.placeholder{color:#667085}.status{margin-top:13px;padding:13px;border-radius:12px;background:#ddffd0;color:#163213;font-weight:800}.contact-social{display:grid;gap:9px;margin-top:18px;padding:20px 23px;border-radius:22px;background:rgba(23,35,67,.9);color:#fff}.contact-social strong{font-family:"Work Sans",sans-serif;font-size:1.05rem}.contact-social a,.contact-social span{font-size:.92rem;line-height:1.45}.contact-social a{color:var(--lime);text-decoration:underline;text-underline-offset:3px;display:flex;align-items:center;gap:10px}.contact-social a svg{flex:0 0 20px;stroke-width:2.2}.hidden{display:none}.footer{padding:32px 0;background:#060b17;color:#c8d3ed}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:.86rem}
+    .reveal{opacity:0;transform:translateY(22px);transition:.65s ease}.reveal.show{opacity:1;transform:none}
+    @keyframes float{50%{translate:0 -11px}}@keyframes drift{to{transform:scale(1.08) translate(-1%,2%)}}@keyframes dash{to{stroke-dashoffset:-160}}
+    @media(max-width:950px){.nav-links{display:none}.mobile-toggle{display:block}.hero{min-height:auto}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.board{max-width:650px;width:100%;margin:auto}.bento{grid-template-columns:1fr 1fr}.bento-card:first-child{grid-row:auto;grid-column:span 2;min-height:290px}.bento-card:nth-child(4){grid-column:span 2}.project-nodes,.quotes{grid-template-columns:1fr}.project:nth-child(2),.project:nth-child(3){transform:none}.shelf{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:620px){#blog .site-shell{grid-template-columns:1fr}#blog>.site-shell>article.blog-card{grid-column:auto;grid-row:auto}.blog-cards,.modal-steps,.modal-cta .next-actions{grid-template-columns:1fr}.article-modal{padding:8px}.article-modal-panel{max-height:calc(96 * min(var(--vh,1vh),1vh));border-radius:20px;padding:24px 18px}.site-shell{padding:0 16px}section{padding:75px 0}.hero{padding-top:120px}.hero h1{font-size:3.2rem}.actions .button-main{width:100%}.entry-grid,.bento,.module-grid,.shelf,.steps,.next-actions{grid-template-columns:1fr}.entry-card{min-height:auto}.bento-card:first-child,.bento-card:nth-child(4){grid-column:auto}.bento-card:first-child{min-height:250px}.board{min-height:420px}.board-photo{height:50%;width:58%}.sticker{font-size:.82rem;padding:9px 10px}.shelf{padding:18px 18px 28px}.book-card,.book-card:first-child{min-height:auto;transform:none}.book-visual,.book-card:first-child .book-visual{height:180px}.portrait-wrap img{height:420px}.experience{right:8px}.footer-inner{flex-direction:column;text-align:center}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+    /* The about section follows a winding editorial timeline composition. */
+    #o-nas{position:relative;overflow:hidden;background-color:#111b36;background-image:linear-gradient(rgba(201,255,74,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(201,255,74,.045) 1px,transparent 1px),radial-gradient(circle at 22% 12%,rgba(201,255,74,.16),transparent 24%),radial-gradient(circle at 76% 84%,rgba(201,255,74,.12),transparent 28%);background-size:34px 34px,34px 34px,auto,auto}
+    #o-nas:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 48%,rgba(201,255,74,.08),transparent 34%)}
+    #o-nas>.about-grid{position:relative;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);column-gap:56px;align-items:start;max-width:1080px}
+    #o-nas .portrait-wrap{width:100%;margin:0 0 30px;z-index:2}
+    #o-nas .portrait-wrap img{height:430px;border:5px solid var(--paper);border-radius:30px;box-shadow:14px 14px 0 var(--violet);object-position:center}
+    #o-nas .experience{right:-28px;bottom:-22px;padding:16px 20px;border-radius:15px;box-shadow:5px 5px 0 var(--ink);z-index:3}
+    #o-nas .experience strong{font-size:2.8rem}
+    #o-nas .experience > div{font-weight:800}
+    #o-nas .about-grid>.reveal:nth-child(2){position:relative}
+    #o-nas .about-grid>.reveal:nth-child(2)> .about-kicker{display:block}
+    #o-nas .about-grid>.reveal:nth-child(2)>[data-template-id="about-title"]{max-width:690px;margin-left:0!important}
+    #o-nas .about-grid>.reveal:nth-child(2)>[data-template-id="about-text-1"],#o-nas .about-grid>.reveal:nth-child(2)>[data-template-id="about-text-2"]{max-width:650px}
+    #o-nas .timeline-item strong{color:#fff}
+    .professional-links-list{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+    .professional-links-list li{line-height:1.5}
+    .professional-links-list .text-link{color:var(--lime)}
+    /* O zavodu: portret + uvod, pod njima cik-cak časovnica, povezana s črtkano krivuljo in pikami */
+    #o-nas .about-grid>.reveal:nth-child(2){padding-top:4px}
+    #o-nas .timeline{grid-column:1/-1;position:relative;display:grid;gap:38px;margin:26px 0 0;padding:0;border:0}
+    #o-nas .timeline-svg{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+    #o-nas .timeline-svg path{fill:none;stroke:var(--lime);stroke-width:3;stroke-dasharray:13 10;stroke-linecap:round;filter:drop-shadow(0 0 5px rgba(201,255,74,.28))}
+    #o-nas .timeline-item{position:relative;z-index:1;width:min(46%,490px);padding:22px 24px;border:1px solid rgba(200,211,237,.14);border-radius:18px;background:#172343;box-shadow:0 16px 32px rgba(0,0,0,.2)}
+    #o-nas .timeline-item:nth-child(odd){justify-self:end}
+    #o-nas .timeline-item:nth-child(even){justify-self:start;margin-top:-110px}
+    #o-nas .timeline-item:before{content:"";position:absolute;top:26px;width:16px;height:16px;box-sizing:border-box;border-radius:50%;background:var(--coral);border:3px solid var(--ink);box-shadow:0 0 0 3px rgba(255,116,100,.3);z-index:3}
+    #o-nas .timeline-item:nth-child(odd):before{left:-34px;right:auto}
+    #o-nas .timeline-item:nth-child(even):before{right:-34px;left:auto}
+    #o-nas .timeline-item strong{color:#fff}
+    @media(max-width:940px){#o-nas>.about-grid{grid-template-columns:1fr}#o-nas .portrait-wrap{width:min(440px,100%);margin:0 auto 34px}#o-nas .about-grid>.reveal:nth-child(2){padding-top:0}}
+    @media(max-width:760px){#o-nas .timeline{gap:20px;padding-left:30px;margin-top:30px}#o-nas .timeline-svg{display:none}#o-nas .timeline:after{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:3px;background:linear-gradient(to bottom,var(--lime) 13px,transparent 13px) 0 0/3px 23px repeat-y;opacity:.85}#o-nas .timeline-item,#o-nas .timeline-item:nth-child(odd),#o-nas .timeline-item:nth-child(even){width:100%;justify-self:stretch;margin-top:0}#o-nas .timeline-item:nth-child(odd):before,#o-nas .timeline-item:nth-child(even):before{left:-30px;right:auto}}
+    @media(max-width:620px){#o-nas .portrait-wrap img{height:380px}}
+    /* O zavodu: kartice ob prehodu miške izstopijo, črtkane črte se subtilno pomikajo navzdol */
+    #o-nas .timeline-item{transition:opacity .65s ease,transform .35s cubic-bezier(.22,.8,.26,1),box-shadow .35s ease,border-color .35s ease}
+    @keyframes tl-flow{to{stroke-dashoffset:-23}}
+    @keyframes tl-flow-v{to{background-position:0 23px}}
+    @media (hover:hover) and (prefers-reduced-motion:no-preference){
+      #o-nas .timeline-item.reveal.show:hover,#o-nas .timeline-item.reveal.show:focus-within{transform:translateY(-8px) scale(1.025);z-index:4;border-color:rgba(201,255,74,.55);box-shadow:0 26px 48px rgba(0,0,0,.38),0 0 0 1px rgba(201,255,74,.22),0 0 34px rgba(201,255,74,.14)}
+    }
+    @media (prefers-reduced-motion:no-preference){
+      #o-nas .timeline-svg path{animation:tl-flow 2.6s linear infinite}
+      #o-nas .timeline:after{animation:tl-flow-v 2.6s linear infinite}
+    }
+
+    /* Utrinki route: 3D card ring hero */
+    .route.hidden{display:none}
+    .u-hero{position:relative;overflow:hidden;padding:130px 0 80px;min-height:calc(100 * min(var(--vh,1vh),1vh));display:flex;align-items:center;background:radial-gradient(circle at 78% 40%,rgba(143,208,255,.16),transparent 38%),radial-gradient(circle at 12% 70%,rgba(201,255,74,.08),transparent 30%)}
+    .u-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:center}
+    .u-copy{min-width:0}
+    .u-copy .eyebrow{border-color:rgba(201,255,74,.55);background:rgba(201,255,74,.06)}
+    .u-title{line-height:1;margin:22px 0 12px;letter-spacing:-.04em}
+    .u-title span{display:inline}
+    .u-subtitle{margin:0 0 22px;line-height:1.5}
+    .u-hint-row{display:flex;align-items:center;gap:10px;color:#fff}
+    .u-hint-row svg{flex:0 0 18px;color:var(--sky)}
+    .u-hint{margin:0;line-height:1.5}
+    .u-carousel{position:relative;width:100%;min-width:0;outline:none}
+    .u-stage{position:relative;width:100%;height:clamp(340px,42vw,520px);perspective:1100px;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;border-radius:28px}
+    .u-stage.dragging{cursor:grabbing}
+    .u-orbit{position:absolute;left:50%;top:50%;width:min(88%,560px);aspect-ratio:1;transform:translate(-50%,-46%);border-radius:50%;border:1px solid rgba(143,208,255,.28);box-shadow:0 0 60px rgba(143,208,255,.12) inset,0 0 40px rgba(201,255,74,.06);pointer-events:none}
+    .u-orbit:after{content:"";position:absolute;inset:18%;border-radius:50%;border:1px dashed rgba(201,255,74,.2)}
+    .u-track{position:absolute;inset:0;margin:0;padding:0;list-style:none;transform-style:preserve-3d}
+    .u-slide{position:absolute;left:50%;top:50%;width:clamp(118px,15vw,196px);aspect-ratio:3/4;margin:0;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.22,.8,.26,1),opacity .6s ease,filter .6s ease}
+    .u-stage.dragging .u-slide{transition:none}
+    .u-card{position:relative;display:block;width:100%;height:100%;padding:0;border-radius:22px;overflow:hidden;border:2px solid rgba(255,255,255,.18);background:#172343;box-shadow:0 22px 44px rgba(0,0,0,.45);cursor:pointer;color:#fff;font:inherit;transition:border-color .3s ease,box-shadow .3s ease}
+    .u-card img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
+    .u-card.u-material img{object-fit:contain;background:#dfe8ff;padding:10px}
+    .u-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(9,18,37,.88));pointer-events:none}
+    .u-label{position:absolute;left:8px;right:8px;bottom:12px;z-index:2;text-align:center;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+    .u-slide.is-active .u-card{border-color:var(--sky);box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 4px rgba(143,208,255,.18),0 0 38px rgba(143,208,255,.35)}
+    .u-card:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+    .u-controls{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:16px}
+    .u-arrow{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid rgba(143,208,255,.45);background:rgba(23,35,67,.9);color:#fff;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease}
+    .u-arrow:hover{background:var(--lime);color:var(--ink);transform:translateY(-2px)}
+    .u-arrow:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .u-dots{display:flex;gap:6px}
+    .u-dot{width:8px;height:8px;border-radius:50%;background:rgba(200,211,237,.35);transition:background .3s ease,width .3s ease}
+    .u-dot.on{width:22px;border-radius:6px;background:var(--sky)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:950px){.u-grid{grid-template-columns:1fr}.u-copy{text-align:center}.u-hint-row{justify-content:center}.u-hero{min-height:auto}}
+    @media(max-width:620px){.u-hero{padding:112px 0 60px}.u-stage{height:340px}.u-slide{width:clamp(110px,34vw,150px)}}
+    /* Utrinki: preklop med dvema obročema */
+    .u-rings{min-width:0;width:100%}
+    .u-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+    .u-tab:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .u-note{margin:14px 0 0;max-width:36ch;color:var(--mist);font-size:.92rem;line-height:1.55}
+    .u-panel[hidden],.u-note[hidden],.u-caption a[hidden]{display:none}
+    .u-chip{position:absolute;left:10px;top:10px;z-index:2;max-width:calc(100% - 20px);padding:5px 9px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.03em;line-height:1.25;background:rgba(9,18,37,.84);border:1px solid currentColor;text-align:left}
+    .u-card[data-tone="coral"] .u-chip{color:var(--coral)}
+    .u-card[data-tone="lime"] .u-chip{color:var(--lime)}
+    .u-ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.55)}
+    .u-ph svg{width:44px;height:44px;stroke-width:1.5}
+    .u-card[data-tone="coral"] .u-ph{background:radial-gradient(circle at 70% 18%,rgba(255,116,100,.5),transparent 48%),linear-gradient(150deg,#2a2150,#172343)}
+    .u-card[data-tone="lime"] .u-ph{background:radial-gradient(circle at 70% 18%,rgba(201,255,74,.34),transparent 48%),linear-gradient(150deg,#123049,#172343)}
+    .u-card.has-photo .u-ph{display:none}
+    .u-card[data-tone="sky"] .u-chip{color:var(--sky)}
+    .u-card[data-tone="sky"] .u-ph{background:radial-gradient(circle at 70% 18%,rgba(143,208,255,.42),transparent 48%),linear-gradient(150deg,#1b2a55,#172343)}
+    .u-caption{min-height:1.7em;margin:12px 0 0;text-align:center;font-size:.9rem;color:var(--mist)}
+    .u-caption a{color:var(--lime);font-weight:700;margin-left:8px;text-decoration:none}
+    .u-caption a:hover,.u-caption a:focus-visible{text-decoration:underline}
+    .youth-banner{margin-top:26px;display:flex;gap:24px;align-items:center;justify-content:space-between;padding:24px 28px;border-radius:22px;border:1px solid rgba(200,211,237,.14);background:linear-gradient(135deg,rgba(23,35,67,.92),rgba(37,29,68,.92))}
+    .youth-banner h3{margin:6px 0 8px;font-size:1.3rem;color:#fff}
+    .youth-banner p{margin:0;color:var(--mist);line-height:1.6;max-width:62ch}
+    .youth-link{flex:none;padding:12px 18px;border-radius:999px;background:var(--lime);color:var(--ink);font-weight:800;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+    .youth-link:hover,.youth-link:focus-visible{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+    @media(max-width:760px){.youth-banner{flex-direction:column;align-items:flex-start}}
+    @media(max-width:950px){.u-tabs{justify-content:center}.u-note{margin-inline:auto}}
+    /* Utrinki: dva carousela eden pod drugim */
+    .u-block{min-height:auto;padding:118px 0 72px}
+    .u-block+.u-block{padding-top:60px;border-top:1px solid rgba(200,211,237,.08)}
+    .u-title{font-size:clamp(2.1rem,4.4vw,3.3rem);font-weight:800}
+    .u-title .u-t-main{color:#fff}
+    .u-title .u-t-accent{color:var(--lime)}
+    .u-hint{font-size:.94rem;font-weight:700;color:#fff}
+    .u-note+.u-hint-row{margin-top:20px}
+    .u-block.flip .u-grid{grid-template-columns:1.2fr .8fr}
+    .u-block.flip .u-copy{order:2}
+    @media(max-width:950px){.u-block.flip .u-grid{grid-template-columns:1fr}.u-block.flip .u-copy{order:0}.u-note{margin-inline:auto}}
+    @media(max-width:620px){.u-block{padding:104px 0 52px}}
+    /* Hero: carousel namesto slike; slika v sekciji Kontakt */
+    .hero-ring{min-width:0;width:100%}
+    .hero-ring .u-stage{height:clamp(400px,34vw,540px)}
+    .hero-ring .u-slide{width:clamp(150px,13vw,200px)}
+    @media(max-width:620px){.hero-ring .u-stage{height:360px}.hero-ring .u-slide{width:clamp(120px,36vw,160px)}}
+    .contact-board{margin-top:24px;min-height:460px}
+    #route-utrinki .u-block{min-height:calc(100 * min(var(--vh,1vh),1vh) - 140px)}
+    @media(max-width:620px){.contact-board{min-height:400px}}
+    /* Projekti: kartici 2 in 3 se ob prehodu miške premakneta kot prva (osnovni zamik ostane) */
+    .project:nth-child(2):hover,.project:nth-child(2):focus-visible{transform:translateY(30px)}
+    .project:nth-child(3):hover,.project:nth-child(3):focus-visible{transform:translateY(-18px)}
+    .project:nth-child(2):active{transform:translateY(33px)}
+    .project:nth-child(3):active{transform:translateY(-15px)}
+    @media(max-width:950px){.project:nth-child(2):hover,.project:nth-child(3):hover,.project:nth-child(2):focus-visible,.project:nth-child(3):focus-visible{transform:translateY(-6px)}}
+    /* Reference: obroba se ob prehodu miške obarva (kot pri katalogu usposabljanj), noge poravnane */
+    .quote{display:flex;flex-direction:column}
+    .quote p{margin-top:0}
+    .quote footer{margin-top:auto;padding-top:18px;min-height:96px;box-sizing:border-box}
+    /* Reference: enaka animacija kot pri katalogu usposabljanj (barvna trda senca -> mehka senca z zeleno svetlobo) */
+    .quote{box-shadow:7px 7px 0 var(--lime)}
+    .quote:nth-child(2){box-shadow:7px 7px 0 var(--coral)}
+    .quote:nth-child(3){box-shadow:7px 7px 0 var(--violet)}
+    .quote:nth-child(4){box-shadow:7px 7px 0 var(--yellow)}
+    .quote:nth-child(5){box-shadow:7px 7px 0 var(--sky)}
+    .quote:nth-child(n):hover,.quote:nth-child(n):focus-visible{box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 24px rgba(201,255,74,.18)}
+    /* Modalna okna: gumba v isti kartici z razmikom, drugi z obratnimi barvami */
+    .modal-cta .next-actions p{margin-bottom:18px}
+    .modal-cta .next-actions .button-main ~ .button-main{margin-top:20px}
+    .modal-cta .next-actions .button-main.btn-inverse{background:var(--coral);color:var(--ink);box-shadow:5px 5px 0 var(--lime)}
+    .modal-cta .next-actions .button-main.btn-inverse:hover,.modal-cta .next-actions .button-main.btn-inverse:focus-visible{box-shadow:8px 8px 0 var(--lime)}
+    /* Kontakt: e-pošta in vse pod njo 10 px nižje */
+    .contact-lines{margin-top:34px}
+    /* Kontakt: naslov zgoraj, pod njim slika + podatki (levo) in krajši obrazec (desno) */
+    .contact-grid{grid-template-areas:"head head" "side form"}
+    .contact-head{grid-area:head}
+    .contact-head p{position:relative;top:10px}
+    .contact-side{grid-area:side}
+    #contact-form{grid-area:form;align-self:start}
+    .contact-side .contact-board{margin-top:0}
+    @media(min-width:951px){.contact-line2{white-space:nowrap}}
+    @media(max-width:950px){.contact-grid{grid-template-areas:"head" "side" "form"}.contact-br{display:none}}
+    /* Kontakt: pregledni podatki, pravni podatki v nogi */
+    .contact-lines{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
+    .contact-lines li{display:flex;align-items:center;gap:14px;font-size:1.08rem}
+    .contact-lines svg{flex:0 0 22px;width:22px;height:22px;color:var(--lime)}
+    .contact-lines a{color:#fff;font-weight:700;text-decoration:none;transition:color .2s ease}
+    .contact-lines a:hover,.contact-lines a:focus-visible{color:var(--lime);text-decoration:underline;text-underline-offset:4px}
+    .contact-icons{display:flex;gap:12px;margin-top:22px}
+    .contact-icons a{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#172343;border:1px solid rgba(143,208,255,.35);color:#fff;transition:background .2s ease,color .2s ease,transform .2s ease}
+    .contact-icons a:hover,.contact-icons a:focus-visible{background:var(--lime);color:var(--ink);transform:translateY(-3px)}
+    .contact-icons a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .contact-icons svg{width:20px;height:20px}
+    .footer-legal{flex:1;text-align:center;font-size:.9rem;line-height:1.7;color:#c8d3ed}
+    .footer-copy{margin-top:22px;padding-top:16px;border-top:1px solid rgba(200,211,237,.12);text-align:center;font-size:.9rem;color:#c8d3ed}
+    .footer-legal p{margin:0}
+    /* Reference: 5 odzivov (3 + 2 na sredini) */
+    .quote:nth-child(4){border-color:var(--yellow)}
+    .quote:nth-child(5){border-color:var(--sky)}
+    @media(min-width:951px){.quotes{grid-template-columns:repeat(6,1fr)}.quote{grid-column:span 2}.quote:nth-child(4){grid-column:2/4}.quote:nth-child(5){grid-column:4/6}}
+    /* Utrinki: kartica pod miško stopi ven */
+    .u-card{transition:border-color .3s ease,box-shadow .3s ease,transform .35s cubic-bezier(.22,.8,.26,1)}
+    .u-stage.over-card{cursor:pointer}
+    .u-slide.is-hover{z-index:200!important}
+    @media (prefers-reduced-motion:no-preference){
+      .u-slide.is-hover .u-card{transform:translateY(-12px) scale(1.08)}
+    }
+    .u-slide.is-hover .u-card{border-color:var(--lime);box-shadow:0 30px 64px rgba(0,0,0,.6),0 0 0 4px rgba(201,255,74,.2),0 0 40px rgba(201,255,74,.28)}
+
+  
+    /* ===== Preklopnik izgleda (meni) ===== */
+    .theme-switch{display:inline-flex;gap:3px;padding:3px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05)}
+    .theme-switch button{display:grid;place-items:center;width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:inherit;cursor:pointer;transition:background .2s ease,color .2s ease}
+    .theme-switch button svg{width:17px;height:17px}
+    .theme-switch button:hover{background:rgba(201,255,74,.18)}
+    .theme-switch button.is-on{background:var(--lime);color:var(--ink)}
+    .theme-switch button:focus-visible,.mobile-theme button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+    .mobile-theme{display:flex;gap:8px;margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+    .mobile-theme button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:12px;border:1px solid var(--line);background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+    .mobile-theme button svg{width:17px;height:17px}
+    .mobile-theme button.is-on{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    .nav-links .theme-switch{margin:0 4px}
+
+    /* ===== SVETEL IZGLED ===== */
+    html[data-theme="light"]{color-scheme:light;--l-bg:#f2f4fa;--l-text:#101a34;--l-accent:#3d6b00;--l-line:#5f9c00;--mist:#4a5878;--line:rgba(16,26,52,.16);--panel:#ffffff}
+    html[data-theme="light"] body{background:var(--l-bg)!important;color:var(--l-text)}
+    html[data-theme="light"] body:before{background-color:var(--l-bg);background-image:linear-gradient(rgba(16,26,52,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(16,26,52,.05) 1px,transparent 1px);opacity:.75}
+    html[data-theme="light"] body:after{opacity:.09}
+    /* meni */
+    html[data-theme="light"] .nav-box{background:rgba(255,255,255,.9)!important;border-color:var(--line);box-shadow:0 10px 30px rgba(16,26,52,.1)}
+    html[data-theme="light"] .nav-links{color:#26314f}
+    html[data-theme="light"] .nav-links a:hover{color:var(--l-accent)}
+    html[data-theme="light"] .nav-links a.nav-route{border-color:rgba(16,26,52,.25)}
+    html[data-theme="light"] .nav-links a.nav-route.is-active,html[data-theme="light"] .mobile-menu a.is-active{color:#2c5000;background:rgba(201,255,74,.55);border-color:#7fb800}
+    html[data-theme="light"] .mobile-toggle{color:var(--l-text)}
+    html[data-theme="light"] .mobile-menu{background:#fff;border-color:var(--line);color:var(--l-text)}
+    html[data-theme="light"] .mobile-menu a:hover{background:rgba(201,255,74,.4);color:#2c5000}
+    html[data-theme="light"] .theme-switch{background:rgba(16,26,52,.05);border-color:rgba(16,26,52,.2)}
+    html[data-theme="light"] .brand-name [data-template-id$="white-header"],html[data-theme="light"] .brand-name [data-template-id$="white-footer"],html[data-theme="light"] .brand-name [data-template-id$="white-tail-header"],html[data-theme="light"] .brand-name [data-template-id$="white-tail-footer"]{color:var(--l-text)!important}
+    /* vgrajene (Canva) barve */
+    html[data-theme="light"] [style*="color: rgb(255, 255, 255)"]:not(.u-card *):not(.board *):not(.training-cta *):not(.modal-cta *):not(.next-actions *):not(.u-card){color:var(--l-text)!important}
+    html[data-theme="light"] [style*="color: rgb(201, 255, 74)"]:not(.u-card *):not(.board *):not(.training-cta *){color:var(--l-accent)!important}
+    html[data-theme="light"] [style*="color: rgb(200, 211, 237)"],html[data-theme="light"] [style*="color: rgb(220, 229, 251)"]{color:var(--mist)!important}
+    html[data-theme="light"] [style*="background: rgb(23, 35, 67)"]:not(.u-card):not(.u-arrow){background:#fff!important;color:var(--l-text)!important;border:1px solid var(--line)}
+    html[data-theme="light"] [style*="linear-gradient(145deg, rgb(23, 35, 67)"]{background:#fff!important;color:var(--l-text)!important}
+    /* skupno */
+    html[data-theme="light"] .panel{background:#fff;box-shadow:0 14px 34px rgba(16,26,52,.1)}
+    html[data-theme="light"] .kicker,html[data-theme="light"] .blog-card-kicker,html[data-theme="light"] .text-link,html[data-theme="light"] .professional-links-list .text-link{color:var(--l-accent)}
+    html[data-theme="light"] .eyebrow{color:var(--l-accent);border-color:rgba(61,107,0,.4);background:rgba(201,255,74,.18)}
+    html[data-theme="light"] .u-copy .eyebrow{background:rgba(201,255,74,.18);border-color:rgba(61,107,0,.4)}
+    html[data-theme="light"] .button-main.alt{color:var(--l-text);border-color:rgba(16,26,52,.3)}
+    html[data-theme="light"] .hero-copy,html[data-theme="light"] .section-head p,html[data-theme="light"] .about-text,html[data-theme="light"] .profile-links{color:var(--mist)}
+    html[data-theme="light"] .entry-card{background:#fff;border-color:var(--line);box-shadow:0 10px 24px rgba(16,26,52,.07)}
+    html[data-theme="light"] .entry-card:hover{background:#f6fbe6;border-color:#7fb800}
+    html[data-theme="light"] .entry-card i{color:var(--l-accent)}
+    /* carousela */
+    html[data-theme="light"] .u-orbit{border-color:rgba(16,26,52,.16);box-shadow:0 0 60px rgba(61,107,0,.06) inset}
+    html[data-theme="light"] .u-orbit:after{border-color:rgba(61,107,0,.28)}
+    html[data-theme="light"] .u-arrow{background:#fff;border-color:rgba(16,26,52,.25);color:var(--l-text)}
+    html[data-theme="light"] .u-arrow:hover{background:var(--lime);color:var(--ink)}
+    html[data-theme="light"] .u-dot{background:rgba(16,26,52,.25)}
+    html[data-theme="light"] .u-dot.on{background:#2c7fb8}
+    html[data-theme="light"] .u-caption a,html[data-theme="light"] .u-hint-row svg{color:var(--l-accent)}
+    html[data-theme="light"] .u-card{box-shadow:0 18px 36px rgba(16,26,52,.3)}
+    html[data-theme="light"] .u-title .u-t-main,html[data-theme="light"] .u-hint,html[data-theme="light"] .u-hint-row{color:var(--l-text)}
+    html[data-theme="light"] .u-title .u-t-accent{color:var(--l-accent)}
+    html[data-theme="light"] .u-block+.u-block{border-top-color:var(--line)}
+    /* O zavodu */
+    html[data-theme="light"] #o-nas{background-color:#eaf0f8;background-image:linear-gradient(rgba(16,26,52,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(16,26,52,.045) 1px,transparent 1px),radial-gradient(circle at 22% 12%,rgba(201,255,74,.3),transparent 26%),radial-gradient(circle at 76% 84%,rgba(169,139,255,.16),transparent 30%)}
+    html[data-theme="light"] #o-nas:before{background:radial-gradient(circle at 50% 48%,rgba(201,255,74,.14),transparent 34%)}
+    html[data-theme="light"] #o-nas .timeline-item{background:#fff;border-color:var(--line);box-shadow:0 14px 28px rgba(16,26,52,.1);color:#2c3858}
+    html[data-theme="light"] #o-nas .timeline-item strong,html[data-theme="light"] .timeline-item strong{color:var(--l-text)}
+    html[data-theme="light"] #o-nas .timeline-svg path{stroke:var(--l-line)}
+    html[data-theme="light"] #o-nas .timeline:after{background:linear-gradient(to bottom,var(--l-line) 13px,transparent 13px) 0 0/3px 23px repeat-y}
+    html[data-theme="light"] #o-nas .timeline-item.reveal.show:hover,html[data-theme="light"] #o-nas .timeline-item.reveal.show:focus-within{border-color:#7fb800;box-shadow:0 22px 40px rgba(16,26,52,.18),0 0 0 1px rgba(127,184,0,.35)}
+    /* usposabljanja, gradiva, projekti */
+    html[data-theme="light"] .training-zone{background:#e5eaf5}
+    html[data-theme="light"] .filter{background:#fff;color:var(--l-text);border-color:var(--line)}
+    html[data-theme="light"] .filter.active{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    html[data-theme="light"] .training-cta,html[data-theme="light"] .board,html[data-theme="light"] .modal-cta,html[data-theme="light"] .next-actions,html[data-theme="light"] .u-card{color:#f8fbff}
+    html[data-theme="light"] .map-board{background:#fff;border-color:var(--line);box-shadow:0 14px 34px rgba(16,26,52,.08)}
+    html[data-theme="light"] .map-board:before{background-image:radial-gradient(rgba(16,26,52,.16) 1px,transparent 1px)}
+    html[data-theme="light"] .map-line{stroke:var(--l-line);fill:none}
+    html[data-theme="light"] .project{background:#f5f7fc;border-color:var(--line)}
+    html[data-theme="light"] .project i{color:#b7791f}
+    html[data-theme="light"] .youth-banner{background:#fff;border-color:var(--line);box-shadow:0 14px 30px rgba(16,26,52,.08)}
+    html[data-theme="light"] .youth-banner h3{color:var(--l-text)}
+    /* reference in blog */
+    html[data-theme="light"] .quote{background:#fff}
+    html[data-theme="light"] .blog-card{background:#fff!important;color:var(--l-text)!important;border-color:var(--line);box-shadow:0 12px 28px rgba(16,26,52,.09)}
+    html[data-theme="light"] .blog-tags span{background:rgba(201,255,74,.35);color:#2c5000}
+    /* kontakt in noga */
+    html[data-theme="light"] .contact-zone{background:linear-gradient(135deg,#e8edf9,#efe9fb)}
+    html[data-theme="light"] .contact-lines a{color:var(--l-text)}
+    html[data-theme="light"] .contact-lines svg{color:var(--l-accent)}
+    html[data-theme="light"] .contact-icons a{background:#fff;border-color:rgba(16,26,52,.22);color:var(--l-text)}
+    html[data-theme="light"] .contact-icons a:hover,html[data-theme="light"] .contact-icons a:focus-visible{background:var(--lime);color:var(--ink)}
+    html[data-theme="light"] .form-card{border:1px solid var(--line);box-shadow:0 18px 40px rgba(16,26,52,.12)}
+    html[data-theme="light"] .footer{background:#e2e8f4!important;color:#33405f!important}
+    html[data-theme="light"] .footer-legal,html[data-theme="light"] .footer-copy{color:#33405f}
+    html[data-theme="light"] .footer-copy{border-top-color:rgba(16,26,52,.15)}
+    html[data-theme="light"] .footer a{color:#33405f}
+  
+    /* Noga: razporeditev po predlogi */
+    .contact-label{opacity:.8;font-weight:600}
+    .contact-side .contact-lines{margin-top:44px}
+    .footer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);column-gap:56px;row-gap:22px;align-items:start}
+    .footer-left .footer-about{margin:18px 0 0;max-width:34ch;line-height:1.6;font-size:.95rem}
+    .footer-right{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    .footer-col h4{margin:0 0 14px;font-family:"Work Sans",sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0;color:#fff}
+    .footer-col p{margin:0 0 9px;font-size:.92rem;line-height:1.5}
+    .footer-iban{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem!important;letter-spacing:.02em}
+    .footer-icons{margin-top:16px;gap:10px}
+    .footer-icons a{width:38px;height:38px}
+    .footer-icons svg{width:18px;height:18px}
+    .footer-grid .footer-copy{margin:0;padding-top:16px;text-align:left;grid-column:1}
+    .footer-links{grid-column:2;display:flex;gap:22px;justify-content:flex-end;padding-top:16px;border-top:1px solid rgba(200,211,237,.12);font-size:.9rem}
+    .footer-links a{color:inherit;text-decoration:none}
+    .footer-links a:hover,.footer-links a:focus-visible{color:var(--lime);text-decoration:underline;text-underline-offset:4px}
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr;row-gap:26px}.footer-grid .footer-copy,.footer-links{grid-column:1}.footer-links{justify-content:flex-start;border-top:0;padding-top:0}}
+    @media(max-width:560px){.footer-right{grid-template-columns:1fr}}
+    html[data-theme="light"] .footer-col h4{color:var(--l-text)}
+    html[data-theme="light"] .footer-links{border-top-color:rgba(16,26,52,.15)}
+    html[data-theme="light"] .footer-links a:hover{color:var(--l-accent)}
+  
+    /* Odzivnost: telefon / tablica */
+    .map-line{fill:none}
+    @media(max-width:620px){
+      #blog .blog-cards>.blog-card,#blog>.site-shell>article.blog-card,#blog .blog-cards>.blog-card:nth-of-type(2),#blog .blog-cards>.blog-card:nth-of-type(3){grid-column:auto;grid-row:auto;aspect-ratio:auto;overflow:visible}
+      #blog .blog-cards{display:grid;gap:16px}
+      #o-nas .experience{right:0;bottom:-18px}
+    }
+  
+    @media(max-width:900px){
+      #blog .blog-cards>.blog-card,#blog>.site-shell>article.blog-card{aspect-ratio:auto;overflow:visible}
+      .map-lines{display:none}
+    }
+    /* Veliki zasloni: povečava celotne strani, da vsebina ne izgleda izgubljeno */
+    @media(min-width:1700px){html{zoom:1.2;--z:1.2}}
+    @media(min-width:2200px){html{zoom:1.5;--z:1.5}}
+    @media(min-width:3000px){html{zoom:2;--z:2}}
+    @media(min-width:1700px){
+      .hero,.u-hero{min-height:calc(100vh / var(--z))}
+      #route-utrinki .u-block{min-height:calc(100vh / var(--z) - 140px)}
+      .article-modal{height:calc(100vh / var(--z))}
+      .article-modal-panel{max-height:calc(90vh / var(--z))}
+    }
+      .hero .actions{gap:24px 18px}
+    .hero .entry-grid{margin-top:65px}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  </head>
+ <body data-template-id="__page-root" style="background: rgb(9, 18, 37);">
+  <header class="nav-wrap">
+   <nav class="site-shell">
+    <div data-template-id="navigation" class="nav-box canva-menu" style="background: rgba(9, 18, 37, 0.83);"><a href="#domov" class="brand canva-link"><img data-template-id="brand-logo-header" class="brand-logo canva-image" loading="lazy" src="images/logo.webp" alt="Zavod EDUcatio logo"><span class="brand-name" aria-label="ZAVOD EDUcatio"><span data-template-id="brand-name-white-header" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">ZAVOD</span><span class="brand-subline"><span data-template-id="brand-name-blue-header" class="canva-text" style="color: rgb(45, 99, 189); font-weight: 800; font-style: normal; font-size: 20px;">EDU</span><span data-template-id="brand-name-white-tail-header" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 20px;">catio</span></span></span></a>
+     <div class="nav-links"><a href="#domov">Domov</a><a href="#o-nas">O zavodu</a><a href="#izobrazevanja">Usposabljanja</a><a href="#gradiva">Gradiva</a><a href="#projekti">Projekti</a><a href="#reference">Reference</a><a href="#blog">Blog</a><a href="#utrinki" class="nav-route" data-route-link="">Utrinki</a> <div class="theme-switch" role="group" aria-label="Izgled strani"><button type="button" data-theme-set="dark" aria-pressed="true" aria-label="Temen izgled" title="Dark"><i data-lucide="moon" aria-hidden="true"></i></button><button type="button" data-theme-set="light" aria-pressed="false" aria-label="Svetel izgled" title="Light"><i data-lucide="sun" aria-hidden="true"></i></button></div> <a href="#kontakt" data-template-id="nav-contact" class="nav-contact canva-link" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Kontakt</a>
+     </div><button id="mobile-toggle" type="button" class="mobile-toggle canva-button" aria-label="Odpri meni" aria-expanded="false"><i data-lucide="menu"></i></button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu"><a href="#domov">Domov</a><a href="#o-nas">O zavodu</a><a href="#izobrazevanja">Usposabljanja</a><a href="#gradiva">Gradiva</a><a href="#projekti">Projekti</a><a href="#reference">Reference</a><a href="#blog">Blog</a><a href="#utrinki" data-route-link="">Utrinki</a><a href="#kontakt">Kontakt</a>
+     <div class="mobile-theme" role="group" aria-label="Izgled strani"><button type="button" data-theme-set="dark" aria-pressed="true"><i data-lucide="moon" aria-hidden="true"></i> Dark</button><button type="button" data-theme-set="light" aria-pressed="false"><i data-lucide="sun" aria-hidden="true"></i> Light</button></div>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <div id="route-home" class="route">
+    <section id="domov" class="hero">
+     <div class="site-shell hero-grid">
+      <div class="reveal">
+       <div data-template-id="hero-eyebrow" class="eyebrow canva-tag" style="color: rgb(201, 255, 74); font-weight: 800;">
+        <i data-lucide="sparkles" width="15"></i><span data-template-id="hero-eyebrow-text" class="canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Prihodnost izobraževanja</span>
+       </div>
+       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-size: 32px;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 32px;">Sodobni didaktični pristopi za navdihujoče učenje in poučevanje.</span></h1>
+       <p data-template-id="hero-description" class="hero-copy canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 18px;">Zavod EDUcatio gradi most med teorijo in prakso. Razvijamo inovativne pedagoške prakse in opolnomočamo učitelje z metodologijo, ki v središče postavlja otrokov celostni razvoj.</p>
+       <div class="actions"><a href="#izobrazevanja" data-template-id="hero-primary-cta" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;"><span data-template-id="hero-primary-cta-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Raziščite seminarje za vašo šolo</span> <i data-lucide="arrow-right" width="17"></i></a> <a href="#gradiva" data-template-id="hero-secondary-cta" class="button-main alt canva-button" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-secondary-cta-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Prelistajte avtorska učna gradiva</span></a>
+       </div>
+       <div class="entry-grid"><a href="#izobrazevanja" class="entry-card"><i data-lucide="presentation"></i><strong>Za učitelje</strong><span>Metode za takojšnjo rabo</span></a> <a href="#o-nas" class="entry-card"><i data-lucide="landmark"></i><strong>Za pedagoge</strong><span>Razvoj prakse in sistema</span></a> <a href="#gradiva" class="entry-card"><i data-lucide="rocket"></i><strong>Za učence</strong><span>Zgodbe, igra in gibanje</span></a>
+       </div>
+      </div>
+      <div class="hero-ring reveal">
+       <div class="u-carousel" data-route="home" role="region" aria-roledescription="carousel" aria-label="Utrinki iz dela Zavoda EDUcatio" tabindex="0">
+       <div class="u-stage">
+        <div class="u-orbit" aria-hidden="true"></div>
+        <ul id="u-track-teachers" class="u-track">
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/rokusova-akademija.webp" data-title="Predavanje »From A-maze to Amaze« na Rokusovi akademiji za razredni pouk" data-href="https://www.facebook.com/photo/?fbid=1535677598559911" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="presentation"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Rokusova akademija</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="3 od 8"><button type="button" class="u-card u-material" data-href="https://www.knjigarna.com/posebna-ponudba/jesenska-ugodnost-vadnic-in-dodatnega-gradiva/i_6868_word-adventures-5" data-title="Word Adventures 5 · delovni zvezek Rokus Klett (spletna knjigarna)" data-linktext="Odpri v spletni knjigarni ↗"><img data-template-id="utrinki-wa-image" class="canva-image" loading="lazy" draggable="false" src="images/word-adventures-5.webp" alt="Word Adventures 5 workbook cover"><span data-template-id="utrinki-card-3-label" class="u-label canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 14px;">Word Adventures</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="5 od 8"><button type="button" class="u-card u-material" data-href="https://transcode.rokus.com/player/dn240353?referrer=https%3A%2F%2Firokus.rokus-klett.si%2F" data-title="The Story Garden · video gradivo (Rokus Klett)" data-linktext="Odpri video ↗"><img data-template-id="utrinki-sg-image" class="canva-image" loading="lazy" draggable="false" src="images/story-garden-4.webp" alt="The Story Garden 4 workbook cover"><span data-template-id="utrinki-card-5-label" class="u-label canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 14px;">The Story Garden</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="7 od 8"><button type="button" class="u-card u-material" data-href="https://transcode.rokus.com/player/posnetek-spletne-predstavitve-gradiva-anglescina-1" data-title="Angleščina 1 · posnetek spletne predstavitve gradiva (Rokus Klett)" data-linktext="Ogled posnetka predstavitve ↗"><img data-template-id="utrinki-a1-image" class="canva-image" loading="lazy" draggable="false" src="images/anglescina-1.webp" alt="ANGLEŠČINA 1 didaktično gradivo za pouk angleščine v 1. razredu."><span data-template-id="utrinki-card-7-label" class="u-label canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 14px;">Angleščina 1</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/oz-dobje-umetna-inteligenca.webp" data-pos="62% 50%" data-title="Strokovno srečanje »Učimo (se) z umetno inteligenco«, OŠ Dobje (november 2025)" data-href="https://www.facebook.com/photo?fbid=1359118976225833" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="cpu"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Umetna inteligenca</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/erasmus-teden-dobje.webp" data-pos="50% 40%" data-title="Erasmus+ teden v Dobju: učitelji iz Slovenije, Hrvaške in Litve (november 2025)" data-href="https://www.facebook.com/photo?fbid=122182641002787094" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="globe"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Erasmus+ v Dobju</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/invited-ljubljana.webp" data-pos="50% 40%" data-title="Delavnica projekta INVITED z učitelji, Pedagoška fakulteta UL: virtualne izmenjave z mlajšimi učenci (15. september 2026)" data-href="https://invited-project.eu/workshop-with-teachers-in-ljubljana/" data-linktext="Preberi več na invited-project.eu ↗"><span class="u-ph" aria-hidden="true"><i data-lucide="video"></i></span><span class="u-chip">INVITED</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Virtualne izmenjave</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/lca-trenerka.webp" data-title="Certificirana trenerka učiteljev za LCA, projekt ULCA (november 2022)" data-href="https://www.facebook.com/photo/?fbid=10230191969409103" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="badge-check"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">LCA trenerka</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/konferenca-erasmus.webp" data-pos="45% 50%" data-title="Otvoritvena konferenca Erasmus+, Brdo pri Kranju: primer dobre prakse iz programa Comenius (2014)" data-href="https://www.facebook.com/photo/?fbid=10203141455083151" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="mic"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Konferenca Erasmus+</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/invited-talk-4.webp" data-title="INVITED Talk 4: »Ready, steady… Wait! Let’s build language before online virtual exchange« (30. september 2025, več kot 97 udeležencev)" data-href="https://invited-project.eu/invited-talk-4/" data-linktext="Preberi več na invited-project.eu ↗"><span class="u-ph" aria-hidden="true"><i data-lucide="mic"></i></span><span class="u-chip">INVITED</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">INVITED Talk 4</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label=""><button type="button" class="u-card" data-tone="sky" data-image="images/prakse/dija-riga.webp" data-title="Svetovanje in usposabljanje vodstvene ekipe centra DIJA, Riga (november 2025)" data-href="https://www.facebook.com/photo/?fbid=1473900224460132" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="compass"></i></span><span class="u-chip">Iz prakse</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Svetovanje v Rigi</span></button></li>
+        </ul>
+       </div>
+       <div class="u-controls"><button type="button" data-ring-prev class="u-arrow" aria-label="Prejšnja kartica" aria-controls="u-track-teachers"><i data-lucide="chevron-left"></i></button>
+        <div class="u-dots" aria-hidden="true"></div><button type="button" data-ring-next class="u-arrow" aria-label="Naslednja kartica" aria-controls="u-track-teachers"><i data-lucide="chevron-right"></i></button>
+       </div>
+       <p class="u-caption" aria-live="polite"><span></span><a target="_blank" rel="noopener noreferrer" hidden></a></p>
+        <p class="u-status sr-only" aria-live="polite"></p>
+      </div>
+      </div>
+     </div>
+    </section>
+    <section>
+     <div class="site-shell">
+      <div class="bento">
+       <article data-template-id="feature-clil" class="bento-card panel reveal canva-card" style="background: rgb(23, 35, 67);">
+        <i data-lucide="languages"></i><span class="bento-number">01</span>
+        <h3 data-template-id="feature-clil-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 19px;">Zgodnje poučevanje jezikov (CLIL)</h3>
+        <p data-template-id="feature-clil-text" class="canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 16px;">Razvijamo in uvajamo pristope vsebinsko in jezikovno združenega učenja skozi doživljajske vsebine, gibanje, igro in umetnost.</p>
+       </article>
+       <article data-template-id="feature-training" class="bento-card reveal canva-card" style="background: rgb(201, 255, 74);">
+        <i data-lucide="presentation"></i><span class="bento-number">02</span>
+        <h3 data-template-id="feature-training-title" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 700; font-style: normal; font-size: 19px;">Strokovna usposabljanja</h3>
+        <p data-template-id="feature-training-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 400; font-style: normal; font-size: 16px;">Izvajamo avtorske seminarje, interaktivne delavnice in predavanja po meri osnovnih šol, vrtcev ter strokovnih aktivov.</p>
+       </article>
+       <article data-template-id="feature-materials" class="bento-card reveal canva-card" style="background: rgb(255, 116, 100);">
+        <i data-lucide="book-open"></i><span class="bento-number">03</span>
+        <h3 data-template-id="feature-materials-title" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 700; font-style: normal; font-size: 19px;">Avtorstvo učnih gradiv</h3>
+        <p data-template-id="feature-materials-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 400; font-style: normal; font-size: 16px;">Sodelujemo pri snovanju učnih načrtov ter ustvarjamo mednarodno uveljavljene učbeniške serije z Založbo Rokus Klett.</p>
+       </article>
+       <article data-template-id="feature-international" class="bento-card reveal canva-card" style="background: rgb(169, 139, 255);">
+        <i data-lucide="globe-2"></i><span class="bento-number">04</span>
+        <h3 data-template-id="feature-international-title" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 700; font-style: normal; font-size: 19px;">Mednarodno sodelovanje</h3>
+        <p data-template-id="feature-international-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 400; font-style: normal; font-size: 16px;">Aktivno sodelujemo v evropskih projektih Erasmus+ in eTwinning ter prenašamo vodilne pedagoške prakse v Slovenijo.</p>
+       </article>
+      </div>
+      <p class="profile-links">Uradni poslovni profili subjekta: <a class="text-link" href="https://www.bizi.si/ZAVOD-EDUCATIO/" target="_blank" rel="noopener noreferrer">Poslovni profil Bizi.si</a> · <a class="text-link" href="https://www.companywall.si/podjetje/zavod-educatio/MMBdOSnD" target="_blank" rel="noopener noreferrer">CompanyWall Business</a></p>
+     </div>
+    </section>
+    <section id="o-nas">
+     <div class="site-shell about-grid">
+      <div class="portrait-wrap reveal"><img data-template-id="about-image" class="canva-image" loading="lazy" src="images/mateja-todorovski.webp" alt="mag. Mateja Todorovski, ustanoviteljica in direktorica Zavoda EDUcatio">
+       <div data-template-id="experience-badge" class="experience canva-card" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37);">
+        <strong>20+</strong>
+        <div>
+         Let izkušenj
+        </div><small>v pedagoškem procesu</small>
+       </div>
+      </div>
+      <div class="reveal">
+       <div data-template-id="about-kicker" class="kicker canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">O zavodu in ustanoviteljici</div>
+       <h2 data-template-id="about-title" class="section-head canva-text" style="margin: 10px 0px 18px; color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">Dvigujemo kakovost pedagoškega procesa</h2>
+       <p data-template-id="about-text-1" class="about-text canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 16px;">Zavod EDUcatio je bil ustanovljen z jasnim poslanstvom: dvigovati kakovost pedagoškega procesa prek sistemskega prenosa sodobnih didaktičnih spoznanj v vsakodnevno šolsko prakso. Deluje kot odprto kompetenčno središče za razvoj inovativnih pedagoških praks, opolnomočenje učiteljev ter sistemsko podporo vodstvom šol v Sloveniji in širšem evropskem prostoru.</p>
+       <p data-template-id="about-text-2" class="about-text canva-text" style="color: rgb(200, 211, 237);">Ustanoviteljica in direktorica zavoda je mag. Mateja Todorovski, magistrica evropskega skupnega študija dela z otroki in mladostniki (Iscte – Instituto Universitário de Lisboa, ocena 20/20 A+) ter profesorica razrednega pouka s specializacijo za zgodnje poučevanje tujih jezikov. Razpolaga z več kot 20-letnimi izkušnjami kot avtorica uveljavljenih učnih gradiv, pedagoška svetovalka ter mednarodna izobraževalka na področju sodobne didaktike.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+         <strong>Razredna praksa &amp; Doživljajski pouk</strong>Svojo poklicno pot je več kot dve desetletji gradila v neposrednem razrednem pouku na OŠ Dobje. V razredu je praktično razvijala in evalvirala napredne modele zgodnjega usvajanja jezikov, doživljajskega pouka ter metodologije <strong>CLIL</strong> (povezovanje tujega jezika s športno vzgojo in spoznavanjem okolja). Njene bogate izkušnje so temeljna garancija, da vsa usposabljanja Zavoda EDUcatio nudijo takoj uporabne rešitve za realne izzive v razredu.
+        </div>
+        <div class="timeline-item reveal">
+         <strong>Sistemski razvoj na državni ravni</strong>Kot svetovalka na Zavodu RS za šolstvo (ZRSŠ) in sodelavka pri Ministrstvu za vzgojo in izobraževanje je ključno sooblikovala nacionalne smernice za pouk tujih jezikov. Bila je članica strokovne skupine za pripravo nacionalnega učnega načrta za angleščino v 1. vzgojno-izobraževalnem obdobju (1. VIO) ter avtorica številnih strokovnih prispevkov in smernic.
+        </div>
+        <div class="timeline-item reveal">
+         <strong>Terciarno izobraževanje &amp; Akademska odličnost</strong>Asistentka za didaktiko angleščine na UP PEF, izvajalka usposabljanj na UM PEF ter predavateljica na poletnih šolah UL PEF. Mednarodni magisterij ESWOCHY na univerzitetnem inštitutu v Lizboni (Iscte) z najvišjo oceno 20/20.
+        </div>
+        <div class="timeline-item reveal">
+         <strong>Avtorstvo uveljavljenih učnih gradiv</strong>V sodelovanju z Založbo Rokus Klett in ELI s.r.l. je avtorica samostojnega modularnega gradiva <em>Angleščina 1</em>, knjige/gradiva <em>Word Adventures 4</em> in <em>Word Adventures 5</em> ter soavtorica samostojnih delovnih zvezkov <em>The Story Garden 4</em> in <em>The Story Garden 5</em>. Gradiva v ospredje postavljajo učenje skozi zgodbe, medpredmetno povezovanje, razvijanje veščin 21. stoletja (<em>Life Skills</em>) in formativno spremljanje napredka.
+        </div>
+        <div class="timeline-item reveal">
+         <strong>Tečaji, inštrukcije in izobraževanje odraslih (GenijUM s.p.)</strong>Večletno vodenje jezikovnih tečajev, inštrukcij in svetovanj za otroke, mladostnike in odrasle v okviru podjetja GenijUM s.p. od leta 2016, iz česar so izrastla današnja sistemska usposabljanja Zavoda EDUcatio.
+        </div>
+        <div class="timeline-item reveal">
+         <strong>Mednarodno delovanje &amp; Strokovno mreženje</strong>mag. Mateja Todorovski aktivno gradi mednarodno prepoznavnost zavoda. Sodeluje v mednarodnih projektih Erasmus+ (KA1, KA201, KA203, ULCA, NELCA, INVITED, KNOWLO), je članica mednarodnega združenja IAITME ter predava mednarodni javnosti (predavanje <em>INVITED Talk 4</em> za več kot 97 evropskih strokovnjakov). Prek aktivnega ustvarjanja strokovne skupnosti na profesionalnem omrežju <strong>LinkedIn</strong> v slovenski prostor vnaša vodilne evropske trende (npr. finski model učnih skupnosti iz šole Mutalan Koulu).
+        </div>
+        <div class="timeline-item reveal">
+         <strong style="color:var(--lime)">Mednarodne nagrade &amp; Strokovna priznanja</strong>Delovanje mag. Mateje Todorovski zaznamujejo visoka mednarodna priznanja in odlikovanja za pedagoško ter projektno odličnost: <br>
+          - ACES Special Achievement Awards: Prejemnica dveh prestižnih mednarodnih nagrad Academy of Central European Schools — za medijsko pismenost ter za raznolikost in medkulturnost. <br>
+          - Priznanje finske šole Mutalan Koulu: Posebna uradna pohvala in evalvacija vodstva finske šole (Joensuu) za edinstveno spajanje pedagoške teorije, neposredne razredne prakse in vizije. <br>
+          - Najvišje akademsko priznanje (20/20 A+): Ocena z odliko pri mednarodnem evropskem magisteriju ESWOCHY (Iscte – Instituto Universitário de Lisboa). <br>
+          - Evropske oznake kakovosti: Večkratna prejemnica certifikatov in oznak kakovosti za vodenje mednarodnih projektov eTwinning in Erasmus+.
+        </div>
+        <div data-template-id="professional-links" class="timeline-item reveal canva-card" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255);">
+         <strong data-template-id="professional-links-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Strokovne povezave:</strong>
+         <ul class="professional-links-list">
+          <li><a data-template-id="professional-link-zrss" class="text-link canva-link" href="https://www.zrss.si/arhiv-clankov/mateja-todorovski/" target="_blank" rel="noopener noreferrer" style="color: rgb(201, 255, 74); font-weight: 700; font-style: normal; font-size: 16px;">Članki mag. Mateje Todorovski na portalu Zavoda RS za šolstvo</a></li>
+          <li><a data-template-id="professional-link-clil" class="text-link canva-link" href="https://dk.um.si/IzpisGradiva.php?id=35547&amp;lang=eng&amp;prip=rul:16745585:d5" target="_blank" rel="noopener noreferrer" style="color: rgb(201, 255, 74); font-weight: 700; font-style: normal; font-size: 16px;">Znanstvena objava o CLIL metodologiji na DKUM</a></li>
+          <li><a data-template-id="professional-link-iaitme" class="text-link canva-link" href="https://www.iaitme.com/about-us" target="_blank" rel="noopener noreferrer" style="color: rgb(201, 255, 74); font-weight: 700; font-style: normal; font-size: 16px;">Mednarodno združenje inovativnih učiteljev IAITME / About</a></li>
+          <li><a data-template-id="professional-link-linkedin" class="text-link canva-link" href="https://www.linkedin.com/in/matejatodorovski/" target="_blank" rel="noopener noreferrer" style="color: rgb(201, 255, 74); font-weight: 700; font-style: normal; font-size: 16px;">Osebni strokovni profil mag. Mateje Todorovski na LinkedInu</a></li>
+         </ul>
+        </div>
+      </div>
+     </div>
+    </section>
+    <section id="izobrazevanja" class="training-zone">
+     <div class="site-shell">
+      <div class="section-head center reveal">
+       <div data-template-id="training-kicker" class="kicker canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Katalog B2B usposabljanj</div>
+       <h2 data-template-id="training-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 24px;">Izobraževanja in usposabljanja za šole</h2>
+       <p data-template-id="training-description" class="canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 16px;">Naši programi so prilagojeni učiteljem razrednega pouka, učiteljem tujih jezikov, vzgojiteljem ter vodstvenim delavcem. Izberite modul, ki najbolje ustreza potrebam vašega kolektiva.</p>
+      </div>
+      <div class="filters reveal" role="group" aria-label="Filtri usposabljanj"><button class="filter active" type="button" data-filter="all">Vsi moduli</button><button class="filter" type="button" data-filter="clil">Jezik in CLIL</button><button class="filter" type="button" data-filter="formativno">Formativno spremljanje</button><button class="filter" type="button" data-filter="digitalno">Mednarodno &amp; Digitalno</button>
+      </div>
+      <div class="module-grid">
+       <article data-category="clil" class="module reveal">
+        <div class="module-top">
+         <span class="module-label">Modul 1</span><i data-lucide="message-circle"></i>
+        </div>
+        <h3>Zgodnje poučevanje tujega jezika skozi doživljajski pouk</h3>
+        <p>Praktični načini integracije zgodb, pesmi, gibanja in igre v pouk angleščine (1. in 2. triada). Strategije za naravno usvajanje jezika brez prisilnega pomnjenja.</p>
+        <ul>
+         <li>Za učitelje 1. in 2. triade</li>
+         <li>Ohranjanje visoke motivacije</li>
+        </ul>
+       </article>
+       <article data-category="clil" class="module reveal">
+        <div class="module-top">
+         <span class="module-label">Modul 2</span><i data-lucide="puzzle"></i>
+        </div>
+        <h3>Metodologija CLIL – Vsebinsko in jezikovno združen pouk</h3>
+        <p>Načrtovanje in izvedba učnih enot, pri katerih se tuji jezik prepleta z nejezikovnimi predmeti (športna vzgoja, spoznavanje okolja, umetnost).</p>
+        <ul>
+         <li>Razvoj medpredmetnih povezav</li>
+         <li>Prilagoditev učnih gradiv</li>
+        </ul>
+       </article>
+       <article data-category="formativno" class="module reveal">
+        <div class="module-top">
+         <span class="module-label">Modul 3</span><i data-lucide="chart-no-axes-column-increasing"></i>
+        </div>
+        <h3>Formativno spremljanje in grajenje samostojnosti</h3>
+        <p>Didaktični koraki za spremljanje posameznikovega napredka in razvijanje učne samostojnosti. Uporaba opisnih povratnih informacij brez stresa.</p>
+        <ul>
+         <li>Spodbujanje samorefleksije</li>
+         <li>Opazovanje napredka namesto ocenjevanja</li>
+        </ul>
+       </article>
+       <article data-category="digitalno" class="module reveal">
+        <div class="module-top">
+         <span class="module-label">Modul 4</span><i data-lucide="laptop"></i>
+        </div>
+        <h3>Mednarodne virtualne izmenjave za mlade učence</h3>
+        <p>Usposabljanje učiteljev za vključevanje razredov v spletne projekte Erasmus+ in eTwinning. Varno vodenje spletnih srečanj.</p>
+        <ul>
+         <li>Razvijanje medkulturne kompetence</li>
+         <li>Metodologije varnega e-sodelovanja</li>
+        </ul>
+       </article>
+      </div>
+      <div data-template-id="training-cta-box" class="training-cta reveal canva-banner" style="background: linear-gradient(120deg, rgb(52, 34, 89), rgb(22, 36, 67), rgb(29, 83, 100));">
+       <h3 data-template-id="training-cta-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 19px;">Format izvedbe po vaši meri</h3>
+       <p data-template-id="training-cta-text" class="canva-text" style="color: rgb(220, 229, 251); max-width: 720px; line-height: 1.65; font-weight: 400; font-style: normal; font-size: 16px;">Usposabljanja izvajamo kot celodnevne seminarje na vaši šoli, interaktivne delavnice za strokovne aktive ali spletna predavanja. Udeleženci prejmejo gradivo in potrdilo.</p><a href="#kontakt" data-template-id="training-cta-button" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Pošljite povpraševanje za vašo šolo</a>
+      </div>
+     </div>
+    </section>
+    <section id="gradiva">
+     <div class="site-shell">
+      <div class="section-head reveal">
+       <div class="kicker">
+        Katalog avtorskih del
+       </div>
+       <h2>Učna gradiva in publikacije</h2>
+       <p>V sodelovanju z Založbo Rokus Klett ustvarjamo avtorska gradiva, ki dosegajo najvišje strokovne, didaktične in estetske standarde.</p>
+      </div>
+      <div class="shelf">
+       <article class="book-card reveal">
+        <div class="book-visual word-adventures-visual"><img data-template-id="word-adventures-4-image" class="canva-image" loading="lazy" src="images/word-adventures-4.webp" alt="Word Adventures 4 workbook cover"> <img data-template-id="word-adventures-5-image" class="canva-image" loading="lazy" src="images/word-adventures-5.webp" alt="Word Adventures 5 workbook cover">
+        </div>
+        <div class="book-copy">
+         <h3>Word Adventures 4 &amp; 5</h3>
+         <p>Učbenik, ki temelji na sodobnih smernicah za razvijanje bralne pismenosti v angleščini.</p><strong>Prelistaj </strong><a href="https://www.knjigarna.com/vse-izdaje1/osnovna-sola/i_6867_word-adventures-4" target="_blank" rel="noopener noreferrer" class="text-link">WA4</a><span> · </span><a href="https://www.knjigarna.com/posebna-ponudba/jesenska-ugodnost-vadnic-in-dodatnega-gradiva/i_6868_word-adventures-5" target="_blank" rel="noopener noreferrer" class="text-link">WA5</a>
+        </div>
+       </article>
+       <article class="book-card reveal">
+        <div class="book-visual">
+         <img data-template-id="book-image-2" class="canva-image" loading="lazy" src="images/anglescina-1.webp" alt="ANGLEŠČINA 1 didaktično gradivo za pouk angleščine v 1. razredu.">
+        </div>
+        <div class="book-copy">
+         <h3>Angleščina 1</h3>
+         <p>Odprta, modularna zbirka didaktičnih delovnih listov za 1. razred, ki omogoča visoko avtonomijo učitelja in takojšnjo rabo jezika.</p><a href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1" target="_blank" rel="noopener noreferrer" class="text-link">Oglej si podrobnosti →</a>
+        </div>
+       </article>
+       <article class="book-card reveal">
+        <div class="book-visual">
+         <img data-template-id="story-garden-4-image" class="canva-image" loading="lazy" src="images/story-garden-4.webp" alt="The Story Garden 4 workbook cover"> <img data-template-id="story-garden-5-image" class="canva-image" loading="lazy" src="images/story-garden-5.webp" alt="The Story Garden 5 workbook cover">
+        </div>
+        <div class="book-copy">
+         <h3>The Story Garden 4 &amp; 5</h3>
+         <p>Samostojna delovna zvezka, ki sistematično razvijata bralne in pisne zmožnosti, vključujeta stripovske zgodbe in strani Life Skills.</p><a href="https://emka.si/products/story-garden-4-sdz" target="_blank" rel="noopener noreferrer" class="text-link">EMKA 4</a> · <a href="https://emka.si/products/story-garden-5-sdz" target="_blank" rel="noopener noreferrer" class="text-link">EMKA 5</a>
+        </div>
+       </article>
+      </div>
+      <p class="profile-links"><a href="https://www.rokus-klett.si/wp-content/uploads/2023/06/The-Story-Garden-4_recenzija-2.pdf" target="_blank" rel="noopener noreferrer" class="text-link">Preberite uradno recenzentsko mnenje Založbe Rokus Klett</a></p>
+     </div>
+    </section>
+    <section id="projekti">
+     <div class="site-shell">
+      <div class="section-head center reveal">
+       <div class="kicker">
+        Evropske prakse v Sloveniji
+       </div>
+       <h2>Mednarodni projekti</h2>
+       <p>Vrhunska pedagoška praksa zahteva stalen stik z vodilnimi evropskimi raziskovalnimi in razvojnimi dosežki. Sodelujemo v mednarodnih konzorcijih.</p>
+      </div>
+      <div class="map-board reveal">
+       <svg class="map-lines" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true">
+        <path class="map-line" d="M115,260 C350,40 500,350 840,100"></path><path class="map-line" d="M115,260 C420,340 660,100 840,100"></path>
+       </svg>
+       <div class="project-nodes">
+        <article class="project">
+         <i data-lucide="orbit" width="37" height="37"></i>
+         <h3>Erasmus+ (KA1 do KA203)</h3>
+         <p>Dolgotrajna vpetost v mednarodne konzorcije, razvoj digitalnih orodij in ustvarjanje učnih gradiv za evropski prostor.</p>
+        </article>
+        <article class="project">
+         <i data-lucide="school" width="37" height="37"></i>
+         <h3>Finska pedagoška praksa</h3>
+         <p>Študijski obisk (KA1) na priznani finski šoli Mutalan Koulu v Joensuu in prenos modelov učečih se skupnosti v Slovenijo.</p><a href="https://peda.net/id/9a879462037" target="_blank" rel="noopener noreferrer" class="text-link">Poročilo na Peda.net →</a>
+        </article>
+        <article class="project">
+         <i data-lucide="video" width="37" height="37"></i>
+         <h3>INVITED Talks</h3>
+         <p>Izvedba mednarodnih usposabljanj za več kot 97 tujih strokovnjakov o pripravi otrok na spletne izmenjave.</p><a href="https://invited-project.eu/invited-talk-4/" target="_blank" rel="noopener noreferrer" class="text-link">Ogled predavanja →</a>
+        </article>
+       </div>
+      </div>
+      <div class="youth-banner reveal">
+       <div>
+        <div class="kicker">Erasmus+ mladi (KA152)</div>
+        <h3>Mladinske izmenjave</h3>
+        <p>Zavod EDUcatio kot partnerska organizacija pošilja mlade udeležence na Erasmus+ mladinske izmenjave, kot sta Nature Vibes (Armenija) in Together We Play (Luksemburg).</p>
+       </div>
+       <a class="youth-link" href="#utrinki-mladi">Oglejte si utrinke →</a>
+      </div>
+     </div>
+    </section>
+    <section id="reference">
+     <div class="site-shell">
+      <div class="section-head center reveal">
+       <div class="kicker">
+        Družbeni dokaz
+       </div>
+       <h2>Reference in odzivi</h2>
+      </div>
+      <div class="quotes">
+       <blockquote class="quote reveal">
+        <div class="quote-mark">
+         “
+        </div>
+        <p>Včasih srečamo dobre praktike. Včasih srečamo dobre teoretične strokovnjake. Redko srečamo ljudi, ki so zmožni povezati oba svetova. Skoraj nikoli pa ne srečamo ljudi, ki ne le zmorejo obojega, temveč imajo jasno vizijo, kako to doseči. Privilegij nam je bilo sodelovati z Matejo Todorovski.</p>
+        <footer>
+         <span class="initial">FI</span><span><strong>Mutalan Koulu</strong><small>Erasmus+ Študijski Obisk (Finska)</small></span>
+        </footer>
+       </blockquote>
+       <blockquote class="quote reveal">
+        <div class="quote-mark">
+         “
+        </div>
+        <p>Gradivo The Story Garden izjemno uspešno združuje sodobne didaktične smernice z učencem privlačnimi vsebinami. Posebej dragocen je sistematičen razvoj formativnega spremljanja ter naravna integracija medpredmetnih povezav.</p>
+        <footer>
+         <span class="initial">RK</span><span><strong>Založba Rokus Klett</strong><small>Strokovna Recenzija Gradiv</small></span>
+        </footer>
+       </blockquote>
+       <blockquote class="quote reveal">
+        <div class="quote-mark">
+         “
+        </div>
+        <p>Predavanje je ponudilo izjemno jasne, praktične in takoj uporabne korake za vključevanje mladih učencev v spletne izmenjave. Interaktivnost in strokovna globina sta presegli naša pričakovanja.</p>
+        <footer>
+         <span class="initial">IN</span><span><strong>Projekt INVITED</strong><small>Udeleženci Spletnega Seminarja</small></span>
+        </footer>
+       </blockquote>
+       <blockquote class="quote reveal">
+        <div class="quote-mark">
+         “
+        </div>
+        <p>In hvaležni smo za vsa leta vztrajnosti, učenja, raziskovanja, odkrivanja načina, kako otrokom omogočiti celostno učenje jezika z vso spodbudno podporo, da lahko sedaj z največjim veseljem uporabljamo to odlično gradivo …</p>
+        <footer>
+         <span class="initial">VB</span><span><strong>Valentina Bizjak</strong><small>Odziv na gradivo (Facebook)</small></span>
+        </footer>
+       </blockquote>
+       <blockquote class="quote reveal">
+        <div class="quote-mark">
+         “
+        </div>
+        <p lang="en">Observing and assessing expert facilitators this week has been a real challenge &amp; honour. I am soooo happy about it!</p>
+        <footer>
+         <span class="initial">JC</span><span><strong>Jana Chynoradska</strong><small>Tečaj za LCA trenerje učiteljev, projekt ULCA (Facebook)</small></span>
+        </footer>
+       </blockquote>
+      </div>
+     </div>
+    </section>
+    <section id="blog">
+     <div class="site-shell" style="max-width:960px">
+      <div class="section-head center reveal">
+       <div class="kicker">
+        Strokovno središče za pedagoge
+       </div>
+       <h2>Ideja tedna</h2>
+      </div>
+      <div class="blog-cards reveal">
+       <article class="blog-card panel" tabindex="0">
+        <div class="blog-card-kicker">
+         FORMativno spremljanje · 3 praktični koraki
+        </div>
+        <h3>Stres zaradi ocen že pri devetletnikih? Čas je, da klasične številke zamenjate s formativnim spremljanjem.</h3>
+        <p>Kako lahko učitelji zmanjšajo stres pri ocenjevanju in otrokom vrnejo veselje do učenja?</p>
+        <div class="blog-tags"><span>ocenjevanje</span><span>samostojnost</span><span>zgodnji pouk</span>
+        </div><button id="blog-open-button" type="button" class="button-main blog-open" aria-controls="article-modal" aria-expanded="false">Odpri celoten članek <i data-lucide="arrow-up-right" width="17"></i></button>
+       </article>
+       <article data-template-id="blog-article-card" class="blog-card panel reveal canva-card" style="background: linear-gradient(145deg, rgb(23, 35, 67), rgb(37, 29, 68)); color: rgb(255, 255, 255);">
+        <div class="blog-card-kicker">
+         Strokovne skupnosti · 17. september 2026
+        </div>
+        <h3>Izgorelost v zbornici in odpor do sprememb? Čas je, da slovenske šole preklopijo na finski model učnih skupnosti.</h3>
+        <p>Kako lahko šolska vodstva zmanjšajo izgorelost v zbornici in odpor do sprememb? Spoznajte finski model učnih skupnosti ter rešitev v treh praktičnih korakih: sodelovalno poučevanje, več didaktične avtonomije in ciljno usposabljanje strokovnih aktivov.</p>
+        <div class="blog-tags"><span>učne skupnosti</span><span>finska praksa</span><span>vodenje šol</span>
+        </div><button id="community-open-button" type="button" class="button-main blog-open" aria-controls="community-article-modal" aria-expanded="false">Odpri celoten članek <i data-lucide="arrow-up-right" width="17"></i></button>
+       </article>
+       <article data-template-id="blog-article-card" class="blog-card panel reveal canva-card" style="background: linear-gradient(145deg, rgb(23, 35, 67), rgb(37, 29, 68)); color: rgb(255, 255, 255);">
+        <div class="blog-card-kicker">
+         Mednarodno povezovanje · 21. september 2026
+        </div>
+        <h3>Počutite se strokovno izolirani v svojem razredu? Čas je, da prestopite meje svoje šole in se povežete z Evropo.</h3>
+        <p>Se pri snovanju novih pristopov počutite sami? Prestopite meje svoje učilnice, povežite se z evropskimi strokovnjaki in prenesite preverjene mednarodne prakse v svoj razred.</p>
+        <div class="blog-tags">
+         <span>mednarodno sodelovanje</span><span>Erasmus+</span><span>didaktika</span>
+        </div><button id="europe-open-button" type="button" class="button-main blog-open" aria-controls="europe-article-modal" aria-expanded="false">Odpri celoten članek <i data-lucide="arrow-up-right" width="17"></i></button>
+       </article>
+      </div>
+      <div id="europe-article-modal" class="article-modal hidden" role="dialog" aria-modal="true" aria-labelledby="europe-article-modal-title" aria-hidden="true">
+       <div class="article-modal-backdrop" data-close-europe=""></div>
+       <article class="idea-card article-modal-panel">
+        <button type="button" class="modal-close" data-close-europe="" aria-label="Zapri članek"><i data-lucide="x"></i></button>
+        <div class="eyebrow" style="color:#2c2162;border-color:#a98bff">
+         Mednarodno povezovanje · 21. september 2026
+        </div>
+        <h2 id="europe-article-modal-title">Počutite se strokovno izolirani v svojem razredu? Čas je, da prestopite meje svoje šole in se povežete z Evropo.</h2>
+        <p>Leto za letom poučujete za zaprtimi vrati svoje učilnice ali vodite isti šolski kolektiv. Soočate se z vprašanji, kako motivirati učence, kako vpeljati sodobne metode in kako premagati rutino. Vendar odgovore pogosto iščete povsem sami ali v krogu nekaj sodelavcev, ki se ubadajo z natanko enakimi lokalnimi izzivi.</p>
+        <p>Občutek, da ste pri snovanju novih pristopov sami, vodi v ustvarjalno blokado. Medtem ko se v izobraževanju po svetu bliskovito razvijajo novi koncepti – od doživljajskega učenja v gibanju do spletnih izmenjav –, vi znova in znova izumljate že odkrito kolesje.</p>
+        <p class="idea-quote">Priznajmo si resnico: ostajanje v zaprtem šolskem mehurčku brez stika z zunanjimi strokovnjaki in mednarodnimi praksami zmanjšuje vašo poklicno strast in omejuje napredek vaših učencev.</p>
+        <h3>Krivda ni vaša – sodobni učitelj potrebuje mednarodno skupnost</h3>
+        <p>Naj vas pomirimo: to ne pomeni, da vam primanjkuje ustvarjalnosti ali strokovnega znanja. Težava je v tem, da je poučevanje v klasičnem sistemu pogosto organizirano izolirano.</p>
+        <p>Najboljši pedagoški strokovnjaki in raziskovalci po vsej Evropi se danes povezujejo na profesionalnih omrežjih, kot je LinkedIn, ter v mednarodnih združenjih. Ko prestopite meje svoje učilnice in se vključite v mednarodno izmenjavo idej, ugotovite, da so izzivi povsod podobni – rešitve pa izjemno navdihujoče.</p>
+        <h3>Rešitev v 3 praktičnih korakih</h3>
+        <div class="steps">
+         <div class="step">
+          <h4>1. Aktivno profesionalno mreženje in deljenje praks (IAITME in LinkedIn)</h4>
+          <p>Ne ostajajte tihi opazovalec. Povežite se z mednarodnimi izobraževalnimi združenji, kot je IAITME (International Association of Innovative Teachers and School Managers), ter spremljajte strokovne razmisleke na profesionalnih omrežjih. Z deljenjem svojih izkušenj in prebiranjem ugotovitev kolegov iz tujine pridobite takojšen dostop do svežih didaktičnih idej.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fwww.iaitme.com%2Fabout-us">Preberite več o IAITME / About →</a>
+         </div>
+         <div class="step">
+          <h4>2. Vključevanje v mednarodne spletne seminarje in projekte (INVITED Talks)</h4>
+          <p>Za stik z evropskimi praksami vam ni treba potovati v tujino. Z udeležbo na mednarodnih spletnih seminarjih, kot so INVITED Talks pod okriljem projektov Erasmus+, pridobite neposreden vpogled v prakse učiteljev iz vse Evrope.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Finvited-project.eu%2Finvited-talk-4%2F">Oglejte si poročilo INVITED Talk 4 →</a>
+         </div>
+         <div class="step">
+          <h4>3. Prenos vrhunskih evropskih spoznanj v slovenski razred</h4>
+          <p>Največja vrednost mednarodnega mreženja je v tem, da pridobljena spoznanja prenesete neposredno v svojo učilnico. S sodobnimi avtorskimi gradivi v svoj razred vnesete preverjene evropske standarde učenja.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Firokus.rokus-klett.si%2Fmoj-predmet%2Fnovosti%2Fanglescina-1">Preverite pristope na iRokus – Angleščina 1 →</a>
+         </div>
+        </div>
+        <div class="modal-cta">
+         <h3>Ukrepajte zdaj – izberite vaš naslednji korak</h3>
+         <p>Prestopite meje rutine in vnesite mednarodni navdih v svoje vsakodnevno delo.</p>
+         <div class="next-actions">
+          <div>
+           <h4>👩‍🏫 Za učitelje razrednega pouka in tujih jezikov:</h4>
+           <p>Razbremenite se osamljene priprave na pouk in preizkusite gradiva, ki črpajo iz bogatih mednarodnih in domačih izkušenj.</p><a class="button-main" target="_blank" rel="noopener noreferrer" href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1">Prelistajte The Story Garden</a><a class="button-main btn-inverse" target="_blank" rel="noopener noreferrer" href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1">Preizkusite Angleščino 1</a>
+          </div>
+          <div>
+           <h4>🏫 Za ravnatelje, pomočnike in vodje aktivov:</h4>
+           <p>Zavod EDUcatio izvaja specializirana usposabljanja in svetovanja za šolske kolektive.</p><a class="button-main" href="#kontakt">Naročite strokovno usposabljanje</a><a class="button-main alt" href="#kontakt">Rezervirajte termin za posvet</a>
+          </div>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div id="community-article-modal" class="article-modal hidden" role="dialog" aria-modal="true" aria-labelledby="community-article-modal-title" aria-hidden="true">
+       <div class="article-modal-backdrop" data-close-community=""></div>
+       <article class="idea-card article-modal-panel">
+        <button type="button" class="modal-close" data-close-community="" aria-label="Zapri članek"><i data-lucide="x"></i></button>
+        <div class="eyebrow" style="color:#2c2162;border-color:#a98bff">
+         Strokovne skupnosti · 17. september 2026
+        </div>
+        <h2 id="community-article-modal-title">Izgorelost v zbornici in odpor do sprememb? Čas je, da slovenske šole preklopijo na finski model učnih skupnosti.</h2>
+        <p>Kot ravnatelj ali član vodstva šole se vsakodnevno srečujete z eno najtežjih nalog: kako v zbornici ohraniti motivacijo učiteljev, ko pa se ti utapljajo v birokraciji, pritisku staršev in strahu pred napovedanimi kurikularnimi spremembami.</p>
+        <p>Vidite, kako se učitelji zapirajo v svoje »predmetne vrtičke«, kjer vsak brani svoje učne ure in svoj predmet. Poskusi uvajanja novosti pogosto naletijo na tihi odpor, izgorelost kolektiva raste, medpredmetno sodelovanje pa žal predolgo ostaja le zapis v letnem delovnem načrtu.</p>
+        <p class="idea-quote">Priznajmo si resnico: stari sistem delitve na strogo ločene predmetne predale in administrativni nadzor pri sodobnih izzivih šolstva enostavno ne deluje več.</p>
+        <h3>Krivda ni vaša – zastarel je organizacijski model, ne vaš kolektiv</h3>
+        <p>Naj vas pomirimo: vi niste neuspešen vodja, vaš učiteljski kolektiv pa ni nesposoben za spremembe. Težava je v zastarelem organizacijskem modelu, ki temelji na formalni hierarhiji, administraciji in izoliranem delu posameznega učitelja.</p>
+        <p>Finski šolski uspeh ne temelji na dražjih digitalnih tablah ali večjem številu preizkusov znanja, temveč na povsem drugačni organizacijski kulturi: prehodu iz birokratskega nadzora v gradnjo učnih skupnosti (Learning Communities) ter popolnem zaupanju v didaktično avtonomijo učitelja.</p>
+        <h3>Rešitev v 3 praktičnih korakih</h3>
+        <div class="steps">
+         <div class="step">
+          <h4>1. Prehod iz »predmetnih predalčkov« v učne skupnosti (Mutalan Koulu, Finska)</h4>
+          <p>Na Finskem učitelji ne delajo v osami. V okviru študijskega obiska na finski osnovni šoli Mutalan Koulu (Joensuu) se je izkazalo, da finski model temelji na sodelovalnem poučevanju, kjer učitelji skupaj načrtujejo učne enote in medpredmetno povezujejo vsebine, na primer metodologijo CLIL.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fpeda.net%2Fid%2F9a879462037">Oglejte si uradno poročilo na Peda.net →</a>
+         </div>
+         <div class="step">
+          <h4>2. Gradnja didaktične avtonomije namesto administrativnega pritiska (Erasmus+ ULCA/NELCA)</h4>
+          <p>Finski ravnatelji ne trošijo časa za pregledovanje vsake podrobne učne priprave. Namesto tega učiteljem zagotavljajo pogoje za strokovni razvoj in formativno spremljanje napredka učencev. Ko učitelj začuti zaupanje vodstva in prejme preverjena didaktična orodja, izgorelost nadomesti ustvarjalnost.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Fcloud-b.edupage.org%2Fcloud%2FNELCA%5FProject%5Fproposal.pdf%3Fz%253AP1kzuw31G%252BB8JLYvEJXUPQz0uLz4k6%252B5Hdww6YXhhDzCEzP5z4CJTfyi7cFp2LXG">Preberite strokovne ugotovitve projekta (PDF) →</a>
+         </div>
+         <div class="step">
+          <h4>3. Postopno uvajanje sprememb prek ciljnih usposabljanj za aktive (Angleščina 1 in Story Garden)</h4>
+          <p>Spremembe se ne zgodijo čez noč z dekretom v zbornici. Najučinkovitejši pristop je postopno opolnomočenje strokovnih aktivov s praktičnimi delavnicami, uporabnimi predlogi učnih ur, gradivi za doživljajski pouk ter jasnimi koraki za formativno spremljanje napredka.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/url?sa=E&amp;q=https%3A%2F%2Firokus.rokus-klett.si%2Fmoj-predmet%2Fnovosti%2Fanglescina-1">Preverite primer dobre prakse na iRokus →</a>
+         </div>
+        </div>
+        <div class="modal-cta">
+         <h3>Ukrepajte zdaj – izberite vaš naslednji korak</h3>
+         <p>Preprečite izgorelost v zbornici in zgradite spodbudno okolje, ki bo pripravljeno na vse prihodnje izzive šolstva.</p>
+         <div class="next-actions">
+          <div>
+           <h4>👩‍🏫 Za učitelje in vodje strokovnih aktivov:</h4>
+           <p>Spodbudite sodelovanje v vašem aktivu ter preizkusite gradiva, ki že vključujejo medpredmetne povezave in formativno spremljanje.</p><a class="button-main" target="_blank" rel="noopener noreferrer" href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1">Prelistajte The Story Garden</a><a class="button-main btn-inverse" target="_blank" rel="noopener noreferrer" href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1">Preizkusite Angleščino 1</a>
+          </div>
+          <div>
+           <h4>🏫 Za ravnatelje, pomočnike in vodstva šol:</h4>
+           <p>Želite na vaši šoli uvesti finski model učnih skupnosti? Zavod EDUcatio izvaja praktična usposabljanja in svetovanja po meri vodstev ter šolskih kolektivov.</p><a class="button-main" href="#kontakt">Naročite strokovno usposabljanje</a><a class="button-main alt" href="#kontakt">Rezervirajte termin za posvet</a>
+          </div>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div id="article-modal" class="article-modal hidden" role="dialog" aria-modal="true" aria-labelledby="article-modal-title" aria-hidden="true">
+       <div class="article-modal-backdrop" data-close-article=""></div>
+       <article class="article-modal-panel">
+        <button type="button" class="modal-close" data-close-article="" aria-label="Zapri članek"><i data-lucide="x"></i></button>
+        <div class="eyebrow" style="color:#2c2162;border-color:#a98bff">
+         FORMativno spremljanje · 3 praktični koraki
+        </div>
+        <h2 id="article-modal-title">Stres zaradi ocen že pri devetletnikih? Čas je, da klasične številke zamenjate s formativnim spremljanjem.</h2>
+        <p>Učna ura se bliža koncu, vi pa razdelite ocenjene pisne preizkuse ali preberete ocene. V razredu v trenutku opazite dve skrajnosti: nekaj učencev se veseli petic, večina pa zre v mizo s cmokom v grlu. Nekdo potihem potoči solzo, spet drugi pa nemudoma zapre zvezek z mislijo: »Brezveze, saj itak nič ne znam.«</p>
+        <p>Nato sledijo popoldanski klici prizadetih ali jeznih staršev, ki preštevajo polovične točke, in vaši večeri, preživeti ob popravljanju testov ter izpolnjevanju ocenjevalnih dokumentov.</p>
+        <p>Najbolj žalostno pri tem pa je, da številčna ocena pri otroku ne sproži večje želje po znanju – sproži le strah pred napako in primerjanje z vrstniki.</p>
+        <blockquote>
+         Priznajmo si resnico: klasično točkovanje in številčne ocene v zgodnjem otroštvu ne merijo učenčevega dejanskega napredka, temveč le uničujejo njegovo notranjo motivacijo.
+        </blockquote>
+        <h3>Krivda ni vaša – klasične ocene otroku ne povedo, KAKO naj napreduje</h3>
+        <p>Naj vas pomirimo: vi niste premalo zahtevni ali preveč strogi učitelj, vaši učenci pa niso nesposobni. Težava je v samem mehanizmu številčnega ocenjevanja.</p>
+        <p>Otroški možgani v 1. in 2. triadi številke ali rdečega minusa ne razumejo kot spodbude za delo, temveč kot osebni neuspeh. Rdeča ocena v njih sproži stresni odziv, pri čemer se možgani zaprejo za novo učenje. Številka otroku ne odgovori na ključni vprašanji: »Kaj že dobro obvladam?« in »Kaj je moj naslednji konkreten korak?«</p>
+        <p>Formativno spremljanje ne pomeni, da znižujemo merila ali gledamo skozi prste. Pomeni, da poudarek z merjenja znanja prestavimo na grajenje učenčeve samostojnosti in zavedanja lastnega napredka.</p>
+        <h3>Rešitev v 3 praktičnih korakih</h3>
+        <div class="modal-steps">
+         <section>
+          <h4>1. Uvedite spodbude »Zmorem!« namesto točkovanja napak (The Story Garden)</h4>
+          <p>Namesto da otroke obremenjujete s štetjem napak, v pouk vpeljite dejavnosti samorefleksije. Prek ustvarjalnih rubrik in plakatov, kot je rubrika Life skills – I can do it, ter izdelave ustvarjalnih Lapbookov, otrok sam označi in predstavi, kaj vse že zna in zmore. S tem napake prenehajo biti strašilo ter postanejo naraven in dobrodošel del učenja.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.rokus-klett.si/wp-content/uploads/2023/06/The-Story-Garden-4_recenzija-2.pdf">Uradna recenzija Založbe Rokus Klett →</a>
+         </section>
+         <section>
+          <h4>2. Začnite in končajte učno enoto s formativno stranjo (Angleščina 1)</h4>
+          <p>Odstopite od klasičnega zaporedja »pouk → preizkus → ocena«. Pri sodobnih modularnih gradivih se vsaka učna enota začne in konča s formativno stranjo. Učenec na začetku sam odkriva, kaj bo raziskoval, na koncu pa prek opazovanja lastnega napredka ugotovi: »Hej, na začetku tega nisem znal, zdaj pa obvladam!«</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1">Gradivo Angleščina 1 na iRokus →</a>
+         </section>
+         <section>
+          <h4>3. Prejmite podporo in smernice iz preverjenih evropskih projektov (Learner-Centered Approach)</h4>
+          <p>Zavod EDUcatio v okviru mednarodnih projektov Erasmus+, kot je pobuda ULCA – Learner Centered Assessment, razvija in preizkuša modele opazovanja učenja, ki učitelja razbremenijo administrativnega balasta in v središče postavljajo učenčeve prečne veščine ter samostojnost.</p><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://cloud-b.edupage.org/cloud/NELCA_Project_proposal.pdf?z:P1kzuw31G+B8JLYvEJXUPQz0uLz4k6+5Hdww6YXhhDzCEzP5z4CJTfyi7cFp2LXG">Projektni predlog →</a>
+         </section>
+        </div>
+        <div class="modal-cta">
+         <h3>Ukrepajte zdaj – izberite vaš naslednji korak</h3>
+         <p>Razbremenite se pritiska ocenjevalnih preglednic in vrnite otrokom veselje do učenja. Orodja in didaktični koraki za formativno spremljanje so vam že na voljo.</p>
+         <div class="next-actions">
+          <div>
+           <h4>👩‍🏫 Za učitelje razrednega pouka in tujih jezikov:</h4>
+           <p>Preizkusite gradiva, ki vključujejo formativne strani ter omogočajo postopno grajenje samostojnosti pri najmlajših.</p><a href="#gradiva" class="button-main">Prelistajte gradiva</a>
+          </div>
+          <div>
+           <h4>🏫 Za ravnatelje, pomočnike in vodje aktivov:</h4>
+           <p>Želite na vaši šoli sistemsko uvesti formativno spremljanje? Zavod EDUcatio izvaja praktična usposabljanja in seminarje po meri vaše ustanove.</p><a href="#kontakt" class="button-main alt">Naročite usposabljanje</a>
+          </div>
+         </div>
+        </div>
+       </article>
+      </div>
+      <article data-template-id="blog-article-card" class="blog-card panel reveal canva-card" style="background: linear-gradient(145deg, rgb(23, 35, 67), rgb(37, 29, 68)); color: rgb(255, 255, 255);">
+       <div class="blog-card-kicker">
+        CLIL in doživljajski pouk · September 2026
+       </div>
+       <h3>Tišina v razredu, ko morajo otroci spregovoriti v angleščini? Čas je, da prenehate s tiskanjem novih delovnih listov.</h3>
+       <p>Praktični pristopi, ki zamenjajo delovne liste z gibanjem, zgodbami in doživljajskim učenjem.</p>
+       <div class="blog-tags"><span>CLIL</span><span>zgodbe</span><span>govorna samozavest</span>
+       </div><button id="clil-open-button" type="button" class="button-main blog-open" aria-controls="clil-article-modal" aria-expanded="false">Odpri celoten članek <i data-lucide="arrow-up-right" width="17"></i></button>
+      </article>
+      <div id="clil-article-modal" class="article-modal hidden" role="dialog" aria-modal="true" aria-labelledby="clil-article-modal-title" aria-hidden="true">
+       <div class="article-modal-backdrop" data-close-clil=""></div>
+       <article data-template-id="blog-article" class="idea-card article-modal-panel canva-card" style="background: rgb(246, 245, 238);">
+        <button type="button" class="modal-close" data-close-clil="" aria-label="Zapri članek"><i data-lucide="x"></i></button>
+        <header>
+         <div class="eyebrow" style="color:#2c2162;border-color:#a98bff">
+          CLIL in doživljajski pouk · September 2026
+         </div>
+         <h2 id="clil-article-modal-title">Tišina v razredu, ko morajo otroci spregovoriti v angleščini? Čas je, da prenehate s tiskanjem novih delovnih listov.</h2>
+        </header>
+        <p>Učna ura angleščine je v polnem teku. Učencem postavite povsem preprosto vprašanje. Namesto dvignjenih rok pa v razredu nastane neugodna, težka tišina. Otroci zrejo v mizo, se izogibajo vašemu pogledu in enostavno zablokirajo.</p>
+        <p>Na pisnih preizkusih znajo obkljukati prave odgovore in obnavljati sezname besed na pamet. Ko pa morajo v pogovoru samostojno sestaviti en sam stavek, jih paralizira strah pred napako.</p>
+        <p>In kaj v stiski naredite učitelji? Doma do polnoči tiskate in rišete nove, še bolj barvite delovne liste. Učenci jih rešijo, učinka na njihovo govorno samozavest pa še vedno ni. Rezultat je vaša izčrpanost ter odpor in stres pri otrokih.</p>
+        <p class="idea-quote">Priznajmo si resnico: klasičen pristop »reši delovni list in se nauči besede« pri mladih učencih enostavno ne deluje.</p>
+        <h3>Krivda ni vaša – otroški možgani delujejo drugače</h3>
+        <p>Naj vas pomirimo: vaši učenci niso "brez posluha za jezik", pa tudi vi niste slab učitelj. Otroški možgani v 1. in 2. triadi jezika ne usvajajo analitično skozi pomnjenje slovničnih pravil in prevajanje.</p>
+        <p>Ko od 7-letnika zahtevate zavestno prevajanje, v njegovih možganih sprožite obrambni mehanizem in blokado. Tuji jezik otroci usvojijo le takrat, ko ga <strong>uporabljajo podzavestno – skozi gibanje, igro in neposredno doživetje</strong>.</p>
+        <h3>Rešitev v 3 praktičnih korakih</h3>
+        <div class="steps">
+         <div class="step">
+          <h4>1. Zamenjajte sedenje na stolih z gibanjem (Metodologija CLIL)</h4>
+          <p>Namesto da angleščino obravnavate kot ločen, abstrakten predmet, jo prepletite s predmeti, ki zahtevajo akcijo – na primer s športno vzgojo ali spoznavanjem okolja. Ko otrok izvaja gibalni ukaz ali sodeluje v gibalni igri, se tuji jezik usvaja naravno in brez stresa – natanko tako kot materinščina.</p><a href="https://dk.um.si/IzpisGradiva.php?id=35547" target="_blank" rel="noopener noreferrer" class="text-link">Strokovna analiza o CLIL</a>
+         </div>
+         <div class="step">
+          <h4>2. Vnesite v razred moč zgodb in stripov (The Story Garden)</h4>
+          <p>Otroci obožujejo zgodbe. Ko namesto suhoparnih besednih seznamov uporabite stripovske zgodbe z moralno noto, otroci pozabijo na strah pred ocenjevanjem. Ko odigrajo vlogo pravljičnega junaka, začnejo jezik uporabljati spontano.</p><a href="https://www.rokus-klett.si/wp-content/uploads/2023/06/The-Story-Garden-4_recenzija-2.pdf" target="_blank" rel="noopener noreferrer" class="text-link">Uradna recenzija Rokus Klett</a>
+         </div>
+         <div class="step">
+          <h4>3. Postopno grajenje samozavesti brez stresa (Angleščina 1)</h4>
+          <p>Učenca razbremenite pritiska ocenjevanja napak. Z modularno zbirko dejavnosti in elementom <em>Lapbooka</em> dajte otroku možnost, da sam spremlja svoj napredek (rubrika <em>I can do it</em>). Ko otrok sam ugotovi »Hey, pa saj to zmorem!«, blokada izgine.</p><a href="https://irokus.rokus-klett.si/moj-predmet/novosti/anglescina-1" target="_blank" rel="noopener noreferrer" class="text-link">Smernice na portalu iRokus</a>
+         </div>
+        </div>
+        <div class="next-actions">
+         <div>
+          <h4>👩‍🏫 Za učitelje razrednega pouka in tujih jezikov:</h4>
+          <p>Razbremenite svojo pripravo na pouk in preizkusite gradiva, ki so prilagojena specifikam slovenskega šolskega prostora.</p><a href="#gradiva" class="button-main">Prelistajte The Story Garden</a>
+         </div>
+         <div>
+          <h4>🏫 Za ravnatelje, pomočnike in vodje aktivov:</h4>
+          <p>Želite na vaši šoli sistemsko opolnomočiti učiteljski kolektiv za izvajanje CLIL metodologije, doživljajskega pouka in formativnega spremljanja?</p><a href="#kontakt" class="button-main alt">Naročite strokovno usposabljanje</a>
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="kontakt" class="contact-zone">
+     <div class="site-shell contact-grid">
+      <div class="reveal contact-head">
+       <div class="kicker">
+        Kontakt
+       </div>
+       <h2 class="contact-title">Povej, kaj želiš<br class="contact-br"> <span class="contact-line2">izboljšati v svoji učilnici.</span></h2>
+       <p style="line-height:1.65;color:var(--mist)">Za vprašanja glede izvedbe usposabljanj, naročila svetovalnih storitev ali sodelovanja pri mednarodnih projektih nas kontaktirajte.</p>
+      </div>
+      <div class="reveal contact-side">
+       <div class="board contact-board" aria-label="Digitalna tabla sodobnega učenja">
+       <div class="board-photo">
+        <img data-template-id="hero-image-1" class="canva-image" loading="lazy" src="images/mateja-pouk.webp" alt="mag. Mateja Todorovski med poukom v razredu">
+       </div>
+       <div class="scribble">
+        ↗
+       </div><span class="sticker s1">CLIL</span><span class="sticker s2">igra</span><span class="sticker s3">zgodbe</span><span class="sticker s4">gibanje</span><span class="sticker s5">digitalno</span><span class="sticker s6">Erasmus+</span><span class="sticker s7">ustvarjanje</span>
+      </div>
+       <ul class="contact-lines">
+        <li><i data-lucide="map-pin" aria-hidden="true"></i><span><span class="contact-label">Sedež zavoda:</span> Škapinova ulica 13, 3000 Celje</span></li>
+        <li><i data-lucide="mail" aria-hidden="true"></i><a href="mailto:mateja.todorovski@gmail.com">mateja.todorovski@gmail.com</a></li>
+        <li><i data-lucide="phone" aria-hidden="true"></i><a href="tel:+38641362410">041 362 410</a></li>
+       </ul>
+      </div>
+      <form id="contact-form" data-template-id="contact-form" class="form-card reveal canva-panel" style="background: rgb(246, 245, 238);">
+       <h3 data-template-id="form-title" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 19px;">Pošljite povpraševanje</h3>
+       <div class="field">
+        <label data-template-id="name-label" class="canva-text" for="name" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Ime in priimek / Ustanova</label><input id="name" type="text" required="">
+       </div>
+       <div class="field">
+        <label data-template-id="email-label" class="canva-text" for="email" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">E-pošta</label><input id="email" type="email" required="">
+       </div>
+       <div class="field area-dropdown">
+        <label data-template-id="area-label" class="canva-text" for="area" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Področje sodelovanja</label><input id="area" type="hidden" required=""><button id="area-trigger" class="area-trigger" type="button" role="combobox" aria-controls="area-options" aria-expanded="false" aria-haspopup="listbox">Izberite področje... <i data-lucide="chevron-down" width="16" aria-hidden="true"></i></button>
+        <ul id="area-options" class="area-options" role="listbox" hidden="">
+         <li class="area-option placeholder" role="option" tabindex="-1" data-value="" aria-selected="true">Izberite področje...</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="izobrazevanje">Izobraževanje za šolo (CLIL, Formativno)</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="svetovanje">Svetovanje in predavanja</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="gradiva">Učna gradiva (Story Garden)</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="projekti">Mednarodni projekti (Erasmus+)</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="mladi">Erasmus+ mladinske izmenjave</li>
+         <li class="area-option" role="option" tabindex="-1" data-value="drugo">Drugo</li>
+        </ul>
+       </div>
+       <div class="field">
+        <label data-template-id="message-label" class="canva-text" for="message" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Sporočilo</label><textarea id="message" rows="5" required=""></textarea>
+       </div><button id="submit-button" data-template-id="submit-button" class="button-main canva-button" style="width: 100%; background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;" type="submit"><span data-template-id="submit-button-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Pošlji sporočilo</span> <i data-lucide="send" width="17"></i></button>
+       <div id="form-success" class="status hidden" aria-live="polite">
+        Vaše sporočilo je bilo uspešno poslano. Odgovorili vam bomo v najkrajšem možnem času.
+       </div>
+       <div id="form-error" class="status hidden" style="background:#ffe0df;color:#811c1c" aria-live="polite"></div>
+      </form>
+     </div>
+    </section>
+   </div>
+   <div id="route-utrinki" class="route hidden">
+    <section id="utrinki-mladi" class="u-hero u-block" aria-labelledby="utrinki-mladi-title">
+     <div class="site-shell u-grid">
+      <div class="u-copy">
+       <div class="eyebrow"><i data-lucide="sparkles" width="15"></i><span>ERASMUS+ MLADI · KA152</span></div>
+       <h1 id="utrinki-mladi-title" class="u-title"><span class="u-t-main">Erasmus+ </span><span class="u-t-accent">mladinske izmenjave</span></h1>
+       <p class="u-subtitle">Izkušnje, ki mlade povezujejo, krepijo in jim dajo glas.</p>
+       <p class="u-note">Zavod EDUcatio kot partnerska organizacija pošilja udeležence na Erasmus+ mladinske izmenjave (KA152).</p>
+       <div class="u-hint-row">
+        <i data-lucide="orbit" width="18" height="18" aria-hidden="true"></i>
+        <p class="u-hint">Povlecite kartico ali odprite izvirno objavo.</p>
+       </div>
+      </div>
+      <div class="u-rings">
+       <div class="u-carousel" data-route="utrinki" role="region" aria-roledescription="carousel" aria-label="Utrinki z Erasmus+ mladinskih izmenjav" tabindex="0">
+        <div class="u-stage">
+         <div class="u-orbit" aria-hidden="true"></div>
+         <ul id="u-track-youth" class="u-track">
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="1 od 10"><button type="button" class="u-card" data-tone="coral" data-image="images/mladi/luksemburg.webp" data-title="Together We Play · Luksemburg, 22. 9.–1. 10. 2026" data-href="https://www.instagram.com/zavodeducatio/p/DcHDKuboFhM/" data-source="Instagramu"><span class="u-ph" aria-hidden="true"><i data-lucide="map-pin"></i></span><span class="u-chip">Together We Play</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Luksemburg</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="2 od 10"><button type="button" class="u-card" data-tone="coral" data-image="images/mladi/prvi-vecer.webp" data-title="Together We Play · Prvi večer izmenjave" data-href="https://www.facebook.com/reel/1820105625684397/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="utensils"></i></span><span class="u-chip">Together We Play</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Prvi večer</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="3 od 10"><button type="button" class="u-card" data-tone="coral" data-image="images/mladi/strahovi-in-pricakovanja.webp" data-title="Together We Play · Strahovi in pričakovanja udeležencev" data-href="https://www.facebook.com/reel/1778815983170196/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="heart-handshake"></i></span><span class="u-chip">Together We Play</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Strahovi in pričakovanja</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="4 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/timsko-delo.webp" data-title="Nature Vibes · Igre za povezovanje" data-href="https://www.facebook.com/reel/716886964850165/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="users"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Timsko delo</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="5 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/povezovanje.webp" data-title="Nature Vibes · CONNECT: Geghard Monastery" data-href="https://www.facebook.com/reel/26127024843663340/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="link"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Povezovanje</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="6 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/rast.webp" data-title="Nature Vibes · GROW: Symphony of Rocks" data-href="https://www.facebook.com/reel/939874812247450/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="sprout"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Rast</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="7 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/pripadnost.webp" data-title="Nature Vibes · BELONG: Garni Temple" data-href="https://www.facebook.com/reel/738165659317128/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="landmark"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Pripadnost</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="8 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/ustvarjalnost.webp" data-title="Nature Vibes · Film udeležencev" data-href="https://www.facebook.com/reel/1913102979392030/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="clapperboard"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Ustvarjalnost</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="9 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/glas-mladih.webp" data-title="Nature Vibes · Glas mladih" data-href="https://www.facebook.com/reel/4387923878139685/" data-source="Facebooku"><span class="u-ph" aria-hidden="true"><i data-lucide="megaphone"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Glas mladih</span></button></li>
+         <li class="u-slide" role="group" aria-roledescription="slide" aria-label="10 od 10"><button type="button" class="u-card" data-tone="lime" data-image="images/mladi/digitalni-detoks.webp" data-title="Nature Vibes · Digitalni detoks" data-href="https://www.instagram.com/zavodeducatio/reel/Daam-1roBIG/" data-source="Instagramu"><span class="u-ph" aria-hidden="true"><i data-lucide="leaf"></i></span><span class="u-chip">Nature Vibes · Armenija</span><span class="u-label" style="color:#fff;font-weight:800;font-size:14px">Digitalni detoks</span></button></li>
+         </ul>
+        </div>
+        <div class="u-controls"><button type="button" data-ring-prev class="u-arrow" aria-label="Prejšnja kartica" aria-controls="u-track-youth"><i data-lucide="chevron-left"></i></button>
+         <div class="u-dots" aria-hidden="true"></div><button type="button" data-ring-next class="u-arrow" aria-label="Naslednja kartica" aria-controls="u-track-youth"><i data-lucide="chevron-right"></i></button>
+        </div>
+        <p class="u-caption" aria-live="polite"><span></span><a target="_blank" rel="noopener noreferrer" hidden></a></p>
+        <p class="u-status sr-only" aria-live="polite"></p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer data-template-id="page-footer" class="footer canva-footer" style="background: rgb(6, 11, 23); color: rgb(200, 211, 237);">
+   <div class="site-shell footer-grid">
+    <div class="footer-left">
+     <a href="#domov" class="brand"><img data-template-id="brand-logo-footer" class="brand-logo canva-image" loading="lazy" src="images/logo.webp" alt="Zavod EDUcatio logo"><span class="brand-name" aria-label="ZAVOD EDUcatio"><span data-template-id="brand-name-white-footer" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">ZAVOD</span><span class="brand-subline"><span data-template-id="brand-name-blue-footer" class="canva-text" style="color: rgb(45, 99, 189); font-weight: 800; font-style: normal; font-size: 20px;">EDU</span><span data-template-id="brand-name-white-tail-footer" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 20px;">catio</span></span></span></a>
+     <p class="footer-about">Zavod za izobraževanje in usposabljanje. Posvečen razvoju inovativnih pedagoških praks in strokovnemu usposabljanju učiteljev in vzgojiteljev.</p>
+    </div>
+    <div class="footer-right">
+     <div class="footer-col">
+      <h4>Poslovni podatki</h4>
+      <p>Matična številka: 9266895000</p>
+      <p>Davčna številka: 45865132</p>
+      <p>Nismo zavezanec za DDV.</p>
+      <p>Vpis: Okrožno sodišče Celje (2022)</p>
+     </div>
+     <div class="footer-col">
+      <h4>Bančni podatki</h4>
+      <p>Banka: Delavska hranilnica d.d.</p>
+      <p class="footer-iban">SI56 6100 0002 7715 284</p>
+      <div class="contact-icons footer-icons">
+        <a href="https://www.facebook.com/zavodEDUcatio/" target="_blank" rel="noopener noreferrer" aria-label="Zavod EDUcatio na Facebooku (nov zavihek)" title="Facebook"><i data-lucide="facebook" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/zavodeducatio/" target="_blank" rel="noopener noreferrer" aria-label="Zavod EDUcatio na Instagramu (nov zavihek)" title="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/matejatodorovski/" target="_blank" rel="noopener noreferrer" aria-label="Mateja Todorovski na LinkedInu (nov zavihek)" title="LinkedIn"><i data-lucide="linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/@matejatodorovski" target="_blank" rel="noopener noreferrer" aria-label="Mateja Todorovski na YouTubu (nov zavihek)" title="YouTube"><i data-lucide="youtube" aria-hidden="true"></i></a>
+       </div>
+     </div>
+    </div>
+    <div class="footer-copy">© 2026 Zavod EDUcatio. Vse pravice pridržane.</div>
+    <div class="footer-links"><a href="#">Varovanje podatkov (GDPR)</a><a href="#">Piškotki</a></div>
+   </div>
+  </footer>
+  <script>
+    lucide.createIcons();
+
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+
+    // In-app routing: switch views without navigating the iframe
+    const routeHome = document.getElementById('route-home');
+    const routeUtrinki = document.getElementById('route-utrinki');
+    const routeLinks = document.querySelectorAll('[data-route-link]');
+    let currentRoute = 'home';
+    function showRoute(name) {
+      currentRoute = name;
+      routeHome.classList.toggle('hidden', name !== 'home');
+      routeUtrinki.classList.toggle('hidden', name !== 'utrinki');
+      routeLinks.forEach(link => {
+        link.classList.toggle('is-active', name === 'utrinki');
+        if (name === 'utrinki') link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
+      });
+      if (name === 'utrinki') startCarousel(); else stopAutoplay();
+    }
+    function goTo(hash) {
+      if (hash === '#utrinki' || hash === '#utrinki-mladi') {
+        showRoute('utrinki');
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        requestAnimationFrame(renderCarousel);
+        return;
+      }
+      const target = document.querySelector(hash);
+      if (!target) return;
+      if (currentRoute !== 'home') showRoute('home');
+      requestAnimationFrame(() => target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }));
+    }
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      const hash = link.getAttribute('href');
+      if (hash.length < 2) return;
+      const isUtrinki = hash === '#utrinki' || hash === '#utrinki-mladi';
+      if (!isUtrinki && !document.querySelector(hash)) return;
+      event.preventDefault();
+      goTo(hash);
+    });
+
+    // Utrinki: dva 3D obroča (za šole in učitelje / Erasmus+ mladi) z isto mehaniko
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    function createRing(root) {
+      const stage = root.querySelector('.u-stage');
+      const slides = [...root.querySelectorAll('.u-slide')];
+      const dotsBox = root.querySelector('.u-dots');
+      const status = root.querySelector('.u-status');
+      const caption = root.querySelector('.u-caption');
+      let visible = false;
+      const N = slides.length;
+      slides.forEach((slide, i) => slide.setAttribute('aria-label', `${i + 1} od ${N}`));
+      let pos = 0, timer = null, hovering = false, focused = false, dragging = false;
+      let moved = false, startX = 0, startPos = 0;
+      slides.forEach(() => { const d = document.createElement('span'); d.className = 'u-dot'; dotsBox.appendChild(d); });
+      const dots = [...dotsBox.children];
+      const wrap = v => ((v % N) + N) % N;
+      const spacingFor = () => Math.min((stage.clientWidth || 600) * 0.19, 190);
+      function updateCaption() {
+        if (!caption) return;
+        const card = slides[wrap(Math.round(pos))].querySelector('.u-card');
+        const link = caption.querySelector('a');
+        caption.querySelector('span').textContent = card.dataset.title || '';
+        if (card.dataset.href) {
+          link.href = card.dataset.href;
+          link.textContent = card.dataset.linktext || `Ogled objave na ${card.dataset.source} ↗`;
+          link.hidden = false;
+        } else {
+          link.hidden = true;
+        }
+      }
+      function render() {
+        const spacing = spacingFor();
+        slides.forEach((slide, i) => {
+          let d = wrap(i - pos);
+          if (d > N / 2) d -= N;
+          const a = Math.abs(d);
+          const scale = Math.max(0.55, 1.28 - a * 0.2);
+          slide.style.transform = `translate(-50%,-50%) translateX(${d * spacing}px) translateZ(${-a * 110}px) rotateY(${-d * 16}deg) scale(${scale})`;
+          slide.style.zIndex = String(100 - Math.round(a * 10));
+          slide.style.opacity = a > 3.2 ? '0' : String(Math.max(0.35, 1 - a * 0.2));
+          slide.style.filter = a < 0.5 ? 'none' : `brightness(${Math.max(0.55, 1 - a * 0.14)})`;
+          slide.style.pointerEvents = a > 3.2 ? 'none' : 'auto';
+          slide.classList.toggle('is-active', a < 0.5);
+          slide.setAttribute('aria-hidden', a > 3.2 ? 'true' : 'false');
+          slide.querySelector('.u-card').tabIndex = a > 3.2 ? -1 : 0;
+        });
+        const idx = wrap(Math.round(pos));
+        dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+        updateCaption();
+      }
+      function announce() { status.textContent = `Kartica ${wrap(Math.round(pos)) + 1} od ${N}`; }
+      function step(n) { pos = Math.round(pos) + n; render(); announce(); }
+      function stop() { clearInterval(timer); timer = null; }
+      function start() {
+        stop();
+        if (reducedMotion.matches || hovering || focused || dragging || currentRoute !== root.dataset.route || !visible) return;
+        timer = setInterval(() => step(1), 3800);
+      }
+      root.querySelector('[data-ring-prev]').addEventListener('click', () => { step(-1); start(); });
+      root.querySelector('[data-ring-next]').addEventListener('click', () => { step(1); start(); });
+      root.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); step(-1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); step(1); }
+      });
+      root.addEventListener('mouseenter', () => { hovering = true; stop(); });
+      root.addEventListener('mouseleave', () => { hovering = false; start(); });
+      root.addEventListener('focusin', () => { focused = true; stop(); });
+      root.addEventListener('focusout', event => { if (!root.contains(event.relatedTarget)) { focused = false; start(); } });
+      // Drag with snap; suppress click when the pointer actually moved
+      stage.addEventListener('pointerdown', event => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        dragging = true; moved = false; startX = event.clientX; startPos = pos;
+        stop();
+      });
+      stage.addEventListener('pointermove', event => {
+        if (!dragging) return;
+        const dx = event.clientX - startX;
+        if (!moved && Math.abs(dx) > 5) {
+          moved = true;
+          stage.classList.add('dragging');
+          stage.setPointerCapture(event.pointerId); // kazalec prevzamemo šele pri pravem vlečenju, da klik na kartico deluje
+        }
+        if (!moved) return;
+        pos = startPos - dx / spacingFor();
+        render();
+      });
+      function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        stage.classList.remove('dragging');
+        pos = Math.round(pos);
+        render(); announce(); start();
+      }
+      stage.addEventListener('pointerup', endDrag);
+      stage.addEventListener('pointercancel', endDrag);
+      // Klik na kartico: stranska se postavi v fokus, sredinska odpre izvirno objavo (enako kot povezava pod carouselom)
+      function activate(i) {
+        const card = slides[i].querySelector('.u-card');
+        let d = wrap(i - Math.round(pos));
+        if (d > N / 2) d -= N;
+        if (d !== 0) { step(d); return; }
+        if (card.dataset.href) window.open(card.dataset.href, '_blank', 'noopener,noreferrer');
+      }
+      // Tipkovnica / sredinska kartica: klik prejme gumb sam
+      slides.forEach((slide, i) => slide.querySelector('.u-card').addEventListener('click', event => {
+        if (moved) { event.preventDefault(); moved = false; return; }
+        activate(i);
+      }));
+      // Stranske kartice v 3D ne prejmejo klika ali :hover (brskalnik jih ne zadene), zato kartico poiščemo po geometriji
+      function slideAt(x, y) {
+        const hits = slides.filter(slide => {
+          if (slide.style.pointerEvents === 'none') return false;
+          const r = slide.querySelector('.u-card').getBoundingClientRect();
+          return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+        });
+        if (!hits.length) return null;
+        hits.sort((a, b) => Number(b.style.zIndex) - Number(a.style.zIndex));
+        return hits[0];
+      }
+      stage.addEventListener('click', event => {
+        if (moved) { moved = false; return; }
+        if (event.target.closest('.u-card')) return;
+        const slide = slideAt(event.clientX, event.clientY);
+        if (slide) activate(slides.indexOf(slide));
+      });
+      // Kartica pod miško stopi ven
+      function setHover(target) {
+        slides.forEach(slide => slide.classList.toggle('is-hover', slide === target));
+        stage.classList.toggle('over-card', !!target);
+      }
+      stage.addEventListener('pointermove', event => {
+        if (dragging && moved) { setHover(null); return; }
+        setHover(event.pointerType === 'mouse' ? slideAt(event.clientX, event.clientY) : null);
+      });
+      stage.addEventListener('pointerleave', () => setHover(null));
+      // Bralniki zaslona: povej, da kartica odpre objavo
+      slides.forEach(slide => {
+        const card = slide.querySelector('.u-card');
+        if (!card.dataset.href) return;
+        const label = card.querySelector('.u-label')?.textContent.trim() || '';
+        const what = card.dataset.linktext ? card.dataset.linktext.replace(/ ↗$/, '') : `odpri objavo na ${card.dataset.source}`;
+        card.setAttribute('aria-label', `${label}: ${what} (nov zavihek)`);
+      });
+      // Fotografije kartic (data-image): če datoteka obstaja, zamenja ozadje s simbolom
+      slides.forEach(slide => {
+        const card = slide.querySelector('.u-card');
+        if (!card.dataset.image) return;
+        const img = new Image();
+        img.className = 'u-photo';
+        img.alt = '';
+        img.draggable = false;
+        if (card.dataset.pos) img.style.objectPosition = card.dataset.pos;
+        img.onload = () => { card.prepend(img); card.classList.add('has-photo'); };
+        img.src = card.dataset.image;
+      });
+      // Samodejno vrtenje samo, ko je carousel viden na zaslonu
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([entry]) => {
+          visible = entry.isIntersecting;
+          if (visible) { render(); start(); } else { stop(); }
+        }, { threshold: 0.35 }).observe(root);
+      } else { visible = true; }
+      return { render, start, stop };
+    }
+    const rings = {
+      youth: createRing(document.querySelector('#utrinki-mladi .u-carousel')),
+      teachers: createRing(document.querySelector('#domov .u-carousel'))
+    };
+    function renderCarousel() { Object.values(rings).forEach(ring => ring.render()); }
+    function startCarousel() { renderCarousel(); Object.values(rings).forEach(ring => ring.start()); }
+    function stopAutoplay() { Object.values(rings).forEach(ring => ring.stop()); }
+    window.addEventListener('resize', renderCarousel);
+    reducedMotion.addEventListener?.('change', startCarousel);
+    renderCarousel();
+    if (location.hash === '#utrinki' || location.hash === '#utrinki-mladi') {
+      showRoute('utrinki');
+    }
+
+    const articleModal = document.getElementById('article-modal');
+    const articleOpenButton = document.getElementById('blog-open-button');
+    const articleCloseButton = articleModal.querySelector('.modal-close');
+    let articlePreviousFocus = null;
+    let articleModalOpen = false;
+
+    function openArticleModal(event) {
+      if (event) event.preventDefault();
+      if (articleModalOpen) return;
+      articlePreviousFocus = document.activeElement;
+      articleModalOpen = true;
+      articleModal.classList.remove('hidden');
+      articleModal.setAttribute('aria-hidden', 'false');
+      articleOpenButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      articleModal.querySelector('.article-modal-panel').scrollTop = 0;
+      requestAnimationFrame(() => {
+        articleModal.querySelector('.article-modal-panel').scrollTop = 0;
+        articleCloseButton.focus();
+      });
+    }
+
+    function closeArticleModal(event) {
+      if (event) event.preventDefault();
+      if (!articleModalOpen) return;
+      articleModalOpen = false;
+      articleModal.classList.add('hidden');
+      articleModal.setAttribute('aria-hidden', 'true');
+      articleOpenButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (articlePreviousFocus && typeof articlePreviousFocus.focus === 'function') articlePreviousFocus.focus();
+    }
+
+    articleOpenButton.addEventListener('click', openArticleModal);
+    articleModal.querySelectorAll('[data-close-article]').forEach(item => item.addEventListener('click', closeArticleModal));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && articleModalOpen) closeArticleModal(event);
+    });
+
+    const clilModal = document.getElementById('clil-article-modal');
+    const clilOpenButton = document.getElementById('clil-open-button');
+    const clilCloseButton = clilModal.querySelector('.modal-close');
+    let clilPreviousFocus = null;
+    let clilModalOpen = false;
+    function openClilModal(event) {
+      event.preventDefault();
+      if (clilModalOpen) return;
+      clilPreviousFocus = document.activeElement;
+      clilModalOpen = true;
+      clilModal.classList.remove('hidden');
+      clilModal.setAttribute('aria-hidden', 'false');
+      clilOpenButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      clilModal.querySelector('.article-modal-panel').scrollTop = 0;
+      requestAnimationFrame(() => clilCloseButton.focus());
+    }
+    function closeClilModal(event) {
+      if (event) event.preventDefault();
+      if (!clilModalOpen) return;
+      clilModalOpen = false;
+      clilModal.classList.add('hidden');
+      clilModal.setAttribute('aria-hidden', 'true');
+      clilOpenButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (clilPreviousFocus) clilPreviousFocus.focus();
+    }
+    clilOpenButton.addEventListener('click', openClilModal);
+    clilModal.querySelectorAll('[data-close-clil]').forEach(item => item.addEventListener('click', closeClilModal));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && clilModalOpen) closeClilModal(event);
+    });
+
+    const europeModal = document.getElementById('europe-article-modal');
+    const europeOpenButton = document.getElementById('europe-open-button');
+    const europeCloseButton = europeModal.querySelector('.modal-close');
+    let europePreviousFocus = null;
+    let europeModalOpen = false;
+    function openEuropeModal(event) {
+      event.preventDefault();
+      if (europeModalOpen) return;
+      europePreviousFocus = document.activeElement;
+      europeModalOpen = true;
+      europeModal.classList.remove('hidden');
+      europeModal.setAttribute('aria-hidden', 'false');
+      europeOpenButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      europeModal.querySelector('.article-modal-panel').scrollTop = 0;
+      requestAnimationFrame(() => europeCloseButton.focus());
+    }
+    function closeEuropeModal(event) {
+      if (event) event.preventDefault();
+      if (!europeModalOpen) return;
+      europeModalOpen = false;
+      europeModal.classList.add('hidden');
+      europeModal.setAttribute('aria-hidden', 'true');
+      europeOpenButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (europePreviousFocus) europePreviousFocus.focus();
+    }
+    europeOpenButton.addEventListener('click', openEuropeModal);
+    europeModal.querySelectorAll('[data-close-europe]').forEach(item => item.addEventListener('click', closeEuropeModal));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && europeModalOpen) closeEuropeModal(event);
+    });
+
+    const communityModal = document.getElementById('community-article-modal');
+    const communityOpenButton = document.getElementById('community-open-button');
+    const communityCloseButton = communityModal.querySelector('.modal-close');
+    let communityPreviousFocus = null;
+    let communityModalOpen = false;
+    function openCommunityModal(event) {
+      event.preventDefault();
+      if (communityModalOpen) return;
+      communityPreviousFocus = document.activeElement;
+      communityModalOpen = true;
+      communityModal.classList.remove('hidden');
+      communityModal.setAttribute('aria-hidden', 'false');
+      communityOpenButton.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      communityModal.querySelector('.article-modal-panel').scrollTop = 0;
+      requestAnimationFrame(() => communityCloseButton.focus());
+    }
+    function closeCommunityModal(event) {
+      if (event) event.preventDefault();
+      if (!communityModalOpen) return;
+      communityModalOpen = false;
+      communityModal.classList.add('hidden');
+      communityModal.setAttribute('aria-hidden', 'true');
+      communityOpenButton.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (communityPreviousFocus) communityPreviousFocus.focus();
+    }
+    communityOpenButton.addEventListener('click', openCommunityModal);
+    communityModal.querySelectorAll('[data-close-community]').forEach(item => item.addEventListener('click', closeCommunityModal));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && communityModalOpen) closeCommunityModal(event);
+    });
+
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.filter').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        document.querySelectorAll('[data-category]').forEach(card => {
+          card.style.display = filter === 'all' || card.dataset.category === filter ? '' : 'none';
+        });
+      });
+    });
+
+    const form = document.getElementById('contact-form');
+    const area = document.getElementById('area');
+    const areaTrigger = document.getElementById('area-trigger');
+    const areaOptions = document.getElementById('area-options');
+    const areaItems = [...areaOptions.querySelectorAll('.area-option')];
+    let areaIndex = 0;
+    function setArea(index) {
+      areaIndex = Math.max(0, Math.min(index, areaItems.length - 1));
+      const item = areaItems[areaIndex];
+      area.value = item.dataset.value;
+      areaTrigger.firstChild.textContent = `${item.textContent} `;
+      areaItems.forEach(option => option.setAttribute('aria-selected', String(option === item)));
+    }
+    function closeArea() {
+      areaOptions.hidden = true;
+      areaTrigger.setAttribute('aria-expanded', 'false');
+    }
+    function openArea() {
+      areaOptions.hidden = false;
+      areaTrigger.setAttribute('aria-expanded', 'true');
+      areaItems[areaIndex].focus?.();
+    }
+    areaTrigger.addEventListener('click', event => { event.preventDefault(); areaOptions.hidden ? openArea() : closeArea(); });
+    areaTrigger.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); openArea(); setArea(areaIndex + (event.key === 'ArrowDown' ? 1 : -1)); }
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); areaOptions.hidden ? openArea() : closeArea(); }
+      if (event.key === 'Escape') closeArea();
+      if (event.key.length === 1) { const match = areaItems.findIndex(item => item.textContent.trim().toLocaleLowerCase().startsWith(event.key.toLocaleLowerCase())); if (match > -1) { setArea(match); openArea(); } }
+    });
+    areaItems.forEach((item, index) => item.addEventListener('click', event => { event.preventDefault(); setArea(index); closeArea(); areaTrigger.focus(); }));
+    document.addEventListener('click', event => { if (!event.target.closest('.area-dropdown')) closeArea(); });
+
+    const submitButton = document.getElementById('submit-button');
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
+
+    // Obrazec: če je nastavljen FORM_ENDPOINT (npr. Formspree), se sporočilo pošlje tja;
+    // sicer se odpre e-poštni program s pripravljenim sporočilom.
+    const FORM_ENDPOINT = '';
+    const CONTACT_EMAIL = 'mateja.todorovski@gmail.com';
+    const successDefault = success.textContent.trim();
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      error.classList.add('hidden');
+      success.classList.add('hidden');
+
+      const areaValue = document.getElementById('area').value;
+      const areaOption = areaItems.find(item => item.dataset.value === areaValue);
+      const data = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        area: areaOption ? areaOption.textContent.trim() : '',
+        message: document.getElementById('message').value.trim()
+      };
+
+      submitButton.disabled = true;
+      submitButton.style.opacity = '.65';
+      let ok = false;
+      if (FORM_ENDPOINT) {
+        try {
+          const response = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(data)
+          });
+          ok = response.ok;
+        } catch (err) {
+          ok = false;
+        }
+        success.textContent = successDefault;
+      } else {
+        const body = `Ime in priimek / ustanova: ${data.name}\nE-pošta: ${data.email}\nPodročje sodelovanja: ${data.area}\n\n${data.message}`;
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Povpraševanje prek spletne strani')}&body=${encodeURIComponent(body)}`;
+        success.textContent = 'Odprl se je vaš e-poštni program s pripravljenim sporočilom. Pošljite ga, da nas dosežete.';
+        ok = true;
+      }
+      submitButton.disabled = false;
+      submitButton.style.opacity = '1';
+
+      if (ok) {
+        form.reset();
+        success.classList.remove('hidden');
+      } else {
+        error.textContent = 'Sporočila trenutno ni bilo mogoče poslati. Poskusite znova ali nam pišite na ' + CONTACT_EMAIL + '.';
+        error.classList.remove('hidden');
+      }
+    });
+
+    // O zavodu: črtkana krivulja skozi pike časovnice (na majhnih zaslonih se uporabi navpična črta iz CSS)
+    (function () {
+      const timeline = document.querySelector('#o-nas .timeline');
+      if (!timeline) return;
+      const NS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(NS, 'svg');
+      svg.setAttribute('class', 'timeline-svg');
+      svg.setAttribute('aria-hidden', 'true');
+      const path = document.createElementNS(NS, 'path');
+      svg.appendChild(path);
+      timeline.appendChild(svg); // zadnji otrok, da nth-child ostane pravilen
+      const DOT_OUT = 26; // sredina pike od roba kartice (CSS: left/right -34px, širina 16px)
+      const DOT_TOP = 34; // sredina pike od zgornjega roba kartice (CSS: top 26px + 8px)
+      const mobile = matchMedia('(max-width:760px)');
+      function draw() {
+        if (mobile.matches) { path.setAttribute('d', ''); return; }
+        const items = [...timeline.querySelectorAll('.timeline-item')];
+        const pts = items.map((el, i) => [i % 2 === 0 ? el.offsetLeft - DOT_OUT : el.offsetLeft + el.offsetWidth + DOT_OUT, el.offsetTop + DOT_TOP]);
+        if (pts.length < 2) return;
+        // Krivulja vijuga: iz pike zavije globoko pod lastno kartico, nato se široko zaziba do sredine nasprotne kartice
+        // (kontrolni točki sta daleč vstran), zato je črta ponekod skrita za karticami
+        const W = timeline.offsetWidth;
+        const near = W * 0.30;   // zamah pod lastno kartico
+        const far = W * 0.75;    // zamah proti sredini nasprotne kartice
+        let d = `M${pts[0][0]} ${pts[0][1]}`;
+        for (let i = 1; i < pts.length; i++) {
+          const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+          const s0 = (i - 1) % 2 === 0 ? 1 : -1; // +1: pika je na levem robu desne kartice
+          const dy = y1 - y0;
+          d += ` C${x0 + s0 * near} ${y0 + dy * 0.45} ${x1 - s0 * far} ${y1 - dy * 0.22} ${x1} ${y1}`;
+        }
+        path.setAttribute('d', d);
+      }
+      draw();
+      window.addEventListener('resize', draw);
+      window.addEventListener('load', draw);
+      document.fonts?.ready.then(draw);
+      if ('ResizeObserver' in window) new ResizeObserver(draw).observe(timeline);
+    })();
+
+    // Izgled strani: Dark / Light (shranjeno v brskalniku)
+    (function () {
+      const root = document.documentElement;
+      const KEY = 'zavod-theme';
+      function apply(theme, save) {
+        root.setAttribute('data-theme', theme);
+        if (save) { try { localStorage.setItem(KEY, theme); } catch (err) { /* brez shranjevanja */ } }
+        document.querySelectorAll('[data-theme-set]').forEach(btn => {
+          const on = btn.dataset.themeSet === theme;
+          btn.setAttribute('aria-pressed', String(on));
+          btn.classList.toggle('is-on', on);
+        });
+      }
+      document.addEventListener('click', event => {
+        const btn = event.target.closest('[data-theme-set]');
+        if (btn) apply(btn.dataset.themeSet, true);
+      });
+      apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
+    })();
+  </script>
+ 
+</body></html>
