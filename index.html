@@ -250,7 +250,7 @@
     .contact-side{grid-area:side}
     #contact-form{grid-area:form;align-self:start}
     .contact-side .contact-board{margin-top:0}
-    @media(min-width:951px){.contact-line2{white-space:nowrap}}
+    @media(min-width:951px){html[lang="sl"] .contact-line2{white-space:nowrap}}
     @media(max-width:950px){.contact-grid{grid-template-areas:"head" "side" "form"}.contact-br{display:none}}
     /* Kontakt: pregledni podatki, pravni podatki v nogi */
     .contact-lines{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px}
@@ -419,6 +419,32 @@
     }
       .hero .actions{gap:24px 18px}
     .hero .entry-grid{margin-top:65px}
+      /* Preklopnik jezika: dropdown */
+    .lang-dd{position:relative;display:inline-block;margin:0 4px}
+    .lang-dd-btn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 10px 0 11px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:inherit;font:inherit;font-size:.78rem;font-weight:800;letter-spacing:.04em;cursor:pointer;transition:background .2s ease,border-color .2s ease}
+    .lang-dd-btn:hover,.lang-dd-btn[aria-expanded="true"]{background:rgba(201,255,74,.16);border-color:rgba(201,255,74,.6)}
+    .lang-dd-btn svg{width:16px;height:16px}
+    .lang-dd-btn .lang-chev{width:14px;height:14px;transition:transform .2s ease}
+    .lang-dd-btn[aria-expanded="true"] .lang-chev{transform:rotate(180deg)}
+    .lang-dd-list{position:absolute;right:0;top:calc(100% + 10px);z-index:120;min-width:172px;margin:0;padding:6px;list-style:none;border-radius:16px;border:1px solid var(--line);background:#111b36;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+    .lang-dd-list[hidden]{display:none}
+    .lang-dd-list button{display:flex;align-items:center;gap:10px;width:100%;padding:9px 12px;border:0;border-radius:11px;background:transparent;color:#f8fbff;font:inherit;font-size:.86rem;text-align:left;cursor:pointer}
+    .lang-dd-list button b{min-width:24px;font-weight:800;letter-spacing:.04em}
+    .lang-dd-list button span{font-weight:500;opacity:.85}
+    .lang-dd-list button:hover,.lang-dd-list button:focus-visible{background:rgba(201,255,74,.18);outline:0}
+    .lang-dd-list button.is-on{background:var(--lime);color:var(--ink)}
+    .lang-dd-list button.is-on span{opacity:1}
+    .lang-dd-btn:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+    .lang-dd--inline{display:block;margin:10px 0 0}
+    .lang-dd--inline .lang-dd-btn{width:100%;height:44px;justify-content:flex-start;border-radius:12px}
+    .lang-dd--inline .lang-chev{margin-left:auto}
+    .lang-dd--inline .lang-dd-list{position:static;margin-top:8px;box-shadow:none;background:transparent;border-color:var(--line)}
+    html[data-theme="light"] .lang-dd-btn{background:rgba(16,26,52,.05);border-color:rgba(16,26,52,.2)}
+    html[data-theme="light"] .lang-dd-list{background:#fff;box-shadow:0 18px 40px rgba(16,26,52,.18)}
+    html[data-theme="light"] .lang-dd-list button{color:var(--l-text)}
+    html[data-theme="light"] .lang-dd-list button.is-on{color:var(--ink)}
+    html[data-theme="light"] .lang-dd--inline .lang-dd-list{background:transparent;box-shadow:none}
+    @media(max-width:1180px){.nav-links{display:none}.mobile-toggle{display:block}}
   </style>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -427,11 +453,12 @@
   <header class="nav-wrap">
    <nav class="site-shell">
     <div data-template-id="navigation" class="nav-box canva-menu" style="background: rgba(9, 18, 37, 0.83);"><a href="#domov" class="brand canva-link"><img data-template-id="brand-logo-header" class="brand-logo canva-image" loading="lazy" src="images/logo.webp" alt="Zavod EDUcatio logo"><span class="brand-name" aria-label="ZAVOD EDUcatio"><span data-template-id="brand-name-white-header" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">ZAVOD</span><span class="brand-subline"><span data-template-id="brand-name-blue-header" class="canva-text" style="color: rgb(45, 99, 189); font-weight: 800; font-style: normal; font-size: 20px;">EDU</span><span data-template-id="brand-name-white-tail-header" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 20px;">catio</span></span></span></a>
-     <div class="nav-links"><a href="#domov">Domov</a><a href="#o-nas">O zavodu</a><a href="#izobrazevanja">Usposabljanja</a><a href="#gradiva">Gradiva</a><a href="#projekti">Projekti</a><a href="#reference">Reference</a><a href="#blog">Blog</a><a href="#utrinki" class="nav-route" data-route-link="">Utrinki</a> <div class="theme-switch" role="group" aria-label="Izgled strani"><button type="button" data-theme-set="dark" aria-pressed="true" aria-label="Temen izgled" title="Dark"><i data-lucide="moon" aria-hidden="true"></i></button><button type="button" data-theme-set="light" aria-pressed="false" aria-label="Svetel izgled" title="Light"><i data-lucide="sun" aria-hidden="true"></i></button></div> <a href="#kontakt" data-template-id="nav-contact" class="nav-contact canva-link" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Kontakt</a>
+     <div class="nav-links"><a href="#domov">Domov</a><a href="#o-nas">O zavodu</a><a href="#izobrazevanja">Usposabljanja</a><a href="#gradiva">Gradiva</a><a href="#projekti">Projekti</a><a href="#reference">Reference</a><a href="#blog">Blog</a><a href="#utrinki" class="nav-route" data-route-link="">Utrinki</a> <div class="theme-switch" role="group" aria-label="Izgled strani"><button type="button" data-theme-set="dark" aria-pressed="true" aria-label="Temen izgled" title="Dark"><i data-lucide="moon" aria-hidden="true"></i></button><button type="button" data-theme-set="light" aria-pressed="false" aria-label="Svetel izgled" title="Light"><i data-lucide="sun" aria-hidden="true"></i></button></div> <div class="lang-dd" data-lang-dd><button type="button" class="lang-dd-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Jezik strani"><i data-lucide="globe" aria-hidden="true"></i><span class="lang-cur">SL</span><i data-lucide="chevron-down" class="lang-chev" aria-hidden="true"></i></button><ul class="lang-dd-list" role="listbox" hidden><li role="none"><button type="button" role="option" data-lang-set="sl" lang="sl" aria-selected="true"><b>SL</b><span>Slovenščina</span></button></li><li role="none"><button type="button" role="option" data-lang-set="en" lang="en" aria-selected="false"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="option" data-lang-set="de" lang="de" aria-selected="false"><b>DE</b><span>Deutsch</span></button></li></ul></div> <a href="#kontakt" data-template-id="nav-contact" class="nav-contact canva-link" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Kontakt</a>
      </div><button id="mobile-toggle" type="button" class="mobile-toggle canva-button" aria-label="Odpri meni" aria-expanded="false"><i data-lucide="menu"></i></button>
     </div>
     <div id="mobile-menu" class="mobile-menu"><a href="#domov">Domov</a><a href="#o-nas">O zavodu</a><a href="#izobrazevanja">Usposabljanja</a><a href="#gradiva">Gradiva</a><a href="#projekti">Projekti</a><a href="#reference">Reference</a><a href="#blog">Blog</a><a href="#utrinki" data-route-link="">Utrinki</a><a href="#kontakt">Kontakt</a>
      <div class="mobile-theme" role="group" aria-label="Izgled strani"><button type="button" data-theme-set="dark" aria-pressed="true"><i data-lucide="moon" aria-hidden="true"></i> Dark</button><button type="button" data-theme-set="light" aria-pressed="false"><i data-lucide="sun" aria-hidden="true"></i> Light</button></div>
+     <div class="lang-dd lang-dd--inline" data-lang-dd><button type="button" class="lang-dd-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Jezik strani"><i data-lucide="globe" aria-hidden="true"></i><span class="lang-cur">SL</span><i data-lucide="chevron-down" class="lang-chev" aria-hidden="true"></i></button><ul class="lang-dd-list" role="listbox" hidden><li role="none"><button type="button" role="option" data-lang-set="sl" lang="sl" aria-selected="true"><b>SL</b><span>Slovenščina</span></button></li><li role="none"><button type="button" role="option" data-lang-set="en" lang="en" aria-selected="false"><b>EN</b><span>English</span></button></li><li role="none"><button type="button" role="option" data-lang-set="de" lang="de" aria-selected="false"><b>DE</b><span>Deutsch</span></button></li></ul></div>
     </div>
    </nav>
   </header>
@@ -1115,6 +1142,7 @@
     <div class="footer-links"><a href="#">Varovanje podatkov (GDPR)</a><a href="#">Piškotki</a></div>
    </div>
   </footer>
+  <script src="i18n.js"></script>
   <script>
     lucide.createIcons();
 
@@ -1184,7 +1212,8 @@
       const caption = root.querySelector('.u-caption');
       let visible = false;
       const N = slides.length;
-      slides.forEach((slide, i) => slide.setAttribute('aria-label', `${i + 1} od ${N}`));
+      const labelSlides = () => slides.forEach((slide, i) => slide.setAttribute('aria-label', I18N.tpl('of', { i: i + 1, n: N })));
+      labelSlides();
       let pos = 0, timer = null, hovering = false, focused = false, dragging = false;
       let moved = false, startX = 0, startPos = 0;
       slides.forEach(() => { const d = document.createElement('span'); d.className = 'u-dot'; dotsBox.appendChild(d); });
@@ -1195,10 +1224,10 @@
         if (!caption) return;
         const card = slides[wrap(Math.round(pos))].querySelector('.u-card');
         const link = caption.querySelector('a');
-        caption.querySelector('span').textContent = card.dataset.title || '';
+        caption.querySelector('span').textContent = I18N.t(card.dataset.title || '');
         if (card.dataset.href) {
           link.href = card.dataset.href;
-          link.textContent = card.dataset.linktext || `Ogled objave na ${card.dataset.source} ↗`;
+          link.textContent = card.dataset.linktext ? I18N.t(card.dataset.linktext) : I18N.tpl('viewPost', { s: I18N.t(card.dataset.source) });
           link.hidden = false;
         } else {
           link.hidden = true;
@@ -1224,7 +1253,7 @@
         dots.forEach((d, i) => d.classList.toggle('on', i === idx));
         updateCaption();
       }
-      function announce() { status.textContent = `Kartica ${wrap(Math.round(pos)) + 1} od ${N}`; }
+      function announce() { status.textContent = I18N.tpl('card', { i: wrap(Math.round(pos)) + 1, n: N }); }
       function step(n) { pos = Math.round(pos) + n; render(); announce(); }
       function stop() { clearInterval(timer); timer = null; }
       function start() {
@@ -1310,13 +1339,15 @@
       });
       stage.addEventListener('pointerleave', () => setHover(null));
       // Bralniki zaslona: povej, da kartica odpre objavo
-      slides.forEach(slide => {
+      const labelCards = () => slides.forEach(slide => {
         const card = slide.querySelector('.u-card');
         if (!card.dataset.href) return;
         const label = card.querySelector('.u-label')?.textContent.trim() || '';
-        const what = card.dataset.linktext ? card.dataset.linktext.replace(/ ↗$/, '') : `odpri objavo na ${card.dataset.source}`;
-        card.setAttribute('aria-label', `${label}: ${what} (nov zavihek)`);
+        const what = card.dataset.linktext ? I18N.t(card.dataset.linktext).replace(/ ↗$/, '') : I18N.tpl('openPost', { s: I18N.t(card.dataset.source) });
+        card.setAttribute('aria-label', `${label}: ${what} ${I18N.tpl('newTab')}`);
       });
+      labelCards();
+      document.addEventListener('langchange', () => { labelSlides(); labelCards(); render(); });
       // Fotografije kartic (data-image): če datoteka obstaja, zamenja ozadje s simbolom
       slides.forEach(slide => {
         const card = slide.querySelector('.u-card');
@@ -1541,7 +1572,12 @@
     // sicer se odpre e-poštni program s pripravljenim sporočilom.
     const FORM_ENDPOINT = '';
     const CONTACT_EMAIL = 'mateja.todorovski@gmail.com';
-    const successDefault = success.textContent.trim();
+    document.addEventListener('langchange', () => {
+      if (area.value) setArea(areaIndex);
+      if (success.dataset.msg) success.textContent = I18N.tpl(success.dataset.msg);
+      if (error.dataset.msg) error.textContent = I18N.tpl(error.dataset.msg, { e: CONTACT_EMAIL });
+    });
+    const successDefault = 'Vaše sporočilo je bilo uspešno poslano. Odgovorili vam bomo v najkrajšem možnem času.';
 
     form.addEventListener('submit', async event => {
       event.preventDefault();
@@ -1571,11 +1607,11 @@
         } catch (err) {
           ok = false;
         }
-        success.textContent = successDefault;
+        success.textContent = I18N.t(successDefault); success.dataset.msg = '';
       } else {
-        const body = `Ime in priimek / ustanova: ${data.name}\nE-pošta: ${data.email}\nPodročje sodelovanja: ${data.area}\n\n${data.message}`;
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Povpraševanje prek spletne strani')}&body=${encodeURIComponent(body)}`;
-        success.textContent = 'Odprl se je vaš e-poštni program s pripravljenim sporočilom. Pošljite ga, da nas dosežete.';
+        const body = I18N.tpl('mailBody', data);
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(I18N.tpl('mailSubject'))}&body=${encodeURIComponent(body)}`;
+        success.textContent = I18N.tpl('formOk'); success.dataset.msg = 'formOk';
         ok = true;
       }
       submitButton.disabled = false;
@@ -1585,7 +1621,7 @@
         form.reset();
         success.classList.remove('hidden');
       } else {
-        error.textContent = 'Sporočila trenutno ni bilo mogoče poslati. Poskusite znova ali nam pišite na ' + CONTACT_EMAIL + '.';
+        error.textContent = I18N.tpl('formErr', { e: CONTACT_EMAIL }); error.dataset.msg = 'formErr';
         error.classList.remove('hidden');
       }
     });
