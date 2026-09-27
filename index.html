@@ -488,6 +488,13 @@
     html[data-theme="light"] .next-actions [style*="color: rgb(220, 229, 251)"],html[data-theme="light"] .next-actions [style*="color: rgb(200, 211, 237)"]{color:#dce5fb!important}
     html[data-theme="light"] .next-actions [style*="color: rgb(255, 255, 255)"]{color:#fff!important}
     html[data-theme="light"] .next-actions [style*="color: rgb(201, 255, 74)"]{color:#c9ff4a!important}
+      /* Hero naslov: besede se pojavijo ena za drugo (kot pri BillBuster "Vaša elektrika./Vaš prihranek.") */
+    .hero-shift-word{display:inline-block;opacity:0;transform:translateY(-16px);animation:heroShiftWord .5s cubic-bezier(.22,1,.36,1) forwards;will-change:transform,opacity}
+    @keyframes heroShiftWord{to{opacity:1;transform:translateY(0)}}
+    .hero-shift-word.is-settled{animation:none;opacity:1;transform:none}
+    .hero-shift-word.is-settled{transition:transform .3s cubic-bezier(.22,1,.36,1),filter .3s ease;cursor:default}
+    .hero-shift-word.is-settled:hover{transform:scale(1.08) translateY(-2px);filter:drop-shadow(0 4px 20px rgba(201,255,74,.5))}
+    @media(prefers-reduced-motion:reduce){.hero-shift-word{animation:none!important;opacity:1!important;transform:none!important}}
   </style>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
@@ -513,7 +520,7 @@
        <div data-template-id="hero-eyebrow" class="eyebrow canva-tag" style="color: rgb(201, 255, 74); font-weight: 800;">
         <i data-lucide="sparkles" width="15"></i><span data-template-id="hero-eyebrow-text" class="canva-text" style="color: rgb(201, 255, 74); font-weight: 800; font-style: normal; font-size: 16px;">Prihodnost izobraževanja</span>
        </div>
-       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Učenje, ki navdušuje. Poučevanje, ki pusti pečat.</span></h1>
+       <h1 data-template-id="hero-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-title-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal;">Učenje, ki navdušuje. </span><span class="hero-title-accent" style="color:var(--mist);font-weight:800;font-style:normal;">Poučevanje, ki pusti pečat.</span></h1>
        <p data-template-id="hero-description" class="hero-copy canva-text" style="color: rgb(200, 211, 237); font-weight: 400; font-style: normal; font-size: 18px;">Seminarji, metodologije in avtorska gradiva za vrtce, osnovne šole in pedagoge, ki želijo več kot klasično predavanje.</p>
        <div class="actions"><a href="#izobrazevanja" data-template-id="hero-primary-cta" class="button-main canva-button" style="background: rgb(201, 255, 74); color: rgb(9, 18, 37); font-weight: 800;"><span data-template-id="hero-primary-cta-text" class="canva-text" style="color: rgb(9, 18, 37); font-weight: 800; font-style: normal; font-size: 16px;">Razišči seminarje</span> <i data-lucide="arrow-right" width="17"></i></a> <a href="#gradiva" data-template-id="hero-secondary-cta" class="button-main alt canva-button" style="background: rgb(23, 35, 67); color: rgb(255, 255, 255); font-weight: 800;"><span data-template-id="hero-secondary-cta-text" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 16px;">Prelistaj gradiva</span></a>
        </div>
@@ -1189,6 +1196,49 @@
   <script src="consent.js"></script>
   <script>
     lucide.createIcons();
+
+    // Hero naslov: besede se pojavijo ena za drugo, enako kot naslov "Vaša elektrika./Vaš prihranek."
+    // na BillBuster strani (08_Design/BillBuster_Web/billbuster_2026_MERGED.html, .hero-shift).
+    (function () {
+      const HERO_LINE_1 = 'Učenje, ki navdušuje.';
+      const HERO_LINE_2 = 'Poučevanje, ki pusti pečat.';
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function buildLine(text, startDelay, step) {
+        const words = text.split(' ');
+        const frag = document.createDocumentFragment();
+        words.forEach((word, i) => {
+          const span = document.createElement('span');
+          span.className = 'hero-shift-word';
+          span.textContent = word;
+          if (reduceMotion) {
+            span.classList.add('is-settled');
+          } else {
+            span.style.animationDelay = (startDelay + i * step) + 's';
+            span.addEventListener('animationend', () => span.classList.add('is-settled'), { once: true });
+          }
+          frag.appendChild(span);
+          if (i < words.length - 1) frag.appendChild(document.createTextNode(' '));
+        });
+        return { frag, wordCount: words.length };
+      }
+      window.renderHeroTitle = function () {
+        const line1El = document.querySelector('[data-template-id="hero-title-text"]');
+        const line2El = document.querySelector('.hero-title-accent');
+        if (!line1El || !line2El) return;
+        const step = 0.12, gap = 0.3;
+        const t1 = window.I18N ? window.I18N.t(HERO_LINE_1) : HERO_LINE_1;
+        const t2 = window.I18N ? window.I18N.t(HERO_LINE_2) : HERO_LINE_2;
+        const line1 = buildLine(t1, 0.15, step);
+        line1El.textContent = '';
+        line1El.appendChild(line1.frag);
+        const line2 = buildLine(t2, 0.15 + line1.wordCount * step + gap, step);
+        line2El.textContent = '';
+        line2El.appendChild(line2.frag);
+      };
+      window.renderHeroTitle();
+      document.addEventListener('langchange', window.renderHeroTitle);
+    })();
+
 
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
