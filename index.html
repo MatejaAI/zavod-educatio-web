@@ -1072,7 +1072,7 @@
        <div class="kicker">
         Kontakt
        </div>
-       <h2 class="contact-title">Kaj želiš<br class="contact-br"> <span class="contact-line2">izboljšati v svoji učilnici?</span></h2>
+       <h2 class="contact-title"><span class="contact-line1">Kaj želiš</span><br class="contact-br"> <span class="contact-line2">izboljšati v svoji učilnici?</span></h2>
        <p style="line-height:1.65;color:var(--mist)">Za vprašanja glede izvedbe usposabljanj, naročila svetovalnih storitev ali sodelovanja pri mednarodnih projektih nas kontaktirajte.</p>
       </div>
       <div class="reveal contact-side">
@@ -1196,6 +1196,42 @@
   <script src="consent.js"></script>
   <script>
     lucide.createIcons();
+    // Glavni naslovi sekcij (ne Hero): enak učinek besed pod miško kot na naslovu Hero,
+    // brez animacije ob nalaganju (te že poskrbi obstoječi .reveal prehod celotnega bloka).
+    (function () {
+      const TITLES = [
+        { selector: '[data-template-id="about-title"]', text: 'Dvigujemo kakovost pedagoškega procesa' },
+        { selector: '[data-template-id="training-title"]', text: 'Izobraževanja in usposabljanja za šole' },
+        { selector: '#gradiva h2', text: 'Učna gradiva in publikacije' },
+        { selector: '#projekti h2', text: 'Mednarodni projekti' },
+        { selector: '#reference h2', text: 'Reference in odzivi' },
+        { selector: '#blog h2', text: 'Ideja tedna' },
+        { selector: '.contact-title .contact-line1', text: 'Kaj želiš' },
+        { selector: '.contact-title .contact-line2', text: 'izboljšati v svoji učilnici?' }
+      ];
+      function wordify(el, text) {
+        const t = window.I18N ? window.I18N.t(text) : text;
+        const frag = document.createDocumentFragment();
+        t.split(' ').forEach((word, i, arr) => {
+          const span = document.createElement('span');
+          span.className = 'hero-shift-word is-settled';
+          span.textContent = word;
+          frag.appendChild(span);
+          if (i < arr.length - 1) frag.appendChild(document.createTextNode(' '));
+        });
+        el.textContent = '';
+        el.appendChild(frag);
+      }
+      window.renderMainTitles = function () {
+        TITLES.forEach(({ selector, text }) => {
+          const el = document.querySelector(selector);
+          if (el) wordify(el, text);
+        });
+      };
+      window.renderMainTitles();
+      document.addEventListener('langchange', window.renderMainTitles);
+    })();
+
 
     // Hero naslov: besede se pojavijo ena za drugo, enako kot naslov "Vaša elektrika./Vaš prihranek."
     // na BillBuster strani (08_Design/BillBuster_Web/billbuster_2026_MERGED.html, .hero-shift).
